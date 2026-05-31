@@ -103,8 +103,8 @@ window.INVENTORY_DATA = {
     },
     {
       "code": "WSTRAIHGT",
-      "qualityName": "MONKEY",
-      "systemQuality": "MONKEY",
+      "qualityName": "W STRAIGHT",
+      "systemQuality": "W STRAIGHT",
       "productName": "W STRAIGHT"
     },
     {
@@ -1817,6 +1817,15 @@ window.INVENTORY_DATA = {
       "denim-click": 0
     },
     "TRUE RELIGION": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "W STRAIGHT": {
       "elite": 0,
       "lineas-originales": 0,
       "club-jeans": 0,
