@@ -39,3 +39,6 @@ create policy "inventory_counts_public_insert"
       'denim-click'
     )
   );
+
+grant usage on schema public to anon;
+grant select, insert on public.inventory_counts to anon;
