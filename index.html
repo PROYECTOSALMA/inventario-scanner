@@ -41,7 +41,10 @@
             <h2>Estatus por sucursal</h2>
             <p class="muted" data-dashboard-sync>Conectando con la nube...</p>
           </div>
-          <button class="small-button" type="button" data-refresh-dashboard>Actualizar</button>
+          <div class="dashboard-actions">
+            <button class="small-button" type="button" data-add-code>Agregar codigo</button>
+            <button class="small-button" type="button" data-refresh-dashboard>Actualizar</button>
+          </div>
         </div>
         <div class="store-grid dashboard-grid" data-store-grid></div>
         <article class="panel">
@@ -54,6 +57,24 @@
           <div data-admin-closures></div>
         </article>
       </section>
+
+      <div class="sheet-backdrop" data-code-sheet hidden>
+        <form class="sheet" data-code-form>
+          <div class="sheet-head">
+            <div>
+              <p class="code-title">Agregar codigo</p>
+              <p class="muted">Este codigo quedara disponible para todas las sucursales.</p>
+            </div>
+            <button type="button" class="icon-button" data-close-code>&times;</button>
+          </div>
+          <label class="scan-label" for="new-code">Codigo</label>
+          <input id="new-code" class="edit-input compact" data-code-input autocapitalize="characters" spellcheck="false" />
+          <label class="scan-label" for="new-product">Nombre del producto</label>
+          <input id="new-product" class="search-input full-input" data-product-input />
+          <p class="error-text" data-code-error hidden></p>
+          <button type="submit" class="primary-button full">Guardar codigo</button>
+        </form>
+      </div>
     </template>
 
     <template id="counter-template">
@@ -86,6 +107,7 @@
             <button type="submit">OK</button>
           </div>
           <p class="error-text" data-scan-error hidden></p>
+          <button class="small-button add-unknown" type="button" data-add-unknown hidden>Agregar codigo no registrado</button>
           <p class="success-text" data-last-scan hidden></p>
         </form>
 
@@ -205,6 +227,24 @@
           <label class="scan-label" for="edit-qty">Piezas correctas</label>
           <input id="edit-qty" class="edit-input" data-edit-input inputmode="numeric" />
           <button type="submit" class="primary-button full">Guardar correccion</button>
+        </form>
+      </div>
+
+      <div class="sheet-backdrop" data-code-sheet hidden>
+        <form class="sheet" data-code-form>
+          <div class="sheet-head">
+            <div>
+              <p class="code-title">Agregar codigo</p>
+              <p class="muted">Despues de guardarlo podras sumar piezas a este codigo.</p>
+            </div>
+            <button type="button" class="icon-button" data-close-code>&times;</button>
+          </div>
+          <label class="scan-label" for="new-code-counter">Codigo</label>
+          <input id="new-code-counter" class="edit-input compact" data-code-input autocapitalize="characters" spellcheck="false" />
+          <label class="scan-label" for="new-product-counter">Nombre del producto</label>
+          <input id="new-product-counter" class="search-input full-input" data-product-input />
+          <p class="error-text" data-code-error hidden></p>
+          <button type="submit" class="primary-button full">Guardar codigo</button>
         </form>
       </div>
     </template>

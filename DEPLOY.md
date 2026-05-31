@@ -90,3 +90,4 @@ Para activar conteo en vivo y carga de stock por archivo, vuelve a ejecutar `sup
 - `inventory_counts`: cierres finales.
 - `inventory_active_counts`: conteo activo visible en nube.
 - `inventory_store_stocks`: inventario de sistema cargado desde Excel, CSV o PDF.
+- `inventory_custom_codes`: codigos nuevos agregados por gerente o durante el escaneo.

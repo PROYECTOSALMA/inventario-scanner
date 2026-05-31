@@ -1,15 +1,18 @@
 (function () {
   const data = window.INVENTORY_DATA
   const app = document.querySelector('#app')
-  const catalogEntries = buildCatalogEntries(data.catalog, data.codeAliases)
-  const catalogByCode = new Map(catalogEntries.map(entry => [entry.code, entry.item]))
   const supabaseClient = createSupabaseClient()
   const stockStorageKey = 'inventario-scanner:stock-overrides:v1'
+  const customCodesStorageKey = 'inventario-scanner:custom-codes:v1'
 
   let store = null
   let activeCount = null
   let pastCounts = []
   let stockOverrides = loadStockOverrides()
+  let customCodes = loadCustomCodes()
+  let catalogItems = []
+  let catalogEntries = []
+  let catalogByCode = new Map()
   let dashboardRows = []
   let dashboardClosures = []
   let dashboardTimer = null
@@ -23,6 +26,10 @@
   let lastMovementId = ''
   let readOnlyMode = false
   let lastActiveSyncHash = ''
+  let unknownScanCode = ''
+  let addCodeContext = null
+
+  refreshCatalogIndex()
 
   boot()
 
@@ -39,6 +46,7 @@
     pastCounts = loadPastCounts(store.slug)
     renderCounter()
     focusScanner()
+    fetchRemoteCustomCodes()
     fetchRemoteStock()
     fetchRemoteCounts()
     fetchRemoteActiveCount()
@@ -50,6 +58,7 @@
     app.replaceChildren(template.content.cloneNode(true))
 
     app.querySelector('[data-refresh-dashboard]').addEventListener('click', fetchDashboard)
+    app.querySelector('[data-add-code]').addEventListener('click', () => openAddCodeSheet('', false))
     app.querySelector('[data-store-grid]').addEventListener('change', event => {
       if (!event.target.matches('[data-stock-upload]')) return
       const file = event.target.files && event.target.files[0]
@@ -57,8 +66,10 @@
       if (file && slug) uploadStoreStock(slug, file)
       event.target.value = ''
     })
+    bindAddCodeSheet()
 
     renderDashboardContent()
+    fetchRemoteCustomCodes()
     fetchDashboard()
     dashboardTimer = window.setInterval(fetchDashboard, 5000)
   }
@@ -171,6 +182,7 @@
         if (Array.isArray(activeResponse.data)) dashboardRows = activeResponse.data
         if (Array.isArray(stockResponse.data)) applyRemoteStocks(stockResponse.data)
         if (Array.isArray(countsResponse.data)) dashboardClosures = countsResponse.data.map(fromRemoteCount).filter(Boolean)
+        await fetchRemoteCustomCodes()
         app.querySelector('[data-dashboard-sync]').textContent = `Nube actualizada ${formatTime(new Date().toISOString())}`
       } else {
         app.querySelector('[data-dashboard-sync]').textContent = 'Sin Supabase configurado; mostrando datos locales base.'
@@ -203,6 +215,7 @@
     app.querySelector('[data-scan-panel]').hidden = readOnlyMode
     app.querySelector('[data-reset]').hidden = readOnlyMode
     app.querySelector('[data-finalize]').hidden = readOnlyMode
+    bindAddCodeSheet()
     bindCounterEvents()
     updateCounter()
   }
@@ -223,6 +236,7 @@
 
       app.querySelector('[data-reset]').addEventListener('click', resetActiveCount)
       app.querySelector('[data-finalize]').addEventListener('click', finalizeCount)
+      app.querySelector('[data-add-unknown]').addEventListener('click', () => openAddCodeSheet(unknownScanCode, true))
       bindQuantitySheet()
       bindEditSheet()
     }
@@ -274,6 +288,94 @@
       event.preventDefault()
       saveMovementEdit()
     })
+  }
+
+  function bindAddCodeSheet() {
+    const form = app.querySelector('[data-code-form]')
+    const close = app.querySelector('[data-close-code]')
+    if (!form || form.dataset.bound === '1') return
+
+    form.dataset.bound = '1'
+    form.addEventListener('submit', event => {
+      event.preventDefault()
+      saveCustomCode()
+    })
+    if (close) close.addEventListener('click', closeAddCodeSheet)
+  }
+
+  function openAddCodeSheet(code, continueToQuantity) {
+    const sheet = app.querySelector('[data-code-sheet]')
+    if (!sheet) return
+
+    addCodeContext = {
+      rawScan: code || '',
+      continueToQuantity: Boolean(continueToQuantity && store && !readOnlyMode),
+    }
+    app.querySelector('[data-code-input]').value = normalizeCode(code || '')
+    app.querySelector('[data-product-input]').value = ''
+    setCodeError('')
+    sheet.hidden = false
+    window.setTimeout(() => {
+      const input = app.querySelector(code ? '[data-product-input]' : '[data-code-input]')
+      if (input) input.focus()
+    }, 60)
+  }
+
+  function closeAddCodeSheet() {
+    addCodeContext = null
+    const sheet = app.querySelector('[data-code-sheet]')
+    if (sheet) sheet.hidden = true
+    focusScanner()
+  }
+
+  async function saveCustomCode() {
+    const code = normalizeCode(app.querySelector('[data-code-input]').value)
+    const productName = String(app.querySelector('[data-product-input]').value || '').trim().toUpperCase()
+
+    if (!code) {
+      setCodeError('Captura el codigo.')
+      return
+    }
+    if (!productName) {
+      setCodeError('Captura el nombre del producto.')
+      return
+    }
+
+    const existing = getCatalogItem(code)
+    if (existing) {
+      setCodeError('Ese codigo ya existe. Ya puedes escanearlo o sumar piezas.')
+      return
+    }
+
+    const item = {
+      code,
+      qualityName: productName,
+      systemQuality: productName,
+      productName,
+      custom: true,
+      createdAt: new Date().toISOString(),
+      createdByStore: store ? store.slug : 'gerente',
+    }
+
+    addCustomCode(item)
+    await syncCustomCode(item)
+    const shouldOpenQuantity = addCodeContext && addCodeContext.continueToQuantity
+    const rawScan = addCodeContext && addCodeContext.rawScan ? addCodeContext.rawScan : code
+    closeAddCodeSheet()
+
+    if (shouldOpenQuantity) {
+      unknownScanCode = ''
+      setScanError('')
+      pendingScan = { item, rawScan }
+      openQuantitySheet()
+      return
+    }
+
+    if (app.querySelector('[data-dashboard-sync]')) {
+      app.querySelector('[data-dashboard-sync]').textContent = `Codigo ${code} agregado.`
+      renderDashboardContent()
+      bindDashboardButtons()
+    }
   }
 
   function updateCounter() {
@@ -345,12 +447,18 @@
 
     if (!item) {
       lastMovementId = ''
+      unknownScanCode = rawScan
       setScanError(`Codigo no registrado: ${rawScan}`)
+      const addButton = app.querySelector('[data-add-unknown]')
+      if (addButton) addButton.hidden = false
       updateCounter()
       focusScanner()
       return
     }
 
+    unknownScanCode = ''
+    const addButton = app.querySelector('[data-add-unknown]')
+    if (addButton) addButton.hidden = true
     pendingScan = { item, rawScan }
     openQuantitySheet()
   }
@@ -615,7 +723,7 @@
       totals.set(key, (totals.get(key) || 0) + movement.quantity)
     })
 
-    return data.catalog.map(item => ({
+    return catalogItems.map(item => ({
       code: item.code,
       qualityName: item.qualityName,
       systemQuality: item.systemQuality,
@@ -627,7 +735,7 @@
     const expectedByQuality = getExpectedByQualityForStore(storeSlug)
     const qualities = new Set([
       ...Object.keys(expectedByQuality),
-      ...data.catalog.map(item => item.systemQuality),
+      ...catalogItems.map(item => item.systemQuality),
     ])
     const counted = new Map()
     codeTotals.forEach(row => counted.set(row.systemQuality, (counted.get(row.systemQuality) || 0) + row.total))
@@ -916,8 +1024,17 @@
     return parsed && typeof parsed === 'object' ? parsed : {}
   }
 
+  function loadCustomCodes() {
+    const parsed = readJson(customCodesStorageKey)
+    return Array.isArray(parsed) ? parsed : []
+  }
+
   function saveStockOverrides() {
     localStorage.setItem(stockStorageKey, JSON.stringify(stockOverrides))
+  }
+
+  function saveCustomCodes() {
+    localStorage.setItem(customCodesStorageKey, JSON.stringify(customCodes))
   }
 
   async function fetchRemoteCounts() {
@@ -954,6 +1071,42 @@
       }
     } catch {
       // Si la tabla aun no existe, usa el stock base de data.js.
+    }
+  }
+
+  async function fetchRemoteCustomCodes() {
+    if (!supabaseClient) return
+
+    try {
+      const { data: rows } = await supabaseClient
+        .from('inventory_custom_codes')
+        .select('code, quality_name, system_quality, product_name, created_at, created_by_store, source')
+        .order('created_at', { ascending: false })
+
+      if (Array.isArray(rows)) {
+        applyRemoteCustomCodes(rows)
+        if (store && app.querySelector('[data-code-table]')) updateCounter()
+      }
+    } catch {
+      // Si la tabla aun no existe, se usan codigos personalizados locales.
+    }
+  }
+
+  async function syncCustomCode(item) {
+    if (!supabaseClient) return
+
+    try {
+      await supabaseClient.from('inventory_custom_codes').upsert({
+        code: item.code,
+        quality_name: item.qualityName,
+        system_quality: item.systemQuality,
+        product_name: item.productName,
+        created_at: item.createdAt || new Date().toISOString(),
+        created_by_store: item.createdByStore || (store ? store.slug : 'gerente'),
+        source: item.source || 'manual',
+      }, { onConflict: 'code' })
+    } catch {
+      // El codigo queda disponible en este dispositivo aunque falle la nube.
     }
   }
 
@@ -1102,6 +1255,70 @@
     saveStockOverrides()
   }
 
+  function applyRemoteCustomCodes(rows) {
+    rows.forEach(row => {
+      const item = fromRemoteCustomCode(row)
+      if (item) addCustomCode(item, true)
+    })
+    saveCustomCodes()
+    refreshCatalogIndex()
+  }
+
+  function fromRemoteCustomCode(row) {
+    if (!row || !row.code || !row.product_name) return null
+    return {
+      code: normalizeCode(row.code),
+      qualityName: String(row.quality_name || row.product_name).trim().toUpperCase(),
+      systemQuality: String(row.system_quality || row.product_name).trim().toUpperCase(),
+      productName: String(row.product_name).trim().toUpperCase(),
+      custom: true,
+      createdAt: row.created_at || new Date().toISOString(),
+      createdByStore: row.created_by_store || '',
+      source: row.source || 'manual',
+    }
+  }
+
+  function addCustomCode(item, skipSave) {
+    const normalized = normalizeCode(item.code)
+    if (!normalized) return
+    const cleanItem = {
+      code: normalized,
+      qualityName: String(item.qualityName || item.productName || '').trim().toUpperCase(),
+      systemQuality: String(item.systemQuality || item.productName || item.qualityName || '').trim().toUpperCase(),
+      productName: String(item.productName || item.qualityName || '').trim().toUpperCase(),
+      custom: true,
+      createdAt: item.createdAt || new Date().toISOString(),
+      createdByStore: item.createdByStore || (store ? store.slug : 'gerente'),
+      source: item.source || 'manual',
+    }
+    const index = customCodes.findIndex(row => normalizeCode(row.code) === normalized)
+    if (index >= 0) {
+      customCodes[index] = { ...customCodes[index], ...cleanItem }
+    } else {
+      customCodes.push(cleanItem)
+    }
+    refreshCatalogIndex()
+    if (!skipSave) saveCustomCodes()
+  }
+
+  function refreshCatalogIndex() {
+    const baseByCode = new Map()
+    data.catalog.forEach(item => baseByCode.set(normalizeCode(item.code), item))
+    const cleanCustomCodes = customCodes
+      .filter(item => item && normalizeCode(item.code) && !baseByCode.has(normalizeCode(item.code)))
+      .map(item => ({
+        ...item,
+        code: normalizeCode(item.code),
+        qualityName: String(item.qualityName || item.productName || '').trim().toUpperCase(),
+        systemQuality: String(item.systemQuality || item.productName || item.qualityName || '').trim().toUpperCase(),
+        productName: String(item.productName || item.qualityName || '').trim().toUpperCase(),
+      }))
+
+    catalogItems = data.catalog.concat(cleanCustomCodes)
+    catalogEntries = buildCatalogEntries(catalogItems, data.codeAliases)
+    catalogByCode = new Map(catalogItems.map(item => [normalizeCode(item.code), item]))
+  }
+
   async function uploadStoreStock(storeSlug, file) {
     const storeItem = data.stores.find(item => item.slug === storeSlug)
     if (!storeItem) return
@@ -1209,7 +1426,7 @@
   function resolveQualityName(value) {
     const normalized = normalizeQuality(value)
     const base = Object.keys(data.expectedByQuality).find(quality => normalizeQuality(quality) === normalized)
-    const catalogQuality = data.catalog.find(item => normalizeQuality(item.systemQuality) === normalized)
+    const catalogQuality = catalogItems.find(item => normalizeQuality(item.systemQuality) === normalized)
     return base || (catalogQuality && catalogQuality.systemQuality) || String(value || '').trim().toUpperCase()
   }
 
@@ -1319,10 +1536,21 @@
     const el = app.querySelector('[data-scan-error]')
     el.hidden = !message
     el.textContent = message
+    if (!message) {
+      const addButton = app.querySelector('[data-add-unknown]')
+      if (addButton) addButton.hidden = true
+    }
   }
 
   function setQtyError(message) {
     const el = app.querySelector('[data-qty-error]')
+    el.hidden = !message
+    el.textContent = message
+  }
+
+  function setCodeError(message) {
+    const el = app.querySelector('[data-code-error]')
+    if (!el) return
     el.hidden = !message
     el.textContent = message
   }

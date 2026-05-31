@@ -175,3 +175,40 @@ create policy "inventory_store_stocks_public_update"
   );
 
 grant select, insert, update on public.inventory_store_stocks to anon;
+
+create table if not exists public.inventory_custom_codes (
+  code text primary key,
+  quality_name text not null,
+  system_quality text not null,
+  product_name text not null,
+  created_at timestamptz not null default now(),
+  created_by_store text,
+  source text not null default 'manual'
+);
+
+create index if not exists idx_inventory_custom_codes_created
+  on public.inventory_custom_codes (created_at desc);
+
+alter table public.inventory_custom_codes enable row level security;
+
+drop policy if exists "inventory_custom_codes_public_select" on public.inventory_custom_codes;
+drop policy if exists "inventory_custom_codes_public_insert" on public.inventory_custom_codes;
+drop policy if exists "inventory_custom_codes_public_update" on public.inventory_custom_codes;
+
+create policy "inventory_custom_codes_public_select"
+  on public.inventory_custom_codes
+  for select
+  using (true);
+
+create policy "inventory_custom_codes_public_insert"
+  on public.inventory_custom_codes
+  for insert
+  with check (length(code) > 0 and length(product_name) > 0);
+
+create policy "inventory_custom_codes_public_update"
+  on public.inventory_custom_codes
+  for update
+  using (true)
+  with check (length(code) > 0 and length(product_name) > 0);
+
+grant select, insert, update on public.inventory_custom_codes to anon;

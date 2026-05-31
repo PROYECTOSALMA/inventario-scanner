@@ -349,6 +349,13 @@ h2 {
   gap: 12px;
 }
 
+.dashboard-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
 .metric {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -468,6 +475,10 @@ h2 {
   color: #166534;
 }
 
+.add-unknown {
+  margin-top: 10px;
+}
+
 .tabs {
   display: flex;
   gap: 8px;
@@ -563,6 +574,16 @@ h2 {
   text-align: center;
   font-size: 26px;
   font-weight: 950;
+}
+
+.edit-input.compact {
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.full-input {
+  width: 100%;
+  margin-bottom: 4px;
 }
 
 .empty {
