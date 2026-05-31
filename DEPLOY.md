@@ -64,3 +64,29 @@ https://TU-DOMINIO.vercel.app/denim-click
 3. Debe aparecer la pantalla para poner piezas.
 4. Finaliza un conteo de prueba.
 5. En Supabase, revisa la tabla `inventory_counts`.
+
+## Dashboard gerencial
+
+El link principal del sitio muestra el dashboard general.
+
+```text
+https://TU-DOMINIO.netlify.app/
+```
+
+Las tiendas cuentan en sus ligas normales:
+
+```text
+https://TU-DOMINIO.netlify.app/elite
+```
+
+El gerente puede abrir una tienda en modo solo lectura agregando `?visor=1`:
+
+```text
+https://TU-DOMINIO.netlify.app/elite?visor=1
+```
+
+Para activar conteo en vivo y carga de stock por archivo, vuelve a ejecutar `supabase/schema.sql` completo en Supabase SQL Editor. Ese archivo crea:
+
+- `inventory_counts`: cierres finales.
+- `inventory_active_counts`: conteo activo visible en nube.
+- `inventory_store_stocks`: inventario de sistema cargado desde Excel, CSV o PDF.

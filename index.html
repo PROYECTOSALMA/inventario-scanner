@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/styles.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
     <script defer src="/config.js"></script>
     <script defer src="/data.js"></script>
     <script defer src="/app.js"></script>
@@ -20,21 +22,44 @@
         <div class="top-inner">
           <div>
             <p class="eyebrow">Conteo movil por scanner</p>
-            <h1>Inventario por sucursal</h1>
-            <p class="muted">Abre la liga de la tienda, escanea codigos, captura piezas y finaliza para generar PDF.</p>
+            <h1>Dashboard de inventarios</h1>
+            <p class="muted">Monitorea el conteo en vivo, carga inventarios de sistema y descarga cierres por sucursal.</p>
           </div>
           <div class="brand-mark">INV</div>
         </div>
       </section>
-      <section class="page-width">
-        <div class="store-grid" data-store-grid></div>
+      <section class="page-width space">
+        <div class="metrics dashboard-metrics">
+          <article class="metric"><span>Stock sistema</span><strong data-admin-stock>0</strong></article>
+          <article class="metric"><span>Conteo acumulado</span><strong data-admin-counted>0</strong></article>
+          <article class="metric danger"><span>Faltante general</span><strong data-admin-shortage>0</strong></article>
+          <article class="metric warning"><span>Sobrante general</span><strong data-admin-surplus>0</strong></article>
+          <article class="metric"><span>Diferencia neta</span><strong data-admin-difference>0</strong></article>
+        </div>
+        <div class="dashboard-head">
+          <div>
+            <h2>Estatus por sucursal</h2>
+            <p class="muted" data-dashboard-sync>Conectando con la nube...</p>
+          </div>
+          <button class="small-button" type="button" data-refresh-dashboard>Actualizar</button>
+        </div>
+        <div class="store-grid dashboard-grid" data-store-grid></div>
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <h2>Cierres recientes</h2>
+              <p>Descarga PDF sin esperar que te lo manden.</p>
+            </div>
+          </div>
+          <div data-admin-closures></div>
+        </article>
       </section>
     </template>
 
     <template id="counter-template">
       <header class="app-header">
         <div class="header-row">
-          <a class="icon-button" href="./index.html" aria-label="Volver">&larr;</a>
+          <a class="icon-button" href="/" aria-label="Volver">&larr;</a>
           <div class="header-title">
             <h1 data-store-name></h1>
             <p data-count-meta></p>
@@ -45,14 +70,16 @@
       </header>
 
       <section class="page-width space">
+        <p class="viewer-banner" data-viewer-banner hidden>Vista gerente: solo lectura en vivo.</p>
         <div class="metrics">
+          <article class="metric"><span>Stock sistema</span><strong data-metric-expected>0</strong></article>
           <article class="metric"><span>Piezas contadas</span><strong data-metric-counted>0</strong></article>
           <article class="metric danger"><span>Faltante general</span><strong data-metric-shortage>0</strong></article>
           <article class="metric warning"><span>Sobrante general</span><strong data-metric-surplus>0</strong></article>
           <article class="metric"><span>Diferencia neta</span><strong data-metric-difference>0</strong></article>
         </div>
 
-        <form class="scan-panel" data-scan-form>
+        <form class="scan-panel" data-scan-form data-scan-panel>
           <label class="scan-label" for="scan-input">Escanear codigo</label>
           <div class="scan-row">
             <input id="scan-input" data-scan-input autocomplete="off" autocapitalize="characters" spellcheck="false" />

@@ -4,51 +4,193 @@
   const catalogEntries = buildCatalogEntries(data.catalog, data.codeAliases)
   const catalogByCode = new Map(catalogEntries.map(entry => [entry.code, entry.item]))
   const supabaseClient = createSupabaseClient()
+  const stockStorageKey = 'inventario-scanner:stock-overrides:v1'
 
   let store = null
   let activeCount = null
   let pastCounts = []
+  let stockOverrides = loadStockOverrides()
+  let dashboardRows = []
+  let dashboardClosures = []
+  let dashboardTimer = null
+  let activeFetchTimer = null
+  let activeSyncTimer = null
   let currentTab = 'scan'
   let pendingScan = null
   let editingMovement = null
   let showAllCodes = false
   let historyQuery = ''
   let lastMovementId = ''
+  let readOnlyMode = false
+  let lastActiveSyncHash = ''
 
   boot()
 
   function boot() {
     store = getStoreFromUrl()
     if (!store) {
-      renderStoreList()
+      renderDashboard()
       return
     }
 
+    readOnlyMode = isReadOnlyUrl()
     document.title = `Inventario - ${store.name}`
     activeCount = loadActiveCount(store.slug)
     pastCounts = loadPastCounts(store.slug)
     renderCounter()
     focusScanner()
+    fetchRemoteStock()
     fetchRemoteCounts()
+    fetchRemoteActiveCount()
+    activeFetchTimer = window.setInterval(fetchRemoteActiveCount, readOnlyMode ? 4500 : 12000)
   }
 
-  function renderStoreList() {
+  function renderDashboard() {
     const template = document.querySelector('#store-list-template')
     app.replaceChildren(template.content.cloneNode(true))
 
-    const grid = app.querySelector('[data-store-grid]')
-    grid.innerHTML = data.stores.map(item => `
-      <a class="store-card" href="${escapeHtml(storeUrl(item.slug))}">
+    app.querySelector('[data-refresh-dashboard]').addEventListener('click', fetchDashboard)
+    app.querySelector('[data-store-grid]').addEventListener('change', event => {
+      if (!event.target.matches('[data-stock-upload]')) return
+      const file = event.target.files && event.target.files[0]
+      const slug = event.target.dataset.stockUpload
+      if (file && slug) uploadStoreStock(slug, file)
+      event.target.value = ''
+    })
+
+    renderDashboardContent()
+    fetchDashboard()
+    dashboardTimer = window.setInterval(fetchDashboard, 5000)
+  }
+
+  function renderDashboardContent() {
+    const rows = data.stores.map(item => buildStoreDashboardRow(item))
+    const totals = rows.reduce((acc, row) => ({
+      expected: acc.expected + row.dashboard.expected,
+      counted: acc.counted + row.dashboard.counted,
+      shortage: acc.shortage + row.dashboard.shortage,
+      surplus: acc.surplus + row.dashboard.surplus,
+      difference: acc.difference + row.dashboard.difference,
+    }), { expected: 0, counted: 0, shortage: 0, surplus: 0, difference: 0 })
+
+    app.querySelector('[data-admin-stock]').textContent = formatNumber(totals.expected)
+    app.querySelector('[data-admin-counted]').textContent = formatNumber(totals.counted)
+    app.querySelector('[data-admin-shortage]').textContent = formatNumber(totals.shortage)
+    app.querySelector('[data-admin-surplus]').textContent = formatNumber(totals.surplus)
+    app.querySelector('[data-admin-difference]').textContent = signedNumber(totals.difference)
+
+    app.querySelector('[data-store-grid]').innerHTML = rows.map(row => renderDashboardStoreCard(row)).join('')
+    app.querySelector('[data-admin-closures]').innerHTML = renderAdminClosures()
+  }
+
+  function buildStoreDashboardRow(item) {
+    const live = dashboardRows.find(row => row.store_slug === item.slug)
+    const activeCountRow = live && live.active_count && typeof live.active_count === 'object' ? live.active_count : createEmptyCount(item.slug)
+    const codeTotals = buildCodeTotals(activeCountRow.movements || [])
+    const comparison = buildComparisonTotals(codeTotals, item.slug)
+    const dashboard = buildDashboard(comparison)
+    const updatedAt = live ? live.updated_at : null
+    const age = updatedAt ? Date.now() - new Date(updatedAt).getTime() : Infinity
+    const movementCount = live ? Number(live.movement_count) || 0 : 0
+    const status = movementCount > 0 ? (age < 90000 ? 'Contando' : 'Pausado') : 'Sin conteo'
+    const statusClass = movementCount > 0 ? (age < 90000 ? 'live' : '') : ''
+    const lastClosure = dashboardClosures.find(count => count.storeSlug === item.slug)
+
+    return {
+      store: item,
+      dashboard,
+      movementCount,
+      updatedAt,
+      status,
+      statusClass,
+      lastClosure,
+      stockInfo: getStockInfo(item.slug),
+    }
+  }
+
+  function renderDashboardStoreCard(row) {
+    const item = row.store
+    return `
+      <article class="store-card">
         <div>
-          <strong>${escapeHtml(item.name)}</strong>
-          <span>?tienda=${escapeHtml(item.slug)}</span>
+          <div class="store-footer">
+            <strong>${escapeHtml(item.name)}</strong>
+            <span class="status-pill ${escapeHtml(row.statusClass)}">${escapeHtml(row.status)}</span>
+          </div>
+          <p class="muted">${row.updatedAt ? `Actualizado ${formatTime(row.updatedAt)}` : 'Sin avance en nube'}</p>
+          <div class="store-status">
+            <div class="status-cell"><span>Stock</span><strong>${formatNumber(row.dashboard.expected)}</strong></div>
+            <div class="status-cell"><span>Conteo</span><strong>${formatNumber(row.dashboard.counted)}</strong></div>
+            <div class="status-cell"><span>Faltante</span><strong>${formatNumber(row.dashboard.shortage)}</strong></div>
+            <div class="status-cell"><span>Sobrante</span><strong>${formatNumber(row.dashboard.surplus)}</strong></div>
+            <div class="status-cell"><span>Dif. neta</span><strong>${signedNumber(row.dashboard.difference)}</strong></div>
+            <div class="status-cell"><span>Movs.</span><strong>${formatNumber(row.movementCount)}</strong></div>
+          </div>
+          <p class="muted">Stock: ${escapeHtml(row.stockInfo.label)}</p>
+          ${row.lastClosure ? `<p class="muted">Ultimo cierre: ${escapeHtml(row.lastClosure.folio)} - ${formatNumber(row.lastClosure.totalPieces)} pz</p>` : ''}
         </div>
-        <div class="store-footer">
-          <span>Abrir conteo</span>
-          <i class="color-dot" style="background:${escapeHtml(item.color)}"></i>
+        <div class="store-actions">
+          <a class="primary-link" href="${escapeHtml(storeUrl(item.slug, true))}">Ver en vivo</a>
+          <a href="${escapeHtml(storeUrl(item.slug))}">Abrir conteo</a>
+          <label>
+            Cargar stock
+            <input type="file" accept=".xlsx,.xls,.csv,.pdf,application/pdf" data-stock-upload="${escapeHtml(item.slug)}" />
+          </label>
         </div>
-      </a>
-    `).join('')
+      </article>
+    `
+  }
+
+  function renderAdminClosures() {
+    if (!dashboardClosures.length) return empty('Sin cierres en nube')
+    return dashboardClosures.slice(0, 20).map(count => {
+      const item = data.stores.find(storeItem => storeItem.slug === count.storeSlug)
+      return `
+        <article class="past-card">
+          <div>
+            <strong>${escapeHtml(item ? item.name : count.storeSlug)} - <span class="mono">${escapeHtml(count.folio)}</span></strong>
+            <p class="muted">${formatDateTime(count.finalizedAt)} - ${formatNumber(count.totalPieces)} pz - ${formatNumber(count.movements.length)} movimientos</p>
+          </div>
+          <button type="button" class="primary-button" data-admin-pdf="${escapeHtml(count.folio)}">PDF</button>
+        </article>
+      `
+    }).join('')
+  }
+
+  async function fetchDashboard() {
+    if (!app.querySelector('[data-store-grid]')) return
+
+    try {
+      if (supabaseClient) {
+        const [activeResponse, stockResponse, countsResponse] = await Promise.all([
+          supabaseClient.from('inventory_active_counts').select('store_slug, local_id, started_at, updated_at, total_pieces, movement_count, active_count, code_totals, comparison_totals, dashboard'),
+          supabaseClient.from('inventory_store_stocks').select('store_slug, source_name, source_type, uploaded_at, total_stock, expected_by_quality'),
+          supabaseClient.from('inventory_counts').select('local_id, store_slug, folio, started_at, finalized_at, total_pieces, movements, code_totals, comparison_totals').order('finalized_at', { ascending: false }).limit(80),
+        ])
+
+        if (Array.isArray(activeResponse.data)) dashboardRows = activeResponse.data
+        if (Array.isArray(stockResponse.data)) applyRemoteStocks(stockResponse.data)
+        if (Array.isArray(countsResponse.data)) dashboardClosures = countsResponse.data.map(fromRemoteCount).filter(Boolean)
+        app.querySelector('[data-dashboard-sync]').textContent = `Nube actualizada ${formatTime(new Date().toISOString())}`
+      } else {
+        app.querySelector('[data-dashboard-sync]').textContent = 'Sin Supabase configurado; mostrando datos locales base.'
+      }
+    } catch {
+      app.querySelector('[data-dashboard-sync]').textContent = 'No se pudo leer la nube. Reintentando...'
+    }
+
+    renderDashboardContent()
+    bindDashboardButtons()
+  }
+
+  function bindDashboardButtons() {
+    app.querySelectorAll('[data-admin-pdf]').forEach(button => {
+      button.addEventListener('click', () => {
+        const count = dashboardClosures.find(item => item.folio === button.dataset.adminPdf)
+        const item = count ? data.stores.find(storeItem => storeItem.slug === count.storeSlug) : null
+        if (count && item) downloadPdf(count, item)
+      })
+    })
   }
 
   function renderCounter() {
@@ -57,25 +199,41 @@
 
     app.querySelector('[data-store-name]').textContent = store.name
     app.querySelector('[data-finalize]').style.background = store.color
+    app.querySelector('[data-viewer-banner]').hidden = !readOnlyMode
+    app.querySelector('[data-scan-panel]').hidden = readOnlyMode
+    app.querySelector('[data-reset]').hidden = readOnlyMode
+    app.querySelector('[data-finalize]').hidden = readOnlyMode
     bindCounterEvents()
     updateCounter()
   }
 
   function bindCounterEvents() {
-    app.querySelector('[data-scan-form]').addEventListener('submit', event => {
-      event.preventDefault()
-      processScan()
-    })
-
-    app.querySelector('[data-scan-input]').addEventListener('keydown', event => {
-      if ((event.key === 'Enter' || event.key === 'Tab') && event.currentTarget.value.trim()) {
+    if (!readOnlyMode) {
+      app.querySelector('[data-scan-form]').addEventListener('submit', event => {
         event.preventDefault()
         processScan()
-      }
-    })
+      })
 
-    app.querySelector('[data-reset]').addEventListener('click', resetActiveCount)
-    app.querySelector('[data-finalize]').addEventListener('click', finalizeCount)
+      app.querySelector('[data-scan-input]').addEventListener('keydown', event => {
+        if ((event.key === 'Enter' || event.key === 'Tab') && event.currentTarget.value.trim()) {
+          event.preventDefault()
+          processScan()
+        }
+      })
+
+      app.querySelector('[data-reset]').addEventListener('click', resetActiveCount)
+      app.querySelector('[data-finalize]').addEventListener('click', finalizeCount)
+      bindQuantitySheet()
+      bindEditSheet()
+    }
+
+    if (readOnlyMode) {
+      const tablesButton = app.querySelector('[data-tab-button="tables"]')
+      if (tablesButton) {
+        currentTab = 'tables'
+      }
+    }
+
     app.querySelector('[data-go-history]').addEventListener('click', () => setTab('history'))
     app.querySelector('[data-show-all]').addEventListener('change', event => {
       showAllCodes = event.currentTarget.checked
@@ -90,8 +248,7 @@
       button.addEventListener('click', () => setTab(button.dataset.tabButton))
     })
 
-    bindQuantitySheet()
-    bindEditSheet()
+    if (readOnlyMode) setTab(currentTab)
   }
 
   function bindQuantitySheet() {
@@ -121,14 +278,15 @@
 
   function updateCounter() {
     const codeTotals = buildCodeTotals(activeCount.movements)
-    const comparison = buildComparisonTotals(codeTotals)
+    const comparison = buildComparisonTotals(codeTotals, store.slug)
     const dashboard = buildDashboard(comparison)
     const countedCodes = codeTotals.filter(row => row.total > 0).length
     const lastMovement = activeCount.movements.find(row => row.id === lastMovementId)
 
-    app.querySelector('[data-count-meta]').textContent = `Inicio ${formatDateTime(activeCount.startedAt)} - ${activeCount.movements.length} movimientos`
-    app.querySelector('[data-reset]').disabled = activeCount.movements.length === 0
-    app.querySelector('[data-finalize]').disabled = activeCount.movements.length === 0
+    app.querySelector('[data-count-meta]').textContent = `${readOnlyMode ? 'Vista gerente' : 'Inicio'} ${formatDateTime(activeCount.startedAt)} - ${activeCount.movements.length} movimientos`
+    app.querySelector('[data-reset]').disabled = readOnlyMode || activeCount.movements.length === 0
+    app.querySelector('[data-finalize]').disabled = readOnlyMode || activeCount.movements.length === 0
+    app.querySelector('[data-metric-expected]').textContent = formatNumber(dashboard.expected)
     app.querySelector('[data-metric-counted]').textContent = formatNumber(dashboard.counted)
     app.querySelector('[data-metric-shortage]').textContent = formatNumber(dashboard.shortage)
     app.querySelector('[data-metric-surplus]').textContent = formatNumber(dashboard.surplus)
@@ -146,22 +304,27 @@
     app.querySelector('[data-code-table]').innerHTML = renderCodeTable(codeTotals.filter(row => showAllCodes || row.total > 0))
     app.querySelector('[data-comparison-table]').innerHTML = renderComparisonTable(comparison.filter(row => showAllCodes || row.counted || row.expected))
     app.querySelector('[data-compact-comparison]').innerHTML = renderComparisonTable(comparison.filter(row => row.counted || row.expected).slice(0, 8), true)
-    app.querySelector('[data-recent-movements]').innerHTML = renderMovementList(activeCount.movements.slice(0, 6))
-    app.querySelector('[data-history-list]').innerHTML = renderMovementList(filterMovements(activeCount.movements))
+    app.querySelector('[data-recent-movements]').innerHTML = renderMovementList(activeCount.movements.slice(0, 6), readOnlyMode)
+    app.querySelector('[data-history-list]').innerHTML = renderMovementList(filterMovements(activeCount.movements), readOnlyMode)
     app.querySelector('[data-past-list]').innerHTML = renderPastCounts()
 
     bindDynamicButtons()
-    saveActiveCount()
+    if (!readOnlyMode) {
+      saveActiveCount()
+      scheduleActiveSync()
+    }
     savePastCounts()
   }
 
   function bindDynamicButtons() {
-    app.querySelectorAll('[data-edit-movement]').forEach(button => {
-      button.addEventListener('click', () => openEditSheet(button.dataset.editMovement))
-    })
-    app.querySelectorAll('[data-delete-movement]').forEach(button => {
-      button.addEventListener('click', () => deleteMovement(button.dataset.deleteMovement))
-    })
+    if (!readOnlyMode) {
+      app.querySelectorAll('[data-edit-movement]').forEach(button => {
+        button.addEventListener('click', () => openEditSheet(button.dataset.editMovement))
+      })
+      app.querySelectorAll('[data-delete-movement]').forEach(button => {
+        button.addEventListener('click', () => deleteMovement(button.dataset.deleteMovement))
+      })
+    }
     app.querySelectorAll('[data-pdf-count]').forEach(button => {
       button.addEventListener('click', () => {
         const count = pastCounts.find(item => item.id === button.dataset.pdfCount)
@@ -171,6 +334,7 @@
   }
 
   function processScan() {
+    if (readOnlyMode) return
     const input = app.querySelector('[data-scan-input]')
     const rawScan = input.value.trim()
     if (!rawScan) return
@@ -213,6 +377,7 @@
   }
 
   function confirmQuantity() {
+    if (readOnlyMode) return
     if (!pendingScan) return
 
     const quantity = parsePieces(app.querySelector('[data-qty-input]').value)
@@ -263,6 +428,7 @@
   }
 
   function saveMovementEdit() {
+    if (readOnlyMode) return
     if (!editingMovement) return
     const quantity = parsePieces(app.querySelector('[data-edit-input]').value)
     if (!quantity) return
@@ -276,6 +442,7 @@
   }
 
   function deleteMovement(id) {
+    if (readOnlyMode) return
     const movement = activeCount.movements.find(item => item.id === id)
     if (!movement) return
 
@@ -289,6 +456,7 @@
   }
 
   function resetActiveCount() {
+    if (readOnlyMode) return
     if (!activeCount.movements.length) return
     if (!window.confirm('Borrar conteo actual y empezar de cero?')) return
 
@@ -300,11 +468,12 @@
   }
 
   function finalizeCount() {
+    if (readOnlyMode) return
     if (!activeCount.movements.length) return
     if (!window.confirm('Finalizar conteo? Despues del cierre ya no se podra modificar.')) return
 
     const codeTotals = buildCodeTotals(activeCount.movements)
-    const comparison = buildComparisonTotals(codeTotals)
+    const comparison = buildComparisonTotals(codeTotals, store.slug)
     const finalized = {
       ...activeCount,
       folio: buildFolio(store.slug),
@@ -324,6 +493,7 @@
     lastMovementId = ''
     setTab('past')
     updateCounter()
+    syncActiveCountNow(true)
   }
 
   function setTab(tab) {
@@ -393,7 +563,7 @@
     `
   }
 
-  function renderMovementList(rows) {
+  function renderMovementList(rows, readOnly) {
     if (!rows.length) return empty('Sin movimientos')
 
     return rows.map(movement => {
@@ -409,10 +579,12 @@
             <p>${escapeHtml(item ? item.qualityName : 'Codigo no encontrado')}</p>
             <p>${formatTime(movement.createdAt)} - scan: ${escapeHtml(movement.rawScan)}</p>
           </div>
-          <div class="movement-actions">
-            <button type="button" data-edit-movement="${escapeHtml(movement.id)}" aria-label="Corregir">E</button>
-            <button type="button" class="danger" data-delete-movement="${escapeHtml(movement.id)}" aria-label="Eliminar">X</button>
-          </div>
+          ${readOnly ? '' : `
+            <div class="movement-actions">
+              <button type="button" data-edit-movement="${escapeHtml(movement.id)}" aria-label="Corregir">E</button>
+              <button type="button" class="danger" data-delete-movement="${escapeHtml(movement.id)}" aria-label="Eliminar">X</button>
+            </div>
+          `}
         </article>
       `
     }).join('')
@@ -451,9 +623,10 @@
     })).sort((a, b) => a.code.localeCompare(b.code, 'es-MX', { numeric: true }))
   }
 
-  function buildComparisonTotals(codeTotals) {
+  function buildComparisonTotals(codeTotals, storeSlug) {
+    const expectedByQuality = getExpectedByQualityForStore(storeSlug)
     const qualities = new Set([
-      ...Object.keys(data.expectedByQuality),
+      ...Object.keys(expectedByQuality),
       ...data.catalog.map(item => item.systemQuality),
     ])
     const counted = new Map()
@@ -461,7 +634,7 @@
 
     return Array.from(qualities).sort((a, b) => a.localeCompare(b)).map(quality => {
       const countedPieces = counted.get(quality) || 0
-      const expected = Number((data.expectedByQuality[quality] || {})[store.slug]) || 0
+      const expected = Number(expectedByQuality[quality]) || 0
       const difference = countedPieces - expected
       return {
         quality,
@@ -475,13 +648,45 @@
   }
 
   function buildDashboard(rows) {
-    return rows.reduce((acc, row) => ({
+    const totals = rows.reduce((acc, row) => ({
       counted: acc.counted + row.counted,
       expected: acc.expected + row.expected,
-      shortage: acc.shortage + row.shortage,
-      surplus: acc.surplus + row.surplus,
-      difference: acc.difference + row.difference,
-    }), { counted: 0, expected: 0, shortage: 0, surplus: 0, difference: 0 })
+    }), { counted: 0, expected: 0 })
+    const difference = totals.counted - totals.expected
+    return {
+      counted: totals.counted,
+      expected: totals.expected,
+      shortage: Math.max(0, totals.expected - totals.counted),
+      surplus: Math.max(0, totals.counted - totals.expected),
+      difference,
+    }
+  }
+
+  function getExpectedByQualityForStore(storeSlug) {
+    const override = stockOverrides[storeSlug]
+    if (override && override.expectedByQuality && typeof override.expectedByQuality === 'object') {
+      return { ...override.expectedByQuality }
+    }
+
+    return Object.fromEntries(Object.entries(data.expectedByQuality).map(([quality, stores]) => [
+      quality,
+      Number((stores || {})[storeSlug]) || 0,
+    ]))
+  }
+
+  function getStockInfo(storeSlug) {
+    const override = stockOverrides[storeSlug]
+    if (override && override.uploadedAt) {
+      return {
+        label: `${override.sourceName || 'archivo cargado'} (${formatDateTime(override.uploadedAt)})`,
+        total: totalStockForStore(storeSlug),
+      }
+    }
+    return { label: 'base del proyecto', total: totalStockForStore(storeSlug) }
+  }
+
+  function totalStockForStore(storeSlug) {
+    return Object.values(getExpectedByQualityForStore(storeSlug)).reduce((sum, value) => sum + (Number(value) || 0), 0)
   }
 
   function filterMovements(rows) {
@@ -528,7 +733,7 @@
       .sort((a, b) => b.code.length - a.code.length)
   }
 
-  function downloadPdf(count) {
+  function downloadPdf(count, reportStore = store) {
     if (window.jspdf && window.jspdf.jsPDF) {
       const doc = new window.jspdf.jsPDF({ unit: 'mm', format: 'letter', orientation: 'portrait' })
       let y = 14
@@ -536,7 +741,7 @@
 
       doc.setFont('helvetica', 'bold')
       doc.setFontSize(16)
-      doc.text(`Inventario ${store.name}`, margin, y)
+      doc.text(`Inventario ${reportStore.name}`, margin, y)
       y += 7
       doc.setFont('helvetica', 'normal')
       doc.setFontSize(10)
@@ -572,11 +777,11 @@
         { header: 'Estado', width: 36, value: row => row.updatedAt ? 'Corregido' : 'Original' },
       ], [...count.movements].reverse())
 
-      doc.save(`inventario-${store.slug}-${count.folio}.pdf`)
+      doc.save(`inventario-${reportStore.slug}-${count.folio}.pdf`)
       return
     }
 
-    openPrintableReport(count)
+    openPrintableReport(count, reportStore)
   }
 
   function drawPdfTable(doc, title, startY, columns, rows) {
@@ -637,7 +842,7 @@
     return y
   }
 
-  function openPrintableReport(count) {
+  function openPrintableReport(count, reportStore = store) {
     const win = window.open('', '_blank')
     if (!win) return
     win.document.write(`
@@ -656,7 +861,7 @@
           </style>
         </head>
         <body>
-          <h1>Inventario ${escapeHtml(store.name)}</h1>
+          <h1>Inventario ${escapeHtml(reportStore.name)}</h1>
           <p>Folio: ${escapeHtml(count.folio)}</p>
           <p>Inicio: ${formatDateTime(count.startedAt)} - Cierre: ${formatDateTime(count.finalizedAt)}</p>
           <p>Total piezas: ${formatNumber(count.totalPieces)}</p>
@@ -681,11 +886,18 @@
     return data.stores.find(item => item.slug === slug) || null
   }
 
-  function storeUrl(slug) {
+  function isReadOnlyUrl() {
+    const params = new URLSearchParams(window.location.search)
+    const raw = `${params.get('visor') || ''}${params.get('modo') || ''}${params.get('view') || ''}`.toLowerCase()
+    return raw.includes('1') || raw.includes('visor') || raw.includes('gerente') || raw.includes('admin')
+  }
+
+  function storeUrl(slug, viewer) {
+    const suffix = viewer ? '?visor=1' : ''
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      return `./index.html?tienda=${encodeURIComponent(slug)}`
+      return `./index.html?tienda=${encodeURIComponent(slug)}${viewer ? '&visor=1' : ''}`
     }
-    return `/${encodeURIComponent(slug)}`
+    return `/${encodeURIComponent(slug)}${suffix}`
   }
 
   function loadActiveCount(storeSlug) {
@@ -697,6 +909,15 @@
   function loadPastCounts(storeSlug) {
     const parsed = readJson(pastKey(storeSlug))
     return Array.isArray(parsed) ? parsed.filter(item => item.storeSlug === storeSlug) : []
+  }
+
+  function loadStockOverrides() {
+    const parsed = readJson(stockStorageKey)
+    return parsed && typeof parsed === 'object' ? parsed : {}
+  }
+
+  function saveStockOverrides() {
+    localStorage.setItem(stockStorageKey, JSON.stringify(stockOverrides))
   }
 
   async function fetchRemoteCounts() {
@@ -716,6 +937,84 @@
       updateCounter()
     } catch {
       // Si Supabase no esta configurado o no hay red, la app sigue funcionando local.
+    }
+  }
+
+  async function fetchRemoteStock() {
+    if (!supabaseClient) return
+
+    try {
+      const { data: rows } = await supabaseClient
+        .from('inventory_store_stocks')
+        .select('store_slug, source_name, source_type, uploaded_at, total_stock, expected_by_quality')
+
+      if (Array.isArray(rows)) {
+        applyRemoteStocks(rows)
+        if (store) updateCounter()
+      }
+    } catch {
+      // Si la tabla aun no existe, usa el stock base de data.js.
+    }
+  }
+
+  async function fetchRemoteActiveCount() {
+    if (!supabaseClient || !store) return
+
+    try {
+      const { data: row, error } = await supabaseClient
+        .from('inventory_active_counts')
+        .select('store_slug, local_id, started_at, updated_at, total_pieces, movement_count, active_count, code_totals, comparison_totals, dashboard')
+        .eq('store_slug', store.slug)
+        .maybeSingle()
+
+      if (error || !row || !row.active_count) return
+      const remote = fromRemoteActiveCount(row)
+      if (!remote) return
+
+      if (readOnlyMode) {
+        activeCount = remote
+      } else {
+        activeCount.movements = mergeMovementLists(activeCount.movements, remote.movements)
+        if (new Date(remote.startedAt).getTime() < new Date(activeCount.startedAt).getTime()) activeCount.startedAt = remote.startedAt
+      }
+      updateCounter()
+    } catch {
+      // Sigue funcionando local si la nube no responde.
+    }
+  }
+
+  function scheduleActiveSync() {
+    if (!supabaseClient || !store || readOnlyMode) return
+    window.clearTimeout(activeSyncTimer)
+    activeSyncTimer = window.setTimeout(() => syncActiveCountNow(false), 600)
+  }
+
+  async function syncActiveCountNow(force) {
+    if (!supabaseClient || !store || readOnlyMode) return
+
+    const codeTotals = buildCodeTotals(activeCount.movements)
+    const comparison = buildComparisonTotals(codeTotals, store.slug)
+    const dashboard = buildDashboard(comparison)
+    const payload = {
+      store_slug: store.slug,
+      local_id: activeCount.id,
+      started_at: activeCount.startedAt,
+      updated_at: new Date().toISOString(),
+      total_pieces: dashboard.counted,
+      movement_count: activeCount.movements.length,
+      active_count: activeCount,
+      code_totals: codeTotals.filter(row => row.total > 0),
+      comparison_totals: comparison.filter(row => row.counted || row.expected),
+      dashboard,
+    }
+    const hash = JSON.stringify(payload)
+    if (!force && hash === lastActiveSyncHash) return
+    lastActiveSyncHash = hash
+
+    try {
+      await supabaseClient.from('inventory_active_counts').upsert(payload, { onConflict: 'store_slug' })
+    } catch {
+      // La captura local se mantiene aunque falle la sincronizacion en vivo.
     }
   }
 
@@ -759,6 +1058,17 @@
     }
   }
 
+  function fromRemoteActiveCount(row) {
+    const count = row.active_count
+    if (!count || !Array.isArray(count.movements)) return null
+    return {
+      id: row.local_id || count.id || createId('count'),
+      storeSlug: row.store_slug,
+      startedAt: row.started_at || count.startedAt,
+      movements: count.movements,
+    }
+  }
+
   function mergePastCounts(current, incoming) {
     const byFolio = new Map()
     current.concat(incoming).forEach(count => {
@@ -767,6 +1077,156 @@
     return Array.from(byFolio.values())
       .sort((a, b) => new Date(b.finalizedAt).getTime() - new Date(a.finalizedAt).getTime())
       .slice(0, 80)
+  }
+
+  function mergeMovementLists(current, incoming) {
+    const byId = new Map()
+    incoming.concat(current).forEach(movement => {
+      if (movement && movement.id) byId.set(movement.id, movement)
+    })
+    return Array.from(byId.values())
+      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+  }
+
+  function applyRemoteStocks(rows) {
+    rows.forEach(row => {
+      if (!row || !row.store_slug || !row.expected_by_quality) return
+      stockOverrides[row.store_slug] = {
+        sourceName: row.source_name || 'stock cargado',
+        sourceType: row.source_type || 'archivo',
+        uploadedAt: row.uploaded_at || new Date().toISOString(),
+        totalStock: Number(row.total_stock) || 0,
+        expectedByQuality: normalizeStockObject(row.expected_by_quality),
+      }
+    })
+    saveStockOverrides()
+  }
+
+  async function uploadStoreStock(storeSlug, file) {
+    const storeItem = data.stores.find(item => item.slug === storeSlug)
+    if (!storeItem) return
+
+    const syncLabel = app.querySelector('[data-dashboard-sync]')
+    if (syncLabel) syncLabel.textContent = `Leyendo ${file.name}...`
+
+    try {
+      const expectedByQuality = await parseInventoryFile(file)
+      const totalStock = Object.values(expectedByQuality).reduce((sum, value) => sum + (Number(value) || 0), 0)
+      if (!Object.keys(expectedByQuality).length) throw new Error('No encontre calidades con piezas.')
+
+      const override = {
+        sourceName: file.name,
+        sourceType: file.type || file.name.split('.').pop() || 'archivo',
+        uploadedAt: new Date().toISOString(),
+        totalStock,
+        expectedByQuality,
+      }
+      stockOverrides[storeSlug] = override
+      saveStockOverrides()
+
+      if (supabaseClient) {
+        await supabaseClient.from('inventory_store_stocks').upsert({
+          store_slug: storeSlug,
+          source_name: override.sourceName,
+          source_type: override.sourceType,
+          uploaded_at: override.uploadedAt,
+          total_stock: totalStock,
+          expected_by_quality: expectedByQuality,
+        }, { onConflict: 'store_slug' })
+      }
+
+      if (syncLabel) syncLabel.textContent = `${storeItem.name}: stock cargado con ${formatNumber(totalStock)} pz.`
+      renderDashboardContent()
+      bindDashboardButtons()
+    } catch (error) {
+      window.alert(`No pude cargar el inventario de ${storeItem.name}.\n${error.message || 'Revisa el archivo.'}`)
+      if (syncLabel) syncLabel.textContent = 'Carga cancelada.'
+    }
+  }
+
+  async function parseInventoryFile(file) {
+    const name = file.name.toLowerCase()
+    if (name.endsWith('.xlsx') || name.endsWith('.xls') || name.endsWith('.csv')) {
+      return parseSpreadsheetInventory(await file.arrayBuffer(), name)
+    }
+    if (name.endsWith('.pdf')) {
+      return parsePdfInventory(await file.arrayBuffer())
+    }
+    throw new Error('Usa un archivo Excel, CSV o PDF.')
+  }
+
+  function parseSpreadsheetInventory(buffer, name) {
+    if (!window.XLSX) throw new Error('No cargo el lector de Excel. Recarga la pagina.')
+    const workbook = window.XLSX.read(buffer, { type: 'array' })
+    const sheetName = workbook.SheetNames[0]
+    const sheet = workbook.Sheets[sheetName]
+    const rows = window.XLSX.utils.sheet_to_json(sheet, { header: 1, raw: false, defval: '' })
+    return extractInventoryRows(rows, name)
+  }
+
+  async function parsePdfInventory(buffer) {
+    if (!window.pdfjsLib) throw new Error('No cargo el lector de PDF. Recarga la pagina.')
+    window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js'
+    const pdf = await window.pdfjsLib.getDocument({ data: buffer }).promise
+    const rows = []
+
+    for (let index = 1; index <= pdf.numPages; index += 1) {
+      const page = await pdf.getPage(index)
+      const content = await page.getTextContent()
+      const text = content.items.map(item => item.str).join('\n')
+      text.split(/\n+/).forEach(line => {
+        const match = line.trim().match(/^(.+?)\s+(-?[\d,]+)$/)
+        if (match) rows.push([match[1], match[2]])
+      })
+    }
+
+    return extractInventoryRows(rows, 'pdf')
+  }
+
+  function extractInventoryRows(rows, sourceName) {
+    const output = {}
+    rows.forEach(row => {
+      const cells = Array.isArray(row) ? row.map(cell => String(cell || '').trim()).filter(Boolean) : []
+      if (cells.length < 2) return
+      const joined = normalizeSearch(cells.join(' '))
+      if (joined.includes('calidad') || joined.includes('cantidadamano') || joined.includes('pz') && joined.includes('sistema')) return
+
+      const qtyIndex = cells.findIndex(cell => parseLooseNumber(cell) !== null)
+      if (qtyIndex < 0) return
+      const qualityCell = cells.find((cell, index) => index !== qtyIndex && parseLooseNumber(cell) === null)
+      if (!qualityCell) return
+
+      const quality = resolveQualityName(qualityCell)
+      const quantity = parseLooseNumber(cells[qtyIndex])
+      if (!quality || quantity === null) return
+      output[quality] = (output[quality] || 0) + quantity
+    })
+
+    if (!Object.keys(output).length) throw new Error(`No encontre columnas de calidad y piezas en ${sourceName}.`)
+    return normalizeStockObject(output)
+  }
+
+  function resolveQualityName(value) {
+    const normalized = normalizeQuality(value)
+    const base = Object.keys(data.expectedByQuality).find(quality => normalizeQuality(quality) === normalized)
+    const catalogQuality = data.catalog.find(item => normalizeQuality(item.systemQuality) === normalized)
+    return base || (catalogQuality && catalogQuality.systemQuality) || String(value || '').trim().toUpperCase()
+  }
+
+  function parseLooseNumber(value) {
+    const cleaned = String(value || '').replace(/,/g, '').trim()
+    if (!/^-?\d+(\.\d+)?$/.test(cleaned)) return null
+    return Math.round(Number(cleaned))
+  }
+
+  function normalizeStockObject(stock) {
+    const output = {}
+    Object.entries(stock || {}).forEach(([quality, quantity]) => {
+      const key = resolveQualityName(quality)
+      if (!key) return
+      output[key] = Number(quantity) || 0
+    })
+    return output
   }
 
   function createSupabaseClient() {
@@ -832,6 +1292,17 @@
       .replace(/[^a-z0-9]+/g, '')
   }
 
+  function normalizeQuality(value) {
+    return String(value || '')
+      .trim()
+      .toUpperCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^A-Z0-9&]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+  }
+
   function createId(prefix) {
     if (window.crypto && window.crypto.randomUUID) return `${prefix}-${window.crypto.randomUUID()}`
     return `${prefix}-${Date.now()}-${Math.random().toString(16).slice(2)}`
@@ -857,6 +1328,7 @@
   }
 
   function focusScanner() {
+    if (readOnlyMode) return
     window.setTimeout(() => {
       if (currentTab === 'scan' && !pendingScan && !editingMovement) {
         const input = app.querySelector('[data-scan-input]')

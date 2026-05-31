@@ -156,6 +156,94 @@ h2 {
   font-weight: 800;
 }
 
+.store-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.store-actions a,
+.store-actions button,
+.store-actions label {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fafaf9;
+  padding: 0 10px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.store-actions .primary-link {
+  border-color: var(--dark);
+  background: var(--dark);
+  color: white;
+}
+
+.store-actions input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.store-status {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.status-cell {
+  border: 1px solid #f5f5f4;
+  border-radius: 8px;
+  background: #fafaf9;
+  padding: 8px;
+}
+
+.status-cell span {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.status-cell strong {
+  display: block;
+  margin-top: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 16px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: #f5f5f4;
+  padding: 5px 9px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.status-pill.live {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.status-pill.done {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
 .color-dot {
   width: 34px;
   height: 34px;
@@ -246,8 +334,19 @@ h2 {
 
 .metrics {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 10px;
+}
+
+.dashboard-metrics {
+  margin-bottom: 16px;
+}
+
+.dashboard-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .metric {
@@ -291,6 +390,17 @@ h2 {
 
 .scan-panel {
   margin-top: 12px;
+}
+
+.viewer-banner {
+  margin-bottom: 12px;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  background: #eff6ff;
+  padding: 10px 12px;
+  color: #1d4ed8;
+  font-size: 14px;
+  font-weight: 900;
 }
 
 .scan-label {
@@ -669,6 +779,10 @@ td {
 
   .metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-head {
+    flex-direction: column;
   }
 
   .header-row {
