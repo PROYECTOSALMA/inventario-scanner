@@ -3,3 +3,6 @@ dist/
 .env
 .env.local
 node_modules/
+.tmp_pdf/
+.tmp_pdf_pages/
+.tmp_pdf_extract/

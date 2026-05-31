@@ -345,7 +345,6 @@
             <tr>
               <th>Codigo</th>
               <th>Nombre de la calidad</th>
-              <th>Calidad sistema</th>
               <th class="right">Total de pz</th>
             </tr>
           </thead>
@@ -354,7 +353,6 @@
               <tr>
                 <td class="mono">${escapeHtml(row.code)}</td>
                 <td>${escapeHtml(row.qualityName)}</td>
-                <td>${escapeHtml(row.systemQuality)}</td>
                 <td class="right mono">${formatNumber(row.total)}</td>
               </tr>
             `).join('')}
@@ -538,8 +536,7 @@
 
       y = drawPdfTable(doc, 'Conteo por codigo', y, [
         { header: 'Codigo', width: 28, value: row => row.code },
-        { header: 'Nombre de la calidad', width: 88, value: row => row.qualityName },
-        { header: 'Calidad sistema', width: 45, value: row => row.systemQuality },
+        { header: 'Nombre de la calidad', width: 132, value: row => row.qualityName },
         { header: 'Total pz', width: 25, value: row => formatNumber(row.total), align: 'right' },
       ], count.codeTotals)
 
