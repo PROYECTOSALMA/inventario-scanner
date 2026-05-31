@@ -1,0 +1,73 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/elite"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/elite/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/lineas-originales"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/lineas-originales/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/club-jeans"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/club-jeans/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/miguel-aleman"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/miguel-aleman/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/almacen-general"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/almacen-general/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/zapotlanejo"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/zapotlanejo/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/denim-click"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/denim-click/"
+  to = "/index.html"
+  status = 200
