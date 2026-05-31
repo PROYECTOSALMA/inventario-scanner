@@ -1,0 +1,22 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/elite", "destination": "/index.html" },
+    { "source": "/lineas-originales", "destination": "/index.html" },
+    { "source": "/club-jeans", "destination": "/index.html" },
+    { "source": "/miguel-aleman", "destination": "/index.html" },
+    { "source": "/almacen-general", "destination": "/index.html" },
+    { "source": "/zapotlanejo", "destination": "/index.html" },
+    { "source": "/denim-click", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ]
+}

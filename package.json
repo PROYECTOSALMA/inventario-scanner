@@ -1,0 +1,11 @@
+{
+  "name": "inventario-scanner",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "python -m http.server 4173",
+    "build": "node scripts/build.mjs",
+    "check": "node --check app.js && node --check data.js && node --check config.js"
+  },
+  "devDependencies": {}
+}
