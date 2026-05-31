@@ -189,6 +189,9 @@ create table if not exists public.inventory_custom_codes (
 create index if not exists idx_inventory_custom_codes_created
   on public.inventory_custom_codes (created_at desc);
 
+create unique index if not exists idx_inventory_custom_codes_code_lower
+  on public.inventory_custom_codes (lower(code));
+
 alter table public.inventory_custom_codes enable row level security;
 
 drop policy if exists "inventory_custom_codes_public_select" on public.inventory_custom_codes;
@@ -203,12 +206,11 @@ create policy "inventory_custom_codes_public_select"
 create policy "inventory_custom_codes_public_insert"
   on public.inventory_custom_codes
   for insert
-  with check (length(code) > 0 and length(product_name) > 0);
+  with check (
+    length(code) > 0
+    and length(product_name) > 0
+    and code = upper(regexp_replace(code, '[^A-Za-z0-9]', '', 'g'))
+  );
 
-create policy "inventory_custom_codes_public_update"
-  on public.inventory_custom_codes
-  for update
-  using (true)
-  with check (length(code) > 0 and length(product_name) > 0);
-
-grant select, insert, update on public.inventory_custom_codes to anon;
+revoke update on public.inventory_custom_codes from anon;
+grant select, insert on public.inventory_custom_codes to anon;

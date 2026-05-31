@@ -18,6 +18,7 @@
   let dashboardTimer = null
   let activeFetchTimer = null
   let activeSyncTimer = null
+  let customCodesFetchTimer = null
   let currentTab = 'scan'
   let pendingScan = null
   let editingMovement = null
@@ -51,6 +52,7 @@
     fetchRemoteCounts()
     fetchRemoteActiveCount()
     activeFetchTimer = window.setInterval(fetchRemoteActiveCount, readOnlyMode ? 4500 : 12000)
+    customCodesFetchTimer = window.setInterval(fetchRemoteCustomCodes, 6000)
   }
 
   function renderDashboard() {
@@ -341,9 +343,19 @@
       return
     }
 
+    await fetchRemoteCustomCodes()
     const existing = getCatalogItem(code)
     if (existing) {
-      setCodeError('Ese codigo ya existe. Ya puedes escanearlo o sumar piezas.')
+      if (addCodeContext && addCodeContext.continueToQuantity) {
+        const rawScan = addCodeContext.rawScan || code
+        closeAddCodeSheet()
+        unknownScanCode = ''
+        setScanError('')
+        pendingScan = { item: existing, rawScan }
+        openQuantitySheet()
+        return
+      }
+      setCodeError('Ese codigo ya existe en la nube. Ya pueden escanearlo todas las sucursales.')
       return
     }
 
@@ -435,15 +447,20 @@
     })
   }
 
-  function processScan() {
+  async function processScan() {
     if (readOnlyMode) return
     const input = app.querySelector('[data-scan-input]')
     const rawScan = input.value.trim()
     if (!rawScan) return
 
-    const item = findItemByScan(rawScan)
+    let item = findItemByScan(rawScan)
     input.value = ''
     setScanError('')
+
+    if (!item) {
+      await fetchRemoteCustomCodes()
+      item = findItemByScan(rawScan)
+    }
 
     if (!item) {
       lastMovementId = ''
@@ -1096,7 +1113,7 @@
     if (!supabaseClient) return
 
     try {
-      await supabaseClient.from('inventory_custom_codes').upsert({
+      const { error } = await supabaseClient.from('inventory_custom_codes').insert({
         code: item.code,
         quality_name: item.qualityName,
         system_quality: item.systemQuality,
@@ -1104,7 +1121,8 @@
         created_at: item.createdAt || new Date().toISOString(),
         created_by_store: item.createdByStore || (store ? store.slug : 'gerente'),
         source: item.source || 'manual',
-      }, { onConflict: 'code' })
+      })
+      if (error && error.code === '23505') await fetchRemoteCustomCodes()
     } catch {
       // El codigo queda disponible en este dispositivo aunque falle la nube.
     }
