@@ -985,9 +985,9 @@ window.INVENTORY_DATA = {
     },
     {
       "code": "DAEJN03",
-      "qualityName": "JEANS PREMIUM",
-      "systemQuality": "JEANS PREMIUM",
-      "productName": "HOLISTER ABERCROMBIE"
+      "qualityName": "JEANS PREMIUM DAMA",
+      "systemQuality": "JEANS PREMIUM DAMA",
+      "productName": "AE PREMIUM DAMA"
     },
     {
       "code": "KID511",
@@ -1323,10 +1323,10 @@ window.INVENTORY_DATA = {
   "expectedByQuality": {
     "AM&CO": {
       "elite": 0,
-      "lineas-originales": 0,
+      "lineas-originales": 6,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 0,
+      "almacen-general": 20,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1335,7 +1335,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 0,
+      "almacen-general": 48,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1343,14 +1343,14 @@ window.INVENTORY_DATA = {
       "elite": 0,
       "lineas-originales": 0,
       "club-jeans": 0,
-      "miguel-aleman": 0,
+      "miguel-aleman": -1,
       "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "BOLSA ECO": {
       "elite": 0,
-      "lineas-originales": 0,
+      "lineas-originales": 1,
       "club-jeans": 0,
       "miguel-aleman": 0,
       "almacen-general": 0,
@@ -1367,7 +1367,7 @@ window.INVENTORY_DATA = {
       "denim-click": 0
     },
     "BOLSA PREMIUM": {
-      "elite": 0,
+      "elite": 13,
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
@@ -1379,35 +1379,35 @@ window.INVENTORY_DATA = {
       "elite": 0,
       "lineas-originales": 0,
       "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "miguel-aleman": 1,
+      "almacen-general": 4,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "C PRIME": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 44,
+      "lineas-originales": 21,
+      "club-jeans": 8,
+      "miguel-aleman": 32,
+      "almacen-general": 139,
       "zapotlanejo": 0,
-      "denim-click": 0
+      "denim-click": 69
     },
     "C PRO DELUX": {
-      "elite": 0,
-      "lineas-originales": 0,
+      "elite": 31,
+      "lineas-originales": 23,
       "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "miguel-aleman": 9,
+      "almacen-general": 45,
       "zapotlanejo": 0,
-      "denim-click": 0
+      "denim-click": 30
     },
     "CAMISA": {
       "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "lineas-originales": 33,
+      "club-jeans": 1,
+      "miguel-aleman": 4,
+      "almacen-general": 21,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1415,26 +1415,26 @@ window.INVENTORY_DATA = {
       "elite": 0,
       "lineas-originales": 0,
       "club-jeans": 0,
-      "miguel-aleman": 0,
+      "miguel-aleman": 10,
       "almacen-general": 0,
       "zapotlanejo": 0,
-      "denim-click": 0
+      "denim-click": 3
     },
     "CAMISA OAKTREE": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 32,
+      "lineas-originales": 16,
+      "club-jeans": 4,
+      "miguel-aleman": 28,
+      "almacen-general": 93,
       "zapotlanejo": 0,
-      "denim-click": 0
+      "denim-click": 25
     },
     "CAMISA SM": {
       "elite": 0,
-      "lineas-originales": 0,
+      "lineas-originales": 20,
       "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "miguel-aleman": 3,
+      "almacen-general": 11,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1443,7 +1443,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 0,
+      "almacen-general": 1,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1452,16 +1452,16 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 0,
+      "almacen-general": 2,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "CHAMARRA CAPITONADA DELUX": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 7,
+      "lineas-originales": 13,
+      "club-jeans": 3,
+      "miguel-aleman": 45,
+      "almacen-general": 82,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1475,161 +1475,170 @@ window.INVENTORY_DATA = {
       "denim-click": 0
     },
     "CHAMARRA CAPITONADA LINEA": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 2,
+      "lineas-originales": 17,
+      "club-jeans": 9,
+      "miguel-aleman": 75,
+      "almacen-general": 244,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "CHAMARRA CAPITONADA PREMIUM": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 14,
+      "lineas-originales": 58,
+      "club-jeans": 20,
+      "miguel-aleman": 149,
+      "almacen-general": 331,
       "zapotlanejo": 0,
-      "denim-click": 0
+      "denim-click": 3
     },
     "CHAMARRA LINEA": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 23,
+      "lineas-originales": 41,
+      "club-jeans": 48,
+      "miguel-aleman": 67,
+      "almacen-general": 344,
       "zapotlanejo": 0,
-      "denim-click": 0
+      "denim-click": 43
     },
     "CHAMARRA P": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 2,
+      "lineas-originales": 1,
+      "club-jeans": -1,
+      "miguel-aleman": 17,
+      "almacen-general": 23,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "CHAMARRA W": {
       "elite": 0,
       "lineas-originales": 0,
-      "club-jeans": 0,
+      "club-jeans": 3,
       "miguel-aleman": 0,
       "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "COLOMBIANO": {
-      "elite": 0,
+      "elite": 19,
       "lineas-originales": 0,
       "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "miguel-aleman": 1,
+      "almacen-general": 116,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "D PRIME": {
-      "elite": 0,
+      "elite": 10,
       "lineas-originales": 0,
       "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "miguel-aleman": 8,
+      "almacen-general": 65,
       "zapotlanejo": 0,
-      "denim-click": 0
+      "denim-click": 15
     },
     "DS": {
-      "elite": 0,
-      "lineas-originales": 0,
+      "elite": 5,
+      "lineas-originales": 5,
       "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "miguel-aleman": 58,
+      "almacen-general": 42,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "JEANS DELUX": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 35,
+      "lineas-originales": 116,
+      "club-jeans": 30,
+      "miguel-aleman": 102,
+      "almacen-general": 951,
       "zapotlanejo": 0,
-      "denim-click": 0
+      "denim-click": 29
     },
     "JEANS KID": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 7,
+      "lineas-originales": 51,
+      "club-jeans": 6,
+      "miguel-aleman": 63,
+      "almacen-general": 416,
       "zapotlanejo": 0,
-      "denim-click": 0
+      "denim-click": 7
     },
     "JEANS LINEA": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 442,
+      "lineas-originales": 1773,
+      "club-jeans": 378,
+      "miguel-aleman": 1344,
+      "almacen-general": 11612,
       "zapotlanejo": 0,
-      "denim-click": 0
+      "denim-click": 446
     },
     "JEANS PREMIUM": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 139,
+      "lineas-originales": 388,
+      "club-jeans": 61,
+      "miguel-aleman": 396,
+      "almacen-general": 3480,
       "zapotlanejo": 0,
-      "denim-click": 0
+      "denim-click": 177
+    },
+    "JEANS PREMIUM DAMA": {
+      "elite": 12,
+      "lineas-originales": 68,
+      "club-jeans": 19,
+      "miguel-aleman": 39,
+      "almacen-general": 642,
+      "zapotlanejo": 0,
+      "denim-click": 15
     },
     "JEANS SHERMAN": {
       "elite": 0,
-      "lineas-originales": 0,
+      "lineas-originales": 37,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 0,
+      "almacen-general": 16,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "LOLA": {
-      "elite": 0,
-      "lineas-originales": 0,
+      "elite": 12,
+      "lineas-originales": 22,
       "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "miguel-aleman": 46,
+      "almacen-general": 101,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "MONKEY": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 19,
+      "lineas-originales": 28,
+      "club-jeans": 13,
+      "miguel-aleman": 30,
+      "almacen-general": 570,
       "zapotlanejo": 0,
-      "denim-click": 0
+      "denim-click": 58
     },
     "NFL DLX": {
       "elite": 0,
-      "lineas-originales": 0,
+      "lineas-originales": 7,
       "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "miguel-aleman": 155,
+      "almacen-general": 34,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "NFL P": {
       "elite": 0,
-      "lineas-originales": 0,
+      "lineas-originales": 3,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 0,
+      "almacen-general": 14,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "OVER SM": {
       "elite": 0,
-      "lineas-originales": 0,
+      "lineas-originales": 2,
       "club-jeans": 0,
       "miguel-aleman": 0,
       "almacen-general": 0,
@@ -1637,53 +1646,53 @@ window.INVENTORY_DATA = {
       "denim-click": 0
     },
     "PLAYERA DELUX": {
-      "elite": 0,
+      "elite": 162,
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 0,
+      "almacen-general": 605,
       "zapotlanejo": 0,
-      "denim-click": 0
+      "denim-click": 88
     },
     "PLAYERA KID": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 49,
+      "lineas-originales": 68,
+      "club-jeans": 38,
+      "miguel-aleman": 206,
+      "almacen-general": 524,
       "zapotlanejo": 0,
-      "denim-click": 0
+      "denim-click": 3
     },
     "PLAYERA LINEA": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 16,
+      "lineas-originales": 4,
+      "club-jeans": 7,
+      "miguel-aleman": 92,
+      "almacen-general": 77,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "PLAYERA MANGA LARGA": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 6,
+      "lineas-originales": 20,
+      "club-jeans": 15,
+      "miguel-aleman": 32,
+      "almacen-general": 36,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "PLAYERA MANGA LARGA W": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
+      "elite": 9,
+      "lineas-originales": 3,
+      "club-jeans": 31,
       "miguel-aleman": 0,
-      "almacen-general": 0,
+      "almacen-general": 235,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "PLAYERA OVER": {
       "elite": 0,
-      "lineas-originales": 0,
+      "lineas-originales": -1,
       "club-jeans": 0,
       "miguel-aleman": 0,
       "almacen-general": 0,
@@ -1691,79 +1700,79 @@ window.INVENTORY_DATA = {
       "denim-click": 0
     },
     "PLAYERA PREMIUM": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 337,
+      "lineas-originales": 1388,
+      "club-jeans": 799,
+      "miguel-aleman": 2104,
+      "almacen-general": 3409,
       "zapotlanejo": 0,
-      "denim-click": 0
+      "denim-click": 352
     },
     "PLAYERA SM": {
       "elite": 0,
-      "lineas-originales": 0,
+      "lineas-originales": 54,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 0,
+      "almacen-general": 2,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "PLAYERA TIPO SUETER": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 6,
+      "lineas-originales": 1,
+      "club-jeans": 7,
+      "miguel-aleman": 17,
+      "almacen-general": 2,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "POLO": {
-      "elite": 0,
-      "lineas-originales": 0,
+      "elite": 12,
+      "lineas-originales": 1,
       "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "miguel-aleman": 13,
+      "almacen-general": 32,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "POLO DELUX": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 7,
+      "lineas-originales": 9,
+      "club-jeans": 5,
+      "miguel-aleman": 7,
+      "almacen-general": 31,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "POLO SM": {
-      "elite": 0,
-      "lineas-originales": 0,
+      "elite": 3,
+      "lineas-originales": 15,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 0,
+      "almacen-general": 45,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "SHORT CABALLERO": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 19,
+      "lineas-originales": 89,
+      "club-jeans": 19,
+      "miguel-aleman": 49,
+      "almacen-general": 577,
       "zapotlanejo": 0,
-      "denim-click": 0
+      "denim-click": 42
     },
     "SHORT DAMA": {
-      "elite": 0,
-      "lineas-originales": 0,
+      "elite": 20,
+      "lineas-originales": 80,
       "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "miguel-aleman": 21,
+      "almacen-general": 174,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "SHORT MARCAS": {
-      "elite": 0,
+      "elite": 2,
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
@@ -1772,20 +1781,20 @@ window.INVENTORY_DATA = {
       "denim-click": 0
     },
     "SHORT POLO": {
-      "elite": 0,
-      "lineas-originales": 0,
+      "elite": 3,
+      "lineas-originales": -1,
       "club-jeans": 0,
-      "miguel-aleman": 0,
+      "miguel-aleman": 1,
       "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "SHORT PRO": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 11,
+      "lineas-originales": 45,
+      "club-jeans": 9,
+      "miguel-aleman": 21,
+      "almacen-general": 18,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1794,52 +1803,52 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 0,
+      "almacen-general": 5,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "SUDADERA": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 19,
+      "lineas-originales": 24,
+      "club-jeans": 17,
+      "miguel-aleman": 25,
+      "almacen-general": 120,
       "zapotlanejo": 0,
-      "denim-click": 0
+      "denim-click": 22
     },
     "SUETER": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 9,
+      "lineas-originales": 22,
+      "club-jeans": 10,
+      "miguel-aleman": 74,
+      "almacen-general": 269,
       "zapotlanejo": 0,
-      "denim-click": 0
+      "denim-click": 14
     },
     "TRUE RELIGION": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
+      "elite": 4,
+      "lineas-originales": 4,
+      "club-jeans": 1,
       "miguel-aleman": 0,
       "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
     "W STRAIGHT": {
-      "elite": 0,
+      "elite": 4,
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 0,
+      "almacen-general": 9,
       "zapotlanejo": 0,
-      "denim-click": 0
+      "denim-click": 1
     },
     "WOMAN": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
+      "elite": 2,
+      "lineas-originales": 12,
+      "club-jeans": 2,
+      "miguel-aleman": 1,
+      "almacen-general": 4,
       "zapotlanejo": 0,
       "denim-click": 0
     }
