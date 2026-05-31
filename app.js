@@ -1,7 +1,8 @@
 (function () {
   const data = window.INVENTORY_DATA
   const app = document.querySelector('#app')
-  const catalogByCode = new Map(data.catalog.map(item => [normalizeCode(item.code), item]))
+  const catalogEntries = buildCatalogEntries(data.catalog, data.codeAliases)
+  const catalogByCode = new Map(catalogEntries.map(entry => [entry.code, entry.item]))
   const supabaseClient = createSupabaseClient()
 
   let store = null
@@ -437,7 +438,8 @@
   function buildCodeTotals(movements) {
     const totals = new Map()
     movements.forEach(movement => {
-      const key = normalizeCode(movement.code)
+      const item = getCatalogItem(movement.code)
+      const key = normalizeCode(item ? item.code : movement.code)
       totals.set(key, (totals.get(key) || 0) + movement.quantity)
     })
 
@@ -495,13 +497,9 @@
     const scan = normalizeCode(rawScan)
     if (!scan) return null
 
-    const entries = data.catalog
-      .map(item => ({ item, code: normalizeCode(item.code) }))
-      .sort((a, b) => b.code.length - a.code.length)
-
-    const exact = entries.find(entry => entry.code === scan)
+    const exact = catalogEntries.find(entry => entry.code === scan)
     if (exact) return exact.item
-    const included = entries.find(entry => scan.includes(entry.code))
+    const included = catalogEntries.find(entry => scan.includes(entry.code))
     return included ? included.item : null
   }
 
@@ -513,6 +511,21 @@
     const normalized = normalizeCode(code)
     const row = rows.find(item => normalizeCode(item.code) === normalized)
     return row ? row.total : 0
+  }
+
+  function buildCatalogEntries(catalog, aliases) {
+    const byCode = new Map(catalog.map(item => [normalizeCode(item.code), item]))
+    const entries = catalog.map(item => ({ item, code: normalizeCode(item.code) }))
+
+    Object.entries(aliases || {}).forEach(([alias, targetCode]) => {
+      const item = byCode.get(normalizeCode(targetCode))
+      const code = normalizeCode(alias)
+      if (item && code) entries.push({ item, code })
+    })
+
+    return entries
+      .filter(entry => entry.code)
+      .sort((a, b) => b.code.length - a.code.length)
   }
 
   function downloadPdf(count) {

@@ -43,6 +43,9 @@ window.INVENTORY_DATA = {
     "outlet-zapotlanejo": "zapotlanejo",
     "zapotlanejo-outlet": "zapotlanejo"
   },
+  "codeAliases": {
+    "CCK2SL": "CCK2S1"
+  },
   "catalog": [
     {
       "code": "TRUEREL",
@@ -837,6 +840,12 @@ window.INVENTORY_DATA = {
       "productName": "JEANS 510"
     },
     {
+      "code": "0002",
+      "qualityName": "JEANS LINEA",
+      "systemQuality": "JEANS LINEA",
+      "productName": "SEGUNDAS LINEA"
+    },
+    {
       "code": "0728",
       "qualityName": "JEANS LINEA",
       "systemQuality": "JEANS LINEA",
@@ -897,12 +906,6 @@ window.INVENTORY_DATA = {
       "productName": "JEANS 311"
     },
     {
-      "code": "CCK2SL",
-      "qualityName": "JEANS PREMIUM",
-      "systemQuality": "JEANS PREMIUM",
-      "productName": "CK PREMIUM"
-    },
-    {
       "code": "LP03",
       "qualityName": "JEANS PREMIUM",
       "systemQuality": "JEANS PREMIUM",
@@ -918,7 +921,7 @@ window.INVENTORY_DATA = {
       "code": "CCK2S1",
       "qualityName": "JEANS PREMIUM",
       "systemQuality": "JEANS PREMIUM",
-      "productName": "PREMIUM"
+      "productName": "CK PREMIUM"
     },
     {
       "code": "CAE2BTT",

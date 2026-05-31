@@ -47,6 +47,12 @@ SUPABASE_ANON_KEY=TU_SUPABASE_ANON_KEY
 
 Si Supabase no esta configurado, la app sigue funcionando y guarda conteos en el navegador del dispositivo.
 
+## Conteos simultaneos
+
+Todas las sucursales usan el mismo catalogo de codigos en `data.js`, pero cada liga guarda su propio conteo por tienda.
+
+Durante el escaneo, la captura se guarda primero en el dispositivo para que sea rapida en movil y PC. Al presionar **Finalizar conteo**, se genera el PDF y se manda el cierre completo a Supabase, separado por `store_slug`.
+
 ## GitHub y Vercel
 
 ```bash
