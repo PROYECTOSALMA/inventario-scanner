@@ -1739,7 +1739,8 @@
   async function verifyAdminPin(pin) {
     const config = window.INVENTORY_CONFIG || {}
     const expectedHash = config.adminPinHash || '0ab5946ad63b762a4c7ce7f5e9d92bb764e2a10783cbd6ceb9a78a628779dff4'
-    return hashText(String(pin || '').trim()) === expectedHash
+    const cleanPin = String(pin || '').trim()
+    return (await hashText(cleanPin)) === expectedHash || (await hashText(cleanPin.toUpperCase())) === expectedHash
   }
 
   async function hashText(text) {
