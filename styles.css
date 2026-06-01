@@ -599,6 +599,12 @@ h2 {
   text-align: center;
 }
 
+.empty.compact {
+  min-height: 54px;
+  margin-top: 8px;
+  padding: 10px;
+}
+
 .table-wrap {
   overflow-x: auto;
 }

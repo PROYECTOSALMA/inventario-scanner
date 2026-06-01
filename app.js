@@ -4,12 +4,17 @@
   const supabaseClient = createSupabaseClient()
   const stockStorageKey = 'inventario-scanner:stock-overrides:v1'
   const customCodesStorageKey = 'inventario-scanner:custom-codes:v1'
+  const pendingFinalizedStorageKey = 'inventario-scanner:pending-finalized:v1'
+  const pendingCustomCodesStorageKey = 'inventario-scanner:pending-custom-codes:v1'
+  const historyRenderLimit = 250
 
   let store = null
   let activeCount = null
   let pastCounts = []
   let stockOverrides = loadStockOverrides()
   let customCodes = loadCustomCodes()
+  let pendingFinalizedCounts = loadArray(pendingFinalizedStorageKey)
+  let pendingCustomCodes = loadArray(pendingCustomCodesStorageKey)
   let catalogItems = []
   let catalogEntries = []
   let catalogByCode = new Map()
@@ -29,12 +34,14 @@
   let lastActiveSyncHash = ''
   let unknownScanCode = ''
   let addCodeContext = null
+  let networkHandlersBound = false
 
   refreshCatalogIndex()
 
   boot()
 
   function boot() {
+    bindNetworkSync()
     store = getStoreFromUrl()
     if (!store) {
       renderDashboard()
@@ -51,6 +58,8 @@
     fetchRemoteStock()
     fetchRemoteCounts()
     fetchRemoteActiveCount()
+    syncPendingData()
+    if (!readOnlyMode) syncActiveCountNow(true)
     activeFetchTimer = window.setInterval(fetchRemoteActiveCount, readOnlyMode ? 4500 : 12000)
     customCodesFetchTimer = window.setInterval(fetchRemoteCustomCodes, 6000)
   }
@@ -73,7 +82,35 @@
     renderDashboardContent()
     fetchRemoteCustomCodes()
     fetchDashboard()
+    syncPendingData()
     dashboardTimer = window.setInterval(fetchDashboard, 5000)
+  }
+
+  function bindNetworkSync() {
+    if (networkHandlersBound) return
+    networkHandlersBound = true
+
+    window.addEventListener('online', () => {
+      syncPendingData()
+      if (store && !readOnlyMode) syncActiveCountNow(true)
+      if (store) {
+        fetchRemoteCustomCodes()
+        fetchRemoteCounts()
+      } else {
+        fetchDashboard()
+      }
+    })
+    window.addEventListener('offline', () => {
+      if (store) saveActiveCount()
+    })
+    window.addEventListener('beforeunload', () => {
+      if (store && activeCount) saveActiveCount()
+    })
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState !== 'visible') return
+      syncPendingData()
+      if (store && !readOnlyMode) syncActiveCountNow(true)
+    })
   }
 
   function renderDashboardContent() {
@@ -172,6 +209,12 @@
 
   async function fetchDashboard() {
     if (!app.querySelector('[data-store-grid]')) return
+    if (!navigator.onLine) {
+      app.querySelector('[data-dashboard-sync]').textContent = 'Sin internet: mostrando ultimo dato guardado en este dispositivo.'
+      renderDashboardContent()
+      bindDashboardButtons()
+      return
+    }
 
     try {
       if (supabaseClient) {
@@ -397,7 +440,7 @@
     const countedCodes = codeTotals.filter(row => row.total > 0).length
     const lastMovement = activeCount.movements.find(row => row.id === lastMovementId)
 
-    app.querySelector('[data-count-meta]').textContent = `${readOnlyMode ? 'Vista gerente' : 'Inicio'} ${formatDateTime(activeCount.startedAt)} - ${activeCount.movements.length} movimientos`
+    app.querySelector('[data-count-meta]').textContent = `${readOnlyMode ? 'Vista gerente' : 'Inicio'} ${formatDateTime(activeCount.startedAt)} - ${activeCount.movements.length} movimientos${syncStatusText()}`
     app.querySelector('[data-reset]').disabled = readOnlyMode || activeCount.movements.length === 0
     app.querySelector('[data-finalize]').disabled = readOnlyMode || activeCount.movements.length === 0
     app.querySelector('[data-metric-expected]').textContent = formatNumber(dashboard.expected)
@@ -419,7 +462,7 @@
     app.querySelector('[data-comparison-table]').innerHTML = renderComparisonTable(comparison.filter(row => showAllCodes || row.counted || row.expected))
     app.querySelector('[data-compact-comparison]').innerHTML = renderComparisonTable(comparison.filter(row => row.counted || row.expected).slice(0, 8), true)
     app.querySelector('[data-recent-movements]').innerHTML = renderMovementList(activeCount.movements.slice(0, 6), readOnlyMode)
-    app.querySelector('[data-history-list]').innerHTML = renderMovementList(filterMovements(activeCount.movements), readOnlyMode)
+    app.querySelector('[data-history-list]').innerHTML = renderMovementList(filterMovements(activeCount.movements), readOnlyMode, historyRenderLimit)
     app.querySelector('[data-past-list]').innerHTML = renderPastCounts()
 
     bindDynamicButtons()
@@ -688,10 +731,12 @@
     `
   }
 
-  function renderMovementList(rows, readOnly) {
+  function renderMovementList(rows, readOnly, limit) {
     if (!rows.length) return empty('Sin movimientos')
 
-    return rows.map(movement => {
+    const visibleRows = limit ? rows.slice(0, limit) : rows
+    const hiddenCount = rows.length - visibleRows.length
+    const html = visibleRows.map(movement => {
       const item = getCatalogItem(movement.code)
       return `
         <article class="movement">
@@ -713,6 +758,9 @@
         </article>
       `
     }).join('')
+    return hiddenCount > 0
+      ? `${html}<div class="empty compact">Mostrando ${formatNumber(visibleRows.length)} de ${formatNumber(rows.length)} movimientos. Usa buscar para filtrar.</div>`
+      : html
   }
 
   function renderPastCounts() {
@@ -1042,16 +1090,28 @@
   }
 
   function loadCustomCodes() {
-    const parsed = readJson(customCodesStorageKey)
+    return loadArray(customCodesStorageKey)
+  }
+
+  function loadArray(key) {
+    const parsed = readJson(key)
     return Array.isArray(parsed) ? parsed : []
   }
 
   function saveStockOverrides() {
-    localStorage.setItem(stockStorageKey, JSON.stringify(stockOverrides))
+    writeLocalJson(stockStorageKey, stockOverrides)
   }
 
   function saveCustomCodes() {
-    localStorage.setItem(customCodesStorageKey, JSON.stringify(customCodes))
+    writeLocalJson(customCodesStorageKey, customCodes)
+  }
+
+  function savePendingFinalizedCounts() {
+    writeLocalJson(pendingFinalizedStorageKey, pendingFinalizedCounts)
+  }
+
+  function savePendingCustomCodes() {
+    writeLocalJson(pendingCustomCodesStorageKey, pendingCustomCodes)
   }
 
   async function fetchRemoteCounts() {
@@ -1110,7 +1170,10 @@
   }
 
   async function syncCustomCode(item) {
-    if (!supabaseClient) return
+    if (!supabaseClient || !navigator.onLine) {
+      queueCustomCode(item)
+      return false
+    }
 
     try {
       const { error } = await supabaseClient.from('inventory_custom_codes').insert({
@@ -1122,9 +1185,21 @@
         created_by_store: item.createdByStore || (store ? store.slug : 'gerente'),
         source: item.source || 'manual',
       })
-      if (error && error.code === '23505') await fetchRemoteCustomCodes()
+      if (error && error.code === '23505') {
+        await fetchRemoteCustomCodes()
+        removePendingCustomCode(item.code)
+        return true
+      }
+      if (error) {
+        queueCustomCode(item)
+        return false
+      }
+      removePendingCustomCode(item.code)
+      return true
     } catch {
       // El codigo queda disponible en este dispositivo aunque falle la nube.
+      queueCustomCode(item)
+      return false
     }
   }
 
@@ -1190,13 +1265,77 @@
   }
 
   async function syncFinalizedCount(count) {
-    if (!supabaseClient) return
+    if (!supabaseClient || !navigator.onLine) {
+      queueFinalizedCount(count)
+      return false
+    }
 
     try {
-      await supabaseClient.from('inventory_counts').insert(toRemoteCount(count))
+      const { error } = await supabaseClient.from('inventory_counts').insert(toRemoteCount(count))
+      if (error && error.code === '23505') {
+        removePendingFinalizedCount(count.folio)
+        return true
+      }
+      if (error) {
+        queueFinalizedCount(count)
+        return false
+      }
+      removePendingFinalizedCount(count.folio)
+      return true
     } catch {
       // El cierre queda en este dispositivo aunque falle la sincronizacion remota.
+      queueFinalizedCount(count)
+      return false
     }
+  }
+
+  async function syncPendingData() {
+    if (!supabaseClient || !navigator.onLine) return
+
+    const pendingCodes = [...pendingCustomCodes]
+    for (const item of pendingCodes) {
+      await syncCustomCode(item)
+    }
+
+    const pendingCounts = [...pendingFinalizedCounts]
+    for (const count of pendingCounts) {
+      await syncFinalizedCount(count)
+    }
+
+    if (store && app.querySelector('[data-count-meta]')) updateCounter()
+    if (!store && app.querySelector('[data-store-grid]')) renderDashboardContent()
+  }
+
+  function queueFinalizedCount(count) {
+    if (!count || !count.folio) return
+    const exists = pendingFinalizedCounts.some(item => item.folio === count.folio)
+    if (!exists) pendingFinalizedCounts.push(count)
+    savePendingFinalizedCounts()
+  }
+
+  function removePendingFinalizedCount(folio) {
+    const before = pendingFinalizedCounts.length
+    pendingFinalizedCounts = pendingFinalizedCounts.filter(item => item.folio !== folio)
+    if (pendingFinalizedCounts.length !== before) savePendingFinalizedCounts()
+  }
+
+  function queueCustomCode(item) {
+    if (!item || !item.code) return
+    const normalized = normalizeCode(item.code)
+    const index = pendingCustomCodes.findIndex(row => normalizeCode(row.code) === normalized)
+    if (index >= 0) {
+      pendingCustomCodes[index] = { ...pendingCustomCodes[index], ...item, code: normalized }
+    } else {
+      pendingCustomCodes.push({ ...item, code: normalized })
+    }
+    savePendingCustomCodes()
+  }
+
+  function removePendingCustomCode(code) {
+    const normalized = normalizeCode(code)
+    const before = pendingCustomCodes.length
+    pendingCustomCodes = pendingCustomCodes.filter(item => normalizeCode(item.code) !== normalized)
+    if (pendingCustomCodes.length !== before) savePendingCustomCodes()
   }
 
   function toRemoteCount(count) {
@@ -1480,11 +1619,11 @@
   }
 
   function saveActiveCount() {
-    localStorage.setItem(activeKey(store.slug), JSON.stringify(activeCount))
+    writeLocalJson(activeKey(store.slug), activeCount)
   }
 
   function savePastCounts() {
-    localStorage.setItem(pastKey(store.slug), JSON.stringify(pastCounts))
+    writeLocalJson(pastKey(store.slug), pastCounts)
   }
 
   function readJson(key) {
@@ -1493,6 +1632,16 @@
       return raw ? JSON.parse(raw) : null
     } catch {
       return null
+    }
+  }
+
+  function writeLocalJson(key, value) {
+    try {
+      localStorage.setItem(key, JSON.stringify(value))
+      return true
+    } catch {
+      window.alert('No se pudo guardar en este dispositivo. No cierres la pagina y avisa al gerente.')
+      return false
     }
   }
 
@@ -1590,6 +1739,13 @@
   function signedNumber(value) {
     const number = Number(value || 0)
     return number > 0 ? `+${formatNumber(number)}` : formatNumber(number)
+  }
+
+  function syncStatusText() {
+    const pending = pendingFinalizedCounts.length + pendingCustomCodes.length
+    if (!navigator.onLine) return ' - sin internet, guardado local'
+    if (pending) return ` - ${formatNumber(pending)} pendiente(s) de subir`
+    return ' - nube activa'
   }
 
   function formatDateTime(value) {
