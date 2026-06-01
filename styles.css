@@ -479,6 +479,31 @@ h2 {
   margin-top: 10px;
 }
 
+.camera-button {
+  margin-top: 10px;
+}
+
+.camera-sheet {
+  max-width: 560px;
+}
+
+.camera-video {
+  width: 100%;
+  min-height: 260px;
+  border-radius: 8px;
+  background: #111827;
+  object-fit: cover;
+}
+
+.admin-gate {
+  max-width: 440px;
+  margin: 64px auto;
+}
+
+.admin-gate .panel {
+  padding: 18px;
+}
+
 .tabs {
   display: flex;
   gap: 8px;

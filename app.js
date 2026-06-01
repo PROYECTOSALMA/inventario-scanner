@@ -35,6 +35,9 @@
   let unknownScanCode = ''
   let addCodeContext = null
   let networkHandlersBound = false
+  let cameraStream = null
+  let cameraTimer = null
+  let cameraDetector = null
 
   refreshCatalogIndex()
 
@@ -65,6 +68,11 @@
   }
 
   function renderDashboard() {
+    if (!isAdminUnlocked()) {
+      renderAdminGate()
+      return
+    }
+
     const template = document.querySelector('#store-list-template')
     app.replaceChildren(template.content.cloneNode(true))
 
@@ -84,6 +92,42 @@
     fetchDashboard()
     syncPendingData()
     dashboardTimer = window.setInterval(fetchDashboard, 5000)
+  }
+
+  function renderAdminGate() {
+    app.innerHTML = `
+      <section class="top-band">
+        <div class="top-inner">
+          <div>
+            <p class="eyebrow">Acceso gerente</p>
+            <h1>Dashboard protegido</h1>
+            <p class="muted">Las sucursales deben usar su liga directa de conteo.</p>
+          </div>
+          <div class="brand-mark">INV</div>
+        </div>
+      </section>
+      <section class="page-width admin-gate">
+        <form class="panel" data-admin-form>
+          <label class="scan-label" for="admin-pin">Clave de gerente</label>
+          <input id="admin-pin" class="edit-input compact" data-admin-pin type="password" autocomplete="current-password" />
+          <p class="error-text" data-admin-error hidden></p>
+          <button class="primary-button full" type="submit">Entrar al dashboard</button>
+        </form>
+      </section>
+    `
+
+    app.querySelector('[data-admin-form]').addEventListener('submit', async event => {
+      event.preventDefault()
+      const pin = app.querySelector('[data-admin-pin]').value
+      if (await verifyAdminPin(pin)) {
+        localStorage.setItem('inventario-scanner:admin-unlocked:v1', '1')
+        renderDashboard()
+        return
+      }
+      const error = app.querySelector('[data-admin-error]')
+      error.hidden = false
+      error.textContent = 'Clave incorrecta.'
+    })
   }
 
   function bindNetworkSync() {
@@ -282,8 +326,10 @@
       app.querySelector('[data-reset]').addEventListener('click', resetActiveCount)
       app.querySelector('[data-finalize]').addEventListener('click', finalizeCount)
       app.querySelector('[data-add-unknown]').addEventListener('click', () => openAddCodeSheet(unknownScanCode, true))
+      app.querySelector('[data-camera-scan]').addEventListener('click', startCameraScan)
       bindQuantitySheet()
       bindEditSheet()
+      bindCameraSheet()
     }
 
     if (readOnlyMode) {
@@ -333,6 +379,13 @@
       event.preventDefault()
       saveMovementEdit()
     })
+  }
+
+  function bindCameraSheet() {
+    const close = app.querySelector('[data-close-camera]')
+    if (!close || close.dataset.bound === '1') return
+    close.dataset.bound = '1'
+    close.addEventListener('click', stopCameraScan)
   }
 
   function bindAddCodeSheet() {
@@ -521,6 +574,76 @@
     if (addButton) addButton.hidden = true
     pendingScan = { item, rawScan }
     openQuantitySheet()
+  }
+
+  async function startCameraScan() {
+    if (readOnlyMode) return
+    const sheet = app.querySelector('[data-camera-sheet]')
+    const video = app.querySelector('[data-camera-video]')
+    const error = app.querySelector('[data-camera-error]')
+    if (!sheet || !video || !error) return
+
+    if (!('BarcodeDetector' in window)) {
+      error.hidden = false
+      error.textContent = 'Este navegador no soporta escaneo con camara. Usa Chrome actualizado o un scanner fisico.'
+      sheet.hidden = false
+      return
+    }
+
+    try {
+      error.hidden = true
+      sheet.hidden = false
+      cameraDetector = new window.BarcodeDetector({
+        formats: ['code_128', 'code_39', 'code_93', 'ean_13', 'ean_8', 'upc_a', 'upc_e', 'itf', 'codabar', 'qr_code'],
+      })
+      cameraStream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: { ideal: 'environment' }, width: { ideal: 1280 }, height: { ideal: 720 } },
+        audio: false,
+      })
+      video.srcObject = cameraStream
+      await video.play()
+      cameraTimer = window.setInterval(detectCameraCode, 450)
+    } catch {
+      error.hidden = false
+      error.textContent = 'No pude abrir la camara. Revisa permisos del navegador.'
+      stopCameraStreamOnly()
+    }
+  }
+
+  async function detectCameraCode() {
+    const video = app.querySelector('[data-camera-video]')
+    if (!video || !cameraDetector || video.readyState < 2) return
+
+    try {
+      const codes = await cameraDetector.detect(video)
+      const rawValue = codes && codes[0] && codes[0].rawValue
+      if (!rawValue) return
+      stopCameraScan()
+      const input = app.querySelector('[data-scan-input]')
+      if (input) input.value = rawValue
+      await processScan()
+    } catch {
+      // Mantiene la camara activa; algunos frames pueden fallar.
+    }
+  }
+
+  function stopCameraScan() {
+    const sheet = app.querySelector('[data-camera-sheet]')
+    if (sheet) sheet.hidden = true
+    stopCameraStreamOnly()
+    focusScanner()
+  }
+
+  function stopCameraStreamOnly() {
+    window.clearInterval(cameraTimer)
+    cameraTimer = null
+    if (cameraStream) {
+      cameraStream.getTracks().forEach(track => track.stop())
+      cameraStream = null
+    }
+    cameraDetector = null
+    const video = app.querySelector('[data-camera-video]')
+    if (video) video.srcObject = null
   }
 
   function openQuantitySheet() {
@@ -1607,6 +1730,25 @@
     const config = window.INVENTORY_CONFIG || {}
     if (!config.supabaseUrl || !config.supabaseAnonKey || !window.supabase) return null
     return window.supabase.createClient(config.supabaseUrl, config.supabaseAnonKey)
+  }
+
+  function isAdminUnlocked() {
+    return localStorage.getItem('inventario-scanner:admin-unlocked:v1') === '1'
+  }
+
+  async function verifyAdminPin(pin) {
+    const config = window.INVENTORY_CONFIG || {}
+    const expectedHash = config.adminPinHash || '0ab5946ad63b762a4c7ce7f5e9d92bb764e2a10783cbd6ceb9a78a628779dff4'
+    return hashText(String(pin || '').trim()) === expectedHash
+  }
+
+  async function hashText(text) {
+    if (window.crypto && window.crypto.subtle) {
+      const bytes = new TextEncoder().encode(text)
+      const hashBuffer = await window.crypto.subtle.digest('SHA-256', bytes)
+      return Array.from(new Uint8Array(hashBuffer)).map(byte => byte.toString(16).padStart(2, '0')).join('')
+    }
+    return ''
   }
 
   function createEmptyCount(storeSlug) {

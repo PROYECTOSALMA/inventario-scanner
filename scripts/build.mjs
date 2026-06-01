@@ -11,6 +11,7 @@ await Promise.all(files.map(file => copyFile(new URL(`../${file}`, import.meta.u
 const config = `window.INVENTORY_CONFIG = {
   supabaseUrl: ${JSON.stringify(process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || '')},
   supabaseAnonKey: ${JSON.stringify(process.env.SUPABASE_ANON_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '')},
+  adminPinHash: ${JSON.stringify(process.env.ADMIN_PIN_HASH || process.env.NEXT_PUBLIC_ADMIN_PIN_HASH || '0ab5946ad63b762a4c7ce7f5e9d92bb764e2a10783cbd6ceb9a78a628779dff4')},
 }
 `
 

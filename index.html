@@ -106,6 +106,7 @@
             <input id="scan-input" data-scan-input autocomplete="off" autocapitalize="characters" spellcheck="false" />
             <button type="submit">OK</button>
           </div>
+          <button class="small-button camera-button" type="button" data-camera-scan>Escanear con camara</button>
           <p class="error-text" data-scan-error hidden></p>
           <button class="small-button add-unknown" type="button" data-add-unknown hidden>Agregar codigo no registrado</button>
           <p class="success-text" data-last-scan hidden></p>
@@ -246,6 +247,20 @@
           <p class="error-text" data-code-error hidden></p>
           <button type="submit" class="primary-button full">Guardar codigo</button>
         </form>
+      </div>
+
+      <div class="sheet-backdrop" data-camera-sheet hidden>
+        <div class="sheet camera-sheet">
+          <div class="sheet-head">
+            <div>
+              <p class="code-title">Escanear con camara</p>
+              <p class="muted">Apunta al codigo de barras hasta que lo detecte.</p>
+            </div>
+            <button type="button" class="icon-button" data-close-camera>&times;</button>
+          </div>
+          <video class="camera-video" data-camera-video playsinline muted></video>
+          <p class="error-text" data-camera-error hidden></p>
+        </div>
       </div>
     </template>
   </body>
