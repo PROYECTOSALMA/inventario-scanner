@@ -48,1289 +48,1723 @@ window.INVENTORY_DATA = {
   },
   "catalog": [
     {
-      "code": "TRUEREL",
-      "qualityName": "TRUE RELIGION",
-      "systemQuality": "TRUE RELIGION",
-      "productName": "TRUE RELIGION"
+      "code": "0BLLV00",
+      "qualityName": "BOLSA",
+      "systemQuality": "BOLSA",
+      "productName": "BOLSA",
+      "variantName": ""
     },
     {
-      "code": "SHERMAN",
-      "qualityName": "JEANS SHERMAN",
-      "systemQuality": "JEANS SHERMAN",
-      "productName": "COLOMBIANO JEANS MORGAN"
+      "code": "0BLSM04",
+      "qualityName": "BOLSAS DELUXE",
+      "systemQuality": "BOLSAS DELUXE",
+      "productName": "BOLSAS DELUXE",
+      "variantName": ""
     },
     {
-      "code": "BOGOTA",
-      "qualityName": "COLOMBIANO",
-      "systemQuality": "COLOMBIANO",
-      "productName": "COLOMBIANO"
+      "code": "0BLSM01",
+      "qualityName": "BOLSAS ECO",
+      "systemQuality": "BOLSAS ECO",
+      "productName": "BOLSAS ECO",
+      "variantName": ""
     },
     {
-      "code": "MONKEY",
-      "qualityName": "MONKEY",
-      "systemQuality": "MONKEY",
-      "productName": "JEANS MONKEY"
+      "code": "0BLSM02",
+      "qualityName": "BOLSAS LINEA",
+      "systemQuality": "BOLSAS LINEA",
+      "productName": "BOLSAS LINEA",
+      "variantName": ""
     },
     {
-      "code": "LOLA",
-      "qualityName": "LOLA",
-      "systemQuality": "LOLA",
-      "productName": "JEANS LOLA"
+      "code": "0BLSM03",
+      "qualityName": "BOLSAS PREMIUM",
+      "systemQuality": "BOLSAS PREMIUM",
+      "productName": "BOLSAS PREMIUM",
+      "variantName": ""
     },
     {
-      "code": "00DS",
-      "qualityName": "DS",
-      "systemQuality": "DS",
-      "productName": "JEANS DS"
-    },
-    {
-      "code": "POLO",
-      "qualityName": "WOMAN",
-      "systemQuality": "WOMAN",
-      "productName": "WOMAN POLO"
-    },
-    {
-      "code": "STUCHY",
-      "qualityName": "WOMAN",
-      "systemQuality": "WOMAN",
-      "productName": "WOMAN STUCHY"
-    },
-    {
-      "code": "AM&CO",
-      "qualityName": "AM&CO",
-      "systemQuality": "AM&CO",
-      "productName": "JEANS AM"
-    },
-    {
-      "code": "WSTRAIHGT",
-      "qualityName": "W STRAIGHT",
-      "systemQuality": "W STRAIGHT",
-      "productName": "W STRAIGHT"
-    },
-    {
-      "code": "CCCTH01",
-      "qualityName": "CHAMARRA CAPITONADA ECO",
-      "systemQuality": "CHAMARRA CAPITONADA ECO",
-      "productName": "CAPITONADA ECONOMICA"
-    },
-    {
-      "code": "CCCTH03",
-      "qualityName": "CHAMARRA CAPITONADA PREMIUM",
-      "systemQuality": "CHAMARRA CAPITONADA PREMIUM",
-      "productName": "CAPITONADA CAPITONADA PREMIUM"
-    },
-    {
-      "code": "CCCTH04",
-      "qualityName": "CHAMARRA CAPITONADA DELUX",
-      "systemQuality": "CHAMARRA CAPITONADA DELUX",
-      "productName": "CAPITONADA CAPITONADA DELUX"
-    },
-    {
-      "code": "CCCTH02",
-      "qualityName": "CHAMARRA CAPITONADA LINEA",
-      "systemQuality": "CHAMARRA CAPITONADA LINEA",
-      "productName": "CAPITONADA LINEA"
-    },
-    {
-      "code": "CCCAE01",
-      "qualityName": "CHAMARRA CAPITONADA ECO",
-      "systemQuality": "CHAMARRA CAPITONADA ECO",
-      "productName": "CAPITONADA ECONOMICA"
-    },
-    {
-      "code": "CCCAE02",
-      "qualityName": "CHAMARRA CAPITONADA LINEA",
-      "systemQuality": "CHAMARRA CAPITONADA LINEA",
-      "productName": "CAPITONADA LINEA"
-    },
-    {
-      "code": "CCCAE03",
-      "qualityName": "CHAMARRA CAPITONADA PREMIUM",
-      "systemQuality": "CHAMARRA CAPITONADA PREMIUM",
-      "productName": "CAPITONADA CAPITONADA PREMIUM"
-    },
-    {
-      "code": "CCCAE04",
-      "qualityName": "CHAMARRA CAPITONADA DELUX",
-      "systemQuality": "CHAMARRA CAPITONADA DELUX",
-      "productName": "CAPITONADA CAPITONADA DELUX"
-    },
-    {
-      "code": "CCCBS01",
-      "qualityName": "CHAMARRA CAPITONADA ECO",
-      "systemQuality": "CHAMARRA CAPITONADA ECO",
-      "productName": "CAPITONADA ECONOMICA"
-    },
-    {
-      "code": "CCCBS02",
-      "qualityName": "CHAMARRA CAPITONADA LINEA",
-      "systemQuality": "CHAMARRA CAPITONADA LINEA",
-      "productName": "CAPITONADA LINEA"
-    },
-    {
-      "code": "CCCBS03",
-      "qualityName": "CHAMARRA CAPITONADA PREMIUM",
-      "systemQuality": "CHAMARRA CAPITONADA PREMIUM",
-      "productName": "CAPITONADA CAPITONADA PREMIUM"
-    },
-    {
-      "code": "CCCBS04",
-      "qualityName": "CHAMARRA CAPITONADA DELUX",
-      "systemQuality": "CHAMARRA CAPITONADA DELUX",
-      "productName": "CAPITONADA CAPITONADA DELUX"
-    },
-    {
-      "code": "CCCTB04",
-      "qualityName": "CHAMARRA CAPITONADA DELUX",
-      "systemQuality": "CHAMARRA CAPITONADA DELUX",
-      "productName": "CAPITONADA DELUX"
-    },
-    {
-      "code": "CCCTB01",
-      "qualityName": "CHAMARRA CAPITONADA ECO",
-      "systemQuality": "CHAMARRA CAPITONADA ECO",
-      "productName": "CAPITONADA ECONOMICA"
-    },
-    {
-      "code": "CCCTB02",
-      "qualityName": "CHAMARRA CAPITONADA LINEA",
-      "systemQuality": "CHAMARRA CAPITONADA LINEA",
-      "productName": "CAPITONADA CAPITONADA ECONOMICA LINEA"
-    },
-    {
-      "code": "CCCTB03",
-      "qualityName": "CHAMARRA CAPITONADA PREMIUM",
-      "systemQuality": "CHAMARRA CAPITONADA PREMIUM",
-      "productName": "CAPITONADA CAPITONADA PREMIUM"
-    },
-    {
-      "code": "DCCTB03",
-      "qualityName": "CHAMARRA CAPITONADA PREMIUM",
-      "systemQuality": "CHAMARRA CAPITONADA PREMIUM",
-      "productName": "CAPITONADA LINEA CAPITONADA DELUX CAPITONADA PREMIUM TIMBERLAND TIMBERLAND TIMBERLAND"
-    },
-    {
-      "code": "DCCTB04",
-      "qualityName": "CHAMARRA CAPITONADA DELUX",
-      "systemQuality": "CHAMARRA CAPITONADA DELUX",
-      "productName": "CAPITONADA DELUX CAPITONADA PREMIUM TIMBERLAND TIMBERLAND"
-    },
-    {
-      "code": "DCCTB01",
-      "qualityName": "CHAMARRA CAPITONADA ECO",
-      "systemQuality": "CHAMARRA CAPITONADA ECO",
-      "productName": "CAPITONADA LINEA CAPITONADA ECO TIMBERLAND TIMBERLAND"
-    },
-    {
-      "code": "DCCTB02",
-      "qualityName": "CHAMARRA CAPITONADA LINEA",
-      "systemQuality": "CHAMARRA CAPITONADA LINEA",
-      "productName": "CAPITONADA LINEA CAPITONADA ECO CAPITONADA PREMIUM TIMBERLAND TIMBERLAND"
-    },
-    {
-      "code": "CCCLV01",
-      "qualityName": "CHAMARRA CAPITONADA ECO",
-      "systemQuality": "CHAMARRA CAPITONADA ECO",
-      "productName": "CAPITONADA ECONOMICA"
-    },
-    {
-      "code": "CCCLV02",
-      "qualityName": "CHAMARRA CAPITONADA LINEA",
-      "systemQuality": "CHAMARRA CAPITONADA LINEA",
-      "productName": "CAPITONADA CAPITONADA LINEA"
-    },
-    {
-      "code": "CCCLV03",
-      "qualityName": "CHAMARRA CAPITONADA PREMIUM",
-      "systemQuality": "CHAMARRA CAPITONADA PREMIUM",
-      "productName": "CAPITONADA PREMIUM"
-    },
-    {
-      "code": "CCCLV04",
-      "qualityName": "CHAMARRA CAPITONADA DELUX",
-      "systemQuality": "CHAMARRA CAPITONADA DELUX",
-      "productName": "CAPITONADA CAPITONADA DELUX"
-    },
-    {
-      "code": "DCCLV01",
-      "qualityName": "CHAMARRA CAPITONADA ECO",
-      "systemQuality": "CHAMARRA CAPITONADA ECO",
-      "productName": "CAPITONADA ECO CAPITONADA LINEA LV"
-    },
-    {
-      "code": "DCCLV02",
-      "qualityName": "CHAMARRA CAPITONADA LINEA",
-      "systemQuality": "CHAMARRA CAPITONADA LINEA",
-      "productName": "CAPITONADA CAPITONADA ECO CAPITONADA LINEA PREMIUM LV LV"
-    },
-    {
-      "code": "DCCLV03",
-      "qualityName": "CHAMARRA CAPITONADA PREMIUM",
-      "systemQuality": "CHAMARRA CAPITONADA PREMIUM",
-      "productName": "CAPITONADA CAPITONADA CAPITONADA LINEA PREMIUM LV"
-    },
-    {
-      "code": "DCCLV04",
-      "qualityName": "CHAMARRA CAPITONADA DELUX",
-      "systemQuality": "CHAMARRA CAPITONADA DELUX",
-      "productName": "CAPITONADA CAPITONADA DELUX LV PREMIUM LV"
-    },
-    {
-      "code": "CCCCK01",
-      "qualityName": "CHAMARRA CAPITONADA ECO",
-      "systemQuality": "CHAMARRA CAPITONADA ECO",
-      "productName": "CAPITONADA ECONOMICA"
-    },
-    {
-      "code": "CCCCK02",
-      "qualityName": "CHAMARRA CAPITONADA LINEA",
-      "systemQuality": "CHAMARRA CAPITONADA LINEA",
-      "productName": "CAPITONADA LINEA"
-    },
-    {
-      "code": "CCCCK03",
-      "qualityName": "CHAMARRA CAPITONADA PREMIUM",
-      "systemQuality": "CHAMARRA CAPITONADA PREMIUM",
-      "productName": "CAPITONADA PREMIUM"
-    },
-    {
-      "code": "CCCCK04",
-      "qualityName": "CHAMARRA CAPITONADA DELUX",
-      "systemQuality": "CHAMARRA CAPITONADA DELUX",
-      "productName": "CAPITONADA CAPITONADA DELUX"
-    },
-    {
-      "code": "DCCCK01",
-      "qualityName": "CHAMARRA CAPITONADA ECO",
-      "systemQuality": "CHAMARRA CAPITONADA ECO",
-      "productName": "CAPITONADA ECO CAPITONADA LINEA CK"
-    },
-    {
-      "code": "DCCCK02",
-      "qualityName": "CHAMARRA CAPITONADA LINEA",
-      "systemQuality": "CHAMARRA CAPITONADA LINEA",
-      "productName": "CAPITONADA CAPITONADA ECO CAPITONADA LINEA PREMIUM CK CK"
-    },
-    {
-      "code": "DCCCK03",
-      "qualityName": "CHAMARRA CAPITONADA PREMIUM",
-      "systemQuality": "CHAMARRA CAPITONADA PREMIUM",
-      "productName": "CAPITONADA CAPITONADA DELUX CAPITONADA LINEA PREMIUM CK"
-    },
-    {
-      "code": "DCCCK04",
-      "qualityName": "CHAMARRA CAPITONADA DELUX",
-      "systemQuality": "CHAMARRA CAPITONADA DELUX",
-      "productName": "CAPITONADA CAPITONADA DELUX PREMIUM CK CK"
-    },
-    {
-      "code": "CCCMK01",
-      "qualityName": "CHAMARRA CAPITONADA ECO",
-      "systemQuality": "CHAMARRA CAPITONADA ECO",
-      "productName": "CAPITONADA ECONOMICA"
-    },
-    {
-      "code": "CCCMK02",
-      "qualityName": "CHAMARRA CAPITONADA LINEA",
-      "systemQuality": "CHAMARRA CAPITONADA LINEA",
-      "productName": "CAPITONADA LINEA"
-    },
-    {
-      "code": "CCCMK03",
-      "qualityName": "CHAMARRA CAPITONADA PREMIUM",
-      "systemQuality": "CHAMARRA CAPITONADA PREMIUM",
-      "productName": "CAPITONADA PREMIUM"
-    },
-    {
-      "code": "CCCMK04",
-      "qualityName": "CHAMARRA CAPITONADA DELUX",
-      "systemQuality": "CHAMARRA CAPITONADA DELUX",
-      "productName": "CAPITONADA DELUX"
-    },
-    {
-      "code": "DCCMK02",
-      "qualityName": "CHAMARRA CAPITONADA LINEA",
-      "systemQuality": "CHAMARRA CAPITONADA LINEA",
-      "productName": "CAPITONADA CAPITONADA CAPITONADA ECO LINEA MK PREMIUM MK"
-    },
-    {
-      "code": "DCCMK04",
-      "qualityName": "CHAMARRA CAPITONADA DELUX",
-      "systemQuality": "CHAMARRA CAPITONADA DELUX",
-      "productName": "CAPITONADA CAPITONADA PREMIUM MK DELUX MK"
-    },
-    {
-      "code": "DCCMK01",
-      "qualityName": "CHAMARRA CAPITONADA ECO",
-      "systemQuality": "CHAMARRA CAPITONADA ECO",
-      "productName": "CAPITONADA CAPITONADA ECO LINEA MK MK"
-    },
-    {
-      "code": "DCCMK03",
-      "qualityName": "CHAMARRA CAPITONADA PREMIUM",
-      "systemQuality": "CHAMARRA CAPITONADA PREMIUM",
-      "productName": "CAPITONADA CAPITONADA CAPITONADA PREMIUM MK DELUX MK"
-    },
-    {
-      "code": "CCCBB01",
-      "qualityName": "CHAMARRA CAPITONADA ECO",
-      "systemQuality": "CHAMARRA CAPITONADA ECO",
-      "productName": "CAPITONADA ECONOMICA"
-    },
-    {
-      "code": "CCCBB02",
-      "qualityName": "CHAMARRA CAPITONADA LINEA",
-      "systemQuality": "CHAMARRA CAPITONADA LINEA",
-      "productName": "CAPITONADA LINEA"
-    },
-    {
-      "code": "CCCBB03",
-      "qualityName": "CHAMARRA CAPITONADA PREMIUM",
-      "systemQuality": "CHAMARRA CAPITONADA PREMIUM",
-      "productName": "CAPITONADA PREMIUM"
-    },
-    {
-      "code": "CCCBB04",
-      "qualityName": "CHAMARRA CAPITONADA DELUX",
-      "systemQuality": "CHAMARRA CAPITONADA DELUX",
-      "productName": "CAPITONADA DELUX"
-    },
-    {
-      "code": "DCCBB01",
-      "qualityName": "CHAMARRA CAPITONADA ECO",
-      "systemQuality": "CHAMARRA CAPITONADA ECO",
-      "productName": "CAPITONADA ECO CAPITONADA LINEA BURBERRY"
-    },
-    {
-      "code": "DCCBB02",
-      "qualityName": "CHAMARRA CAPITONADA LINEA",
-      "systemQuality": "CHAMARRA CAPITONADA LINEA",
-      "productName": "CAPITONADA ECO CAPITONADA LINEA CAPITONADA PREMIUM BURBERRY BURBERRY"
-    },
-    {
-      "code": "DCCBB03",
-      "qualityName": "CHAMARRA CAPITONADA PREMIUM",
-      "systemQuality": "CHAMARRA CAPITONADA PREMIUM",
-      "productName": "CAPITONADA LINEA CAPITONADA PREMIUM CAPITONADA DELUX BURBERRY"
-    },
-    {
-      "code": "DCCBB04",
-      "qualityName": "CHAMARRA CAPITONADA DELUX",
-      "systemQuality": "CHAMARRA CAPITONADA DELUX",
-      "productName": "CAPITONADA PREMIUM CAPITONADA DELUX BURBERRY"
-    },
-    {
-      "code": "DSDMK00",
-      "qualityName": "SUDADERA",
-      "systemQuality": "SUDADERA",
-      "productName": "SUDADERA SUDADERA MK BURBERRY"
-    },
-    {
-      "code": "DSDBB00",
-      "qualityName": "SUDADERA",
-      "systemQuality": "SUDADERA",
-      "productName": "SUDADERA SUDADERA MK SUDADERA CK BURBERRY"
-    },
-    {
-      "code": "DSDCK00",
-      "qualityName": "SUDADERA",
-      "systemQuality": "SUDADERA",
-      "productName": "SUDADERA SUDADERA CK SUDADERA LV BURBERRY"
-    },
-    {
-      "code": "DSDLV00",
-      "qualityName": "SUDADERA",
-      "systemQuality": "SUDADERA",
-      "productName": "SUDADERA TIMBERLAND SUDADERA CK SUDADERA LV"
-    },
-    {
-      "code": "DSDTB00",
-      "qualityName": "SUDADERA",
-      "systemQuality": "SUDADERA",
-      "productName": "SUDADERA TIMBERLAND SUDADERA LV"
-    },
-    {
-      "code": "CSDBB00",
-      "qualityName": "SUDADERA",
-      "systemQuality": "SUDADERA",
-      "productName": "SUDADERA SUDADERA SUDADERA CALVIN KLEIN BURBERRY MICHAEL KORS"
-    },
-    {
-      "code": "CSDMK00",
-      "qualityName": "SUDADERA",
-      "systemQuality": "SUDADERA",
-      "productName": "SUDADERA SUDADERA SUDADERA TIMBERLAND BURBERRY MICHAEL KORS"
-    },
-    {
-      "code": "CSDTB00",
-      "qualityName": "SUDADERA",
-      "systemQuality": "SUDADERA",
-      "productName": "SUDADERA SUDADERA TIMBERLAND MICHAEL KORS"
-    },
-    {
-      "code": "CSDCK00",
-      "qualityName": "SUDADERA",
-      "systemQuality": "SUDADERA",
-      "productName": "SUDADERA SUDADERA SUDADERA CALVIN KLEIN BURBERRY LEVIS"
-    },
-    {
-      "code": "CSDLV00",
-      "qualityName": "SUDADERA",
-      "systemQuality": "SUDADERA",
-      "productName": "SUDADERA SUDADERA CALVIN KLEIN LEVIS"
-    },
-    {
-      "code": "CPOLV00",
-      "qualityName": "POLO",
-      "systemQuality": "POLO",
-      "productName": "POLO LEVIS"
-    },
-    {
-      "code": "CPOCK00",
-      "qualityName": "POLO",
-      "systemQuality": "POLO",
-      "productName": "POLO CK"
-    },
-    {
-      "code": "CPOTB00",
-      "qualityName": "POLO",
-      "systemQuality": "POLO",
-      "productName": "POLO TIMBERLAND"
-    },
-    {
-      "code": "CPOMK00",
-      "qualityName": "POLO",
-      "systemQuality": "POLO",
-      "productName": "POLO MK POLO TIMBERLAND"
-    },
-    {
-      "code": "DCMLV02",
-      "qualityName": "CHAMARRA LINEA",
-      "systemQuality": "CHAMARRA LINEA",
-      "productName": "CHAMARRA LINEA LEVIS"
-    },
-    {
-      "code": "CCMLV02",
-      "qualityName": "CHAMARRA LINEA",
-      "systemQuality": "CHAMARRA LINEA",
-      "productName": "CHAMARRA DE MEZCLILLA LINEA"
-    },
-    {
-      "code": "NFLP",
-      "qualityName": "NFL P",
-      "systemQuality": "NFL P",
-      "productName": "NFL PREMIUM"
-    },
-    {
-      "code": "NFLDLX",
-      "qualityName": "NFL DLX",
-      "systemQuality": "NFL DLX",
-      "productName": "NFL DELUX"
-    },
-    {
-      "code": "OAKTREE",
-      "qualityName": "CAMISA OAKTREE",
-      "systemQuality": "CAMISA OAKTREE",
-      "productName": "CAMISA OAKTREE"
-    },
-    {
-      "code": "CCALV00",
-      "qualityName": "CAMISA",
-      "systemQuality": "CAMISA",
-      "productName": "CAMISA LEVIS"
-    },
-    {
-      "code": "CCABB00",
-      "qualityName": "CAMISA BURBERRY",
-      "systemQuality": "CAMISA BURBERRY",
-      "productName": "CAMISA BURBERRY"
-    },
-    {
-      "code": "CAMSM",
-      "qualityName": "CAMISA SM",
-      "systemQuality": "CAMISA SM",
-      "productName": "CAMISA SM"
-    },
-    {
-      "code": "CPOTH04",
-      "qualityName": "POLO DELUX",
-      "systemQuality": "POLO DELUX",
-      "productName": "POLO DELUX"
-    },
-    {
-      "code": "DPYLV02",
-      "qualityName": "PLAYERA LINEA",
-      "systemQuality": "PLAYERA LINEA",
-      "productName": "PLAYERA LINEA LEVIS"
-    },
-    {
-      "code": "DPYLV03",
-      "qualityName": "PLAYERA PREMIUM",
-      "systemQuality": "PLAYERA PREMIUM",
-      "productName": "PLAYERA PLAYERA LINEA PREMIUM LEVIS"
-    },
-    {
-      "code": "DPYLV07",
-      "qualityName": "PLAYERA OVER",
-      "systemQuality": "PLAYERA OVER",
-      "productName": "PLAYERA OVER LEVIS"
-    },
-    {
-      "code": "DPYLV08",
-      "qualityName": "PLAYERA MANGA LARGA W",
-      "systemQuality": "PLAYERA MANGA LARGA W",
-      "productName": "PLAYERA OVER PLAYERA MANGA LARGA LEVIS"
-    },
-    {
-      "code": "DPYMK03",
-      "qualityName": "PLAYERA PREMIUM",
-      "systemQuality": "PLAYERA PREMIUM",
-      "productName": "PLAYERA PLAYERA OVER PREMIUM MK"
-    },
-    {
-      "code": "DPYMK07",
-      "qualityName": "PLAYERA OVER",
-      "systemQuality": "PLAYERA OVER",
-      "productName": "PLAYERA OVER MK"
-    },
-    {
-      "code": "DPYMK08",
-      "qualityName": "PLAYERA MANGA LARGA W",
-      "systemQuality": "PLAYERA MANGA LARGA W",
-      "productName": "PLAYERA MANGA LARGA MK"
-    },
-    {
-      "code": "CPYLV02",
-      "qualityName": "PLAYERA LINEA",
-      "systemQuality": "PLAYERA LINEA",
-      "productName": "PLAYERA LV LINEA"
-    },
-    {
-      "code": "DPYCK03",
-      "qualityName": "PLAYERA PREMIUM",
-      "systemQuality": "PLAYERA PREMIUM",
-      "productName": "PLAYERA OVER PLAYERA PREMIUM CK"
-    },
-    {
-      "code": "DPYCK07",
-      "qualityName": "PLAYERA OVER",
-      "systemQuality": "PLAYERA OVER",
-      "productName": "PLAYERA OVER PLAYERA MANGA CK"
-    },
-    {
-      "code": "DPYCK08",
-      "qualityName": "PLAYERA MANGA LARGA W",
-      "systemQuality": "PLAYERA MANGA LARGA W",
-      "productName": "PLAYERA MANGA LARGA CK"
-    },
-    {
-      "code": "DPYBB07",
-      "qualityName": "PLAYERA OVER",
-      "systemQuality": "PLAYERA OVER",
-      "productName": "PLAYERA OVER BURBERRY"
-    },
-    {
-      "code": "DPYBB03",
-      "qualityName": "PLAYERA PREMIUM",
-      "systemQuality": "PLAYERA PREMIUM",
-      "productName": "PLAYERA PREMIUM PLAYERA OVER BURBERRY"
-    },
-    {
-      "code": "DPYBB08",
-      "qualityName": "PLAYERA MANGA LARGA W",
-      "systemQuality": "PLAYERA MANGA LARGA W",
-      "productName": "PLAYERA MANGA LARGA BURBERRY"
-    },
-    {
-      "code": "DPYTB03",
-      "qualityName": "PLAYERA PREMIUM",
-      "systemQuality": "PLAYERA PREMIUM",
-      "productName": "PLAYERA PREMIUM TIMBERLAND"
-    },
-    {
-      "code": "DPYTB07",
-      "qualityName": "PLAYERA OVER",
-      "systemQuality": "PLAYERA OVER",
-      "productName": "PLAYERA PREMIUM PLAYERA OVER LARGA TIMBERLAND TIMBERLAND"
-    },
-    {
-      "code": "DPYTB08",
-      "qualityName": "PLAYERA MANGA LARGA W",
-      "systemQuality": "PLAYERA MANGA LARGA W",
-      "productName": "PLAYERA MANGA PLAYERA OVER LARGA TIMBERLAND"
-    },
-    {
-      "code": "KPYLV00",
-      "qualityName": "PLAYERA KID",
-      "systemQuality": "PLAYERA KID",
-      "productName": "PLAYERA PREMIUM PLAYERA KID"
-    },
-    {
-      "code": "CPYLV03",
-      "qualityName": "PLAYERA PREMIUM",
-      "systemQuality": "PLAYERA PREMIUM",
-      "productName": "PLAYERA LV PREMIUM"
-    },
-    {
-      "code": "CPYLV07",
-      "qualityName": "PLAYERA OVER",
-      "systemQuality": "PLAYERA OVER",
-      "productName": "PLAYERA PLAYERA LV PREMIUM OVER"
-    },
-    {
-      "code": "CPYCK03",
-      "qualityName": "PLAYERA PREMIUM",
-      "systemQuality": "PLAYERA PREMIUM",
-      "productName": "PLAYERA LV PREMIUM"
-    },
-    {
-      "code": "CPYLV08",
-      "qualityName": "PLAYERA MANGA LARGA",
-      "systemQuality": "PLAYERA MANGA LARGA",
-      "productName": "PLAYERA MANGA"
-    },
-    {
-      "code": "CPYCK07",
-      "qualityName": "PLAYERA OVER",
-      "systemQuality": "PLAYERA OVER",
-      "productName": "PLAYERA PLAYERA CK OVER"
-    },
-    {
-      "code": "CPYPB04",
-      "qualityName": "PLAYERA DELUX",
-      "systemQuality": "PLAYERA DELUX",
-      "productName": "PLAYERA PSYCHO BUNNY DELUX"
-    },
-    {
-      "code": "CPYCK08",
-      "qualityName": "PLAYERA MANGA LARGA",
-      "systemQuality": "PLAYERA MANGA LARGA",
-      "productName": "PLAYERA CK MANGA"
-    },
-    {
-      "code": "CPYMK03",
-      "qualityName": "PLAYERA PREMIUM",
-      "systemQuality": "PLAYERA PREMIUM",
-      "productName": "PLAYERA PSYCHO BUNNY DELUX"
-    },
-    {
-      "code": "CPYMK07",
-      "qualityName": "PLAYERA OVER",
-      "systemQuality": "PLAYERA OVER",
-      "productName": "PLAYERA PLAYERA MK PREMIUM OVER"
-    },
-    {
-      "code": "CPYBS04",
-      "qualityName": "PLAYERA DELUX",
-      "systemQuality": "PLAYERA DELUX",
-      "productName": "PLAYERA PSYCHO BUNNY DELUX"
-    },
-    {
-      "code": "CPYMK08",
-      "qualityName": "PLAYERA MANGA LARGA",
-      "systemQuality": "PLAYERA MANGA LARGA",
-      "productName": "PLAYERA MK MANGA"
-    },
-    {
-      "code": "CPYTB03",
-      "qualityName": "PLAYERA PREMIUM",
-      "systemQuality": "PLAYERA PREMIUM",
-      "productName": "PLAYERA"
-    },
-    {
-      "code": "CPYTB07",
-      "qualityName": "PLAYERA OVER",
-      "systemQuality": "PLAYERA OVER",
-      "productName": "PLAYERA PLAYERA TIMBERLAND TIMBERLAND OVER PREMIUM"
-    },
-    {
-      "code": "CPYTB08",
-      "qualityName": "PLAYERA MANGA LARGA",
-      "systemQuality": "PLAYERA MANGA LARGA",
-      "productName": "PLAYERA TIMBERLAND MANGA LARGA"
-    },
-    {
-      "code": "CPYBB03",
-      "qualityName": "PLAYERA PREMIUM",
-      "systemQuality": "PLAYERA PREMIUM",
-      "productName": "PLAYERA BURBERRY PREMIUM"
-    },
-    {
-      "code": "CPYBB07",
-      "qualityName": "PLAYERA OVER",
-      "systemQuality": "PLAYERA OVER",
-      "productName": "PLAYERA PLAYERA BURBERRY BURBERRY PREMIUM"
-    },
-    {
-      "code": "CPYGY03",
-      "qualityName": "PLAYERA PREMIUM",
-      "systemQuality": "PLAYERA PREMIUM",
-      "productName": "PLAYERA"
-    },
-    {
-      "code": "CPYBB08",
-      "qualityName": "PLAYERA MANGA LARGA",
-      "systemQuality": "PLAYERA MANGA LARGA",
-      "productName": "PLAYERA BURBERRY"
-    },
-    {
-      "code": "0724",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "JEANS 724"
-    },
-    {
-      "code": "0514",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "JEANS 514"
-    },
-    {
-      "code": "0501",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "JEANS 501"
-    },
-    {
-      "code": "0721",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "JEANS 724 JEANS 514"
-    },
-    {
-      "code": "0505",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "JEANS 501"
-    },
-    {
-      "code": "0555",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "JEANS 514 JEANS 501"
-    },
-    {
-      "code": "0720",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "JEANS 721 JEANS 555"
-    },
-    {
-      "code": "0578",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "JEANS 505 JEANS 555"
-    },
-    {
-      "code": "0510",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "JEANS 505"
-    },
-    {
-      "code": "0725",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "JEANS 578"
-    },
-    {
-      "code": "0511",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "JEANS 510"
-    },
-    {
-      "code": "0002",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "SEGUNDAS LINEA"
-    },
-    {
-      "code": "0728",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "SEGUNDAS LINEA"
-    },
-    {
-      "code": "LP02",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "SEGUNDAS LINEA JEANS 511"
-    },
-    {
-      "code": "0512",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "JEANS 511"
-    },
-    {
-      "code": "0710",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "LP LINEA"
-    },
-    {
-      "code": "MOMRB",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "LP LINEA JEANS 512"
-    },
-    {
-      "code": "0513",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "JEANS 512"
-    },
-    {
-      "code": "0311",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "JEANS RIBCAGE"
-    },
-    {
-      "code": "DMH1",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "JEANS 513"
-    },
-    {
-      "code": "MOM501",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "JEANS RIBCAGE JEANS 513 MOMRB"
-    },
-    {
-      "code": "0D94",
-      "qualityName": "JEANS LINEA",
-      "systemQuality": "JEANS LINEA",
-      "productName": "JEANS 311"
-    },
-    {
-      "code": "LP03",
-      "qualityName": "JEANS PREMIUM",
-      "systemQuality": "JEANS PREMIUM",
-      "productName": "LP PREMIUM"
-    },
-    {
-      "code": "CAETLS",
-      "qualityName": "JEANS PREMIUM",
-      "systemQuality": "JEANS PREMIUM",
-      "productName": "AE ATLHETIC LOOSE PREMIUM"
-    },
-    {
-      "code": "CCK2S1",
-      "qualityName": "JEANS PREMIUM",
-      "systemQuality": "JEANS PREMIUM",
-      "productName": "CK PREMIUM"
-    },
-    {
-      "code": "CAE2BTT",
-      "qualityName": "JEANS PREMIUM",
-      "systemQuality": "JEANS PREMIUM",
-      "productName": "CK LP PREMIUM PREMIUM"
-    },
-    {
-      "code": "TOMMY1",
-      "qualityName": "JEANS PREMIUM",
-      "systemQuality": "JEANS PREMIUM",
-      "productName": "CK PREMIUM"
-    },
-    {
-      "code": "CMK2",
-      "qualityName": "JEANS PREMIUM",
-      "systemQuality": "JEANS PREMIUM",
-      "productName": "AE LP PREMIUM ATLHETIC LOOSE PREMIUM CAETLS"
-    },
-    {
-      "code": "CAE511",
-      "qualityName": "JEANS PREMIUM",
-      "systemQuality": "JEANS PREMIUM",
-      "productName": "AE BOOTCOT MK PREMIUM PREMIUM"
-    },
-    {
-      "code": "CAEST",
-      "qualityName": "JEANS PREMIUM",
-      "systemQuality": "JEANS PREMIUM",
-      "productName": "AE TOMMY BOOTCOT PREMIUM PREMIUM"
-    },
-    {
-      "code": "0003",
-      "qualityName": "JEANS PREMIUM",
-      "systemQuality": "JEANS PREMIUM",
-      "productName": "SEGUNDAS PREMIUM"
-    },
-    {
-      "code": "HOLLISTER",
-      "qualityName": "JEANS PREMIUM",
-      "systemQuality": "JEANS PREMIUM",
-      "productName": "SEGUNDAS PREMIUM"
-    },
-    {
-      "code": "ABERCROMBIE",
-      "qualityName": "JEANS PREMIUM",
-      "systemQuality": "JEANS PREMIUM",
-      "productName": "AE SEGUNDAS STRAIGHT PREMIUM PREMIUM CAEST"
-    },
-    {
-      "code": "DIESEL",
-      "qualityName": "JEANS PREMIUM",
-      "systemQuality": "JEANS PREMIUM",
-      "productName": "AMERICAN PREMIUM"
-    },
-    {
-      "code": "CAEJN03",
-      "qualityName": "JEANS PREMIUM",
-      "systemQuality": "JEANS PREMIUM",
-      "productName": "HOLISTER"
-    },
-    {
-      "code": "DAEJN03",
-      "qualityName": "JEANS PREMIUM DAMA",
-      "systemQuality": "JEANS PREMIUM DAMA",
-      "productName": "AE PREMIUM DAMA"
-    },
-    {
-      "code": "KID511",
-      "qualityName": "JEANS KID",
-      "systemQuality": "JEANS KID",
-      "productName": "JEANS KID 511"
-    },
-    {
-      "code": "KID510",
-      "qualityName": "JEANS KID",
-      "systemQuality": "JEANS KID",
-      "productName": "JEANS KID 510"
-    },
-    {
-      "code": "CAEATSK",
-      "qualityName": "JEANS DELUX",
-      "systemQuality": "JEANS DELUX",
-      "productName": "AE ATLETIC SKINNY DELUX"
-    },
-    {
-      "code": "CBOSS",
-      "qualityName": "JEANS DELUX",
-      "systemQuality": "JEANS DELUX",
-      "productName": "BOSS DELUX"
-    },
-    {
-      "code": "CAE3511",
-      "qualityName": "JEANS DELUX",
-      "systemQuality": "JEANS DELUX",
-      "productName": "AMERICAN DELUX"
-    },
-    {
-      "code": "DAEJN04",
-      "qualityName": "JEANS DELUX",
-      "systemQuality": "JEANS DELUX",
-      "productName": "BOSS AMERICAN DELUX DELUX"
-    },
-    {
-      "code": "LP04",
-      "qualityName": "JEANS DELUX",
-      "systemQuality": "JEANS DELUX",
-      "productName": "AE ATLETIC BOSS SKINNY DELUX DELUX CBOSS"
-    },
-    {
-      "code": "TOMMY2",
-      "qualityName": "JEANS DELUX",
-      "systemQuality": "JEANS DELUX",
-      "productName": "AE ATLETIC SKINNY DELUX CAEATSK"
-    },
-    {
-      "code": "CAEJN04",
-      "qualityName": "JEANS DELUX",
-      "systemQuality": "JEANS DELUX",
-      "productName": "AE DELUX LP DELUX DAMA"
-    },
-    {
-      "code": "CAERST",
-      "qualityName": "JEANS DELUX",
-      "systemQuality": "JEANS DELUX",
-      "productName": "TOMMY LP DELUX DELUX"
-    },
-    {
-      "code": "0004",
-      "qualityName": "JEANS DELUX",
-      "systemQuality": "JEANS DELUX",
-      "productName": "SEGUNDAS DELUX"
-    },
-    {
-      "code": "DAEFIAR",
-      "qualityName": "JEANS DELUX",
-      "systemQuality": "JEANS DELUX",
-      "productName": "AE DELUX AE RELAXED CABALLERO STRAIGHT DELUX"
-    },
-    {
-      "code": "DAEJ",
-      "qualityName": "JEANS DELUX",
-      "systemQuality": "JEANS DELUX",
-      "productName": "SEGUNDAS DELUX"
-    },
-    {
-      "code": "CSHCK00",
-      "qualityName": "SHORT MARCAS",
-      "systemQuality": "SHORT MARCAS",
-      "productName": "SHORT MARCAS CK"
-    },
-    {
-      "code": "CSHMK00",
-      "qualityName": "SHORT MARCAS",
-      "systemQuality": "SHORT MARCAS",
-      "productName": "SHORT SHORT MARCAS MARCAS MK"
-    },
-    {
-      "code": "CSHTB00",
-      "qualityName": "SHORT MARCAS",
-      "systemQuality": "SHORT MARCAS",
-      "productName": "SHORT SHORT MARCAS MARCAS MK TIMBERLAND"
-    },
-    {
-      "code": "CSHAE00",
-      "qualityName": "SHORT MARCAS",
-      "systemQuality": "SHORT MARCAS",
-      "productName": "SHORT SHORT MARCAS MARCAS TIMBERLAND AE"
-    },
-    {
-      "code": "CSHLV00",
-      "qualityName": "SHORT MARCAS",
-      "systemQuality": "SHORT MARCAS",
-      "productName": "SHORT SHORT MARCAS MARCAS LEVIS AE"
-    },
-    {
-      "code": "0468",
-      "qualityName": "SHORT CABALLERO",
-      "systemQuality": "SHORT CABALLERO",
-      "productName": "SHORT SHORT MARCAS MARCAS TIMBERLAND AE"
-    },
-    {
-      "code": "0412",
-      "qualityName": "SHORT CABALLERO",
-      "systemQuality": "SHORT CABALLERO",
-      "productName": "SHORT 412"
-    },
-    {
-      "code": "SHPOLO",
-      "qualityName": "SHORT POLO",
-      "systemQuality": "SHORT POLO",
-      "productName": "SHORT POLO"
-    },
-    {
-      "code": "AESHORT",
-      "qualityName": "SHORT PRO",
-      "systemQuality": "SHORT PRO",
-      "productName": "SHORT AE SHORT PRO"
-    },
-    {
-      "code": "DSHTR00",
-      "qualityName": "SHORT DAMA",
-      "systemQuality": "SHORT DAMA",
-      "productName": "SHORT AE SHORT PRO"
-    },
-    {
-      "code": "CJNTB05",
-      "qualityName": "C PRIME",
-      "systemQuality": "C PRIME",
-      "productName": "C PRIME TIMBERLAND"
-    },
-    {
-      "code": "CJNAE05",
-      "qualityName": "C PRIME",
-      "systemQuality": "C PRIME",
-      "productName": "C PRIME"
-    },
-    {
-      "code": "CJNLV05",
-      "qualityName": "C PRIME",
-      "systemQuality": "C PRIME",
-      "productName": "C PRIME LEVIS"
-    },
-    {
-      "code": "CJNMK05",
-      "qualityName": "C PRIME",
-      "systemQuality": "C PRIME",
-      "productName": "C PRIME C PRIME AE TIMBERLAND"
-    },
-    {
-      "code": "CJNBS05",
-      "qualityName": "C PRIME",
-      "systemQuality": "C PRIME",
-      "productName": "C PRIME C PRIME AE LEVIS"
-    },
-    {
-      "code": "CJNCK05",
-      "qualityName": "C PRIME",
-      "systemQuality": "C PRIME",
-      "productName": "C PRIME LEVIS"
-    },
-    {
-      "code": "CJNTH05",
-      "qualityName": "C PRIME",
-      "systemQuality": "C PRIME",
-      "productName": "C PRIME C PRIME BOSS CK"
-    },
-    {
-      "code": "DJNAE05",
-      "qualityName": "D PRIME",
-      "systemQuality": "D PRIME",
-      "productName": "D PRIME TIMBERLANF AMERICAN"
-    },
-    {
-      "code": "DJNTH05",
-      "qualityName": "D PRIME",
-      "systemQuality": "D PRIME",
-      "productName": "D PRIME TOMMY"
-    },
-    {
-      "code": "DJNTB05",
-      "qualityName": "D PRIME",
-      "systemQuality": "D PRIME",
-      "productName": "D PRIME MICHAEL KORS TIMBERLANF"
-    },
-    {
-      "code": "DJNMK05",
-      "qualityName": "D PRIME",
-      "systemQuality": "D PRIME",
-      "productName": "D PRIME MICHAEL KORS TIMBERLANF"
-    },
-    {
-      "code": "DJNLV05",
-      "qualityName": "D PRIME",
-      "systemQuality": "D PRIME",
-      "productName": "D PRIME LEVIS"
-    },
-    {
-      "code": "DJNCK05",
-      "qualityName": "D PRIME",
-      "systemQuality": "D PRIME",
-      "productName": "D PRIME CALVIN KLEIN"
-    },
-    {
-      "code": "CDPRO",
-      "qualityName": "C PRO DELUX",
-      "systemQuality": "C PRO DELUX",
-      "productName": "AE C PRO DELUX"
-    },
-    {
-      "code": "DSUAE00",
-      "qualityName": "SUETER",
-      "systemQuality": "SUETER",
-      "productName": "SUETER DAMA"
-    },
-    {
-      "code": "CSUBS00",
-      "qualityName": "SUETER",
-      "systemQuality": "SUETER",
-      "productName": "SUETER CABALLERO"
-    },
-    {
-      "code": "CCMLV03",
-      "qualityName": "CHAMARRA P",
-      "systemQuality": "CHAMARRA P",
-      "productName": "CHAMARRA P DAMA"
-    },
-    {
-      "code": "DCMLV03",
-      "qualityName": "CHAMARRA P",
-      "systemQuality": "CHAMARRA P",
-      "productName": "CHAMARRA P CABALLERO"
+      "code": "BORREGASM",
+      "qualityName": "CHAMARRA BORREGA SHERMAN MORGAN",
+      "systemQuality": "CHAMARRA BORREGA SHERMAN MORGAN",
+      "productName": "CHAMARRA BORREGA SHERMAN MORGAN",
+      "variantName": ""
     },
     {
       "code": "CHALECOSM",
       "qualityName": "CHALECO SM",
       "systemQuality": "CHALECO SM",
-      "productName": "CHALECO SM BORREGA SM"
+      "productName": "CHALECO SM",
+      "variantName": ""
+    },
+    {
+      "code": "CAPSM",
+      "qualityName": "CHAMARRA CAP L SM",
+      "systemQuality": "CHAMARRA CAP L SM",
+      "productName": "CHAMARRA CAP L SM",
+      "variantName": ""
+    },
+    {
+      "code": "NFLDLX",
+      "qualityName": "CHAMARRA NFL DELUXE",
+      "systemQuality": "CHAMARRA NFL DELUXE",
+      "productName": "CHAMARRA NFL DELUXE",
+      "variantName": ""
+    },
+    {
+      "code": "NFLP",
+      "qualityName": "CHAMARRA NFL PREMIUM",
+      "systemQuality": "CHAMARRA NFL PREMIUM",
+      "productName": "CHAMARRA NFL PREMIUM",
+      "variantName": ""
     },
     {
       "code": "CHMW",
       "qualityName": "CHAMARRA W",
       "systemQuality": "CHAMARRA W",
-      "productName": "BORREGA SM CHAMARRA W"
+      "productName": "CHAMARRA W",
+      "variantName": ""
     },
     {
-      "code": "BORREGASM",
-      "qualityName": "BORREGA SM",
-      "systemQuality": "BORREGA SM",
-      "productName": "BORREGA SM"
+      "code": "CDPRO",
+      "qualityName": "JEANS C.PRO DELUX",
+      "systemQuality": "JEANS C.PRO DELUX",
+      "productName": "JEANS C.PRO DELUX",
+      "variantName": ""
     },
     {
-      "code": "CPYSUMK",
-      "qualityName": "PLAYERA TIPO SUETER",
-      "systemQuality": "PLAYERA TIPO SUETER",
-      "productName": "PLAYERA TIPO SUETER"
+      "code": "SHERMAN",
+      "qualityName": "JEANS SHERMAN MORGAN",
+      "systemQuality": "JEANS SHERMAN MORGAN",
+      "productName": "JEANS SHERMAN MORGAN",
+      "variantName": ""
     },
     {
-      "code": "POLOSM",
-      "qualityName": "POLO SM",
-      "systemQuality": "POLO SM",
-      "productName": "POLO SM PLAYERA SM"
+      "code": "PYOVERSM",
+      "qualityName": "PLAYERA OVER SM",
+      "systemQuality": "PLAYERA OVER SM",
+      "productName": "PLAYERA OVER SM",
+      "variantName": ""
+    },
+    {
+      "code": "KPYLV00",
+      "qualityName": "PLAYERA KID",
+      "systemQuality": "PLAYERA KID",
+      "productName": "PLAYERA KID",
+      "variantName": ""
     },
     {
       "code": "PYSM",
       "qualityName": "PLAYERA SM",
       "systemQuality": "PLAYERA SM",
-      "productName": "POLO SM PLAYERA SM"
+      "productName": "PLAYERA SM",
+      "variantName": ""
+    },
+    {
+      "code": "POLOSM",
+      "qualityName": "POLO SHERMAN MORGAN",
+      "systemQuality": "POLO SHERMAN MORGAN",
+      "productName": "POLO SHERMAN MORGAN",
+      "variantName": ""
+    },
+    {
+      "code": "CPYSUMK",
+      "qualityName": "PLAYERA TIPO SUETER",
+      "systemQuality": "PLAYERA TIPO SUETER",
+      "productName": "PLAYERA TIPO SUETER",
+      "variantName": ""
+    },
+    {
+      "code": "DSHTR00",
+      "qualityName": "SHORT DAMA",
+      "systemQuality": "SHORT DAMA",
+      "productName": "SHORT DAMA",
+      "variantName": ""
+    },
+    {
+      "code": "SHPOLO",
+      "qualityName": "SHORT POLO",
+      "systemQuality": "SHORT POLO",
+      "productName": "SHORT POLO",
+      "variantName": ""
     },
     {
       "code": "SUDSM",
-      "qualityName": "SUD SM",
-      "systemQuality": "SUD SM",
-      "productName": "SUDADERASM"
+      "qualityName": "SUDADERA SHERMAN",
+      "systemQuality": "SUDADERA SHERMAN",
+      "productName": "SUDADERA SHERMAN",
+      "variantName": ""
     },
     {
-      "code": "CAPSM",
-      "qualityName": "CAP L SM",
-      "systemQuality": "CAP L SM",
-      "productName": "CAP L SM SUDADERASM"
+      "code": "CJNCK05",
+      "qualityName": "C PRIME - CORTE/MODELO: CK",
+      "systemQuality": "C PRIME - CORTE/MODELO: CK",
+      "productName": "C PRIME",
+      "variantName": "CORTE/MODELO: CK"
     },
     {
-      "code": "PYOVERSM",
-      "qualityName": "OVER SM",
-      "systemQuality": "OVER SM",
-      "productName": "OVER SM"
+      "code": "CJNTH05",
+      "qualityName": "C PRIME - CORTE/MODELO: TOMMY",
+      "systemQuality": "C PRIME - CORTE/MODELO: TOMMY",
+      "productName": "C PRIME",
+      "variantName": "CORTE/MODELO: TOMMY"
     },
     {
-      "code": "0BLLV00",
-      "qualityName": "BOLSA",
-      "systemQuality": "BOLSA",
-      "productName": "BOLSA BOLSA ECO"
+      "code": "CJNMK05",
+      "qualityName": "C PRIME - CORTE/MODELO: MK",
+      "systemQuality": "C PRIME - CORTE/MODELO: MK",
+      "productName": "C PRIME",
+      "variantName": "CORTE/MODELO: MK"
     },
     {
-      "code": "0BLSM03",
-      "qualityName": "BOLSA PREMIUM",
-      "systemQuality": "BOLSA PREMIUM",
-      "productName": "BOLSA LINEA BOLSA PREMIUM BOLSA DELUX"
+      "code": "CJNBS05",
+      "qualityName": "C PRIME - CORTE/MODELO: BOSS",
+      "systemQuality": "C PRIME - CORTE/MODELO: BOSS",
+      "productName": "C PRIME",
+      "variantName": "CORTE/MODELO: BOSS"
     },
     {
-      "code": "0BLSM04",
-      "qualityName": "BOLSA DELUX",
-      "systemQuality": "BOLSA DELUX",
-      "productName": "BOLSA PREMIUM BOLSA DELUX"
+      "code": "CJNAE05",
+      "qualityName": "C PRIME - CORTE/MODELO: AE",
+      "systemQuality": "C PRIME - CORTE/MODELO: AE",
+      "productName": "C PRIME",
+      "variantName": "CORTE/MODELO: AE"
     },
     {
-      "code": "0BLSM02",
-      "qualityName": "BOLSA LINEA",
-      "systemQuality": "BOLSA LINEA",
-      "productName": "BOLSA ECO BOLSA LINEA BOLSA PREMIUM BOLSA DELUX"
+      "code": "CJNLV05",
+      "qualityName": "C PRIME - CORTE/MODELO: LEVIS",
+      "systemQuality": "C PRIME - CORTE/MODELO: LEVIS",
+      "productName": "C PRIME",
+      "variantName": "CORTE/MODELO: LEVIS"
     },
     {
-      "code": "0BLSM01",
-      "qualityName": "BOLSA ECO",
-      "systemQuality": "BOLSA ECO",
-      "productName": "BOLSA ECO"
+      "code": "CJNTB05",
+      "qualityName": "C PRIME - CORTE/MODELO: TIMBERLAND",
+      "systemQuality": "C PRIME - CORTE/MODELO: TIMBERLAND",
+      "productName": "C PRIME",
+      "variantName": "CORTE/MODELO: TIMBERLAND"
+    },
+    {
+      "code": "CCALV00",
+      "qualityName": "CAMISA - CORTE/MODELO: LEVIS",
+      "systemQuality": "CAMISA - CORTE/MODELO: LEVIS",
+      "productName": "CAMISA",
+      "variantName": "CORTE/MODELO: LEVIS"
+    },
+    {
+      "code": "CCABB00",
+      "qualityName": "CAMISA - CORTE/MODELO: BURBERRY",
+      "systemQuality": "CAMISA - CORTE/MODELO: BURBERRY",
+      "productName": "CAMISA",
+      "variantName": "CORTE/MODELO: BURBERRY"
+    },
+    {
+      "code": "OAKTREE",
+      "qualityName": "CAMISA - CORTE/MODELO: OAKTREE",
+      "systemQuality": "CAMISA - CORTE/MODELO: OAKTREE",
+      "productName": "CAMISA",
+      "variantName": "CORTE/MODELO: OAKTREE"
+    },
+    {
+      "code": "CAMSM",
+      "qualityName": "CAMISA - CORTE/MODELO: SM",
+      "systemQuality": "CAMISA - CORTE/MODELO: SM",
+      "productName": "CAMISA",
+      "variantName": "CORTE/MODELO: SM"
+    },
+    {
+      "code": "CCABS03",
+      "qualityName": "CAMISA PREMIUM BOSS",
+      "systemQuality": "CAMISA PREMIUM BOSS",
+      "productName": "CAMISA PREMIUM BOSS",
+      "variantName": ""
+    },
+    {
+      "code": "CCCTH01",
+      "qualityName": "CAPITONADA - CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO"
+    },
+    {
+      "code": "CCCTH02",
+      "qualityName": "CAPITONADA - CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA"
+    },
+    {
+      "code": "CCCTH03",
+      "qualityName": "CAPITONADA - CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "CCCTH04",
+      "qualityName": "CAPITONADA - CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX"
+    },
+    {
+      "code": "CCCAE01",
+      "qualityName": "CAPITONADA - CORTE/MODELO: AE - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: AE - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: AE - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO"
+    },
+    {
+      "code": "CCCAE02",
+      "qualityName": "CAPITONADA - CORTE/MODELO: AE - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: AE - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: AE - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA"
+    },
+    {
+      "code": "CCCAE03",
+      "qualityName": "CAPITONADA - CORTE/MODELO: AE - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: AE - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: AE - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "CCCAE04",
+      "qualityName": "CAPITONADA - CORTE/MODELO: AE - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: AE - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: AE - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX"
+    },
+    {
+      "code": "CCCBS01",
+      "qualityName": "CAPITONADA - CORTE/MODELO: BOSS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: BOSS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: BOSS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO"
+    },
+    {
+      "code": "CCCBS02",
+      "qualityName": "CAPITONADA - CORTE/MODELO: BOSS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: BOSS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: BOSS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA"
+    },
+    {
+      "code": "CCCBS03",
+      "qualityName": "CAPITONADA - CORTE/MODELO: BOSS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: BOSS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: BOSS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "CCCBS04",
+      "qualityName": "CAPITONADA - CORTE/MODELO: BOSS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: BOSS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: BOSS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX"
+    },
+    {
+      "code": "DCCTB01",
+      "qualityName": "CAPITONADA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO"
+    },
+    {
+      "code": "DCCTB02",
+      "qualityName": "CAPITONADA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA"
+    },
+    {
+      "code": "DCCTB03",
+      "qualityName": "CAPITONADA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "DCCTB04",
+      "qualityName": "CAPITONADA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX"
+    },
+    {
+      "code": "CCCTB01",
+      "qualityName": "CAPITONADA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO"
+    },
+    {
+      "code": "CCCTB02",
+      "qualityName": "CAPITONADA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA"
+    },
+    {
+      "code": "CCCTB03",
+      "qualityName": "CAPITONADA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "CCCTB04",
+      "qualityName": "CAPITONADA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX"
+    },
+    {
+      "code": "DCCLV01",
+      "qualityName": "CAPITONADA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO"
+    },
+    {
+      "code": "DCCLV02",
+      "qualityName": "CAPITONADA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA"
+    },
+    {
+      "code": "DCCLV03",
+      "qualityName": "CAPITONADA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "DCCLV04",
+      "qualityName": "CAPITONADA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX"
+    },
+    {
+      "code": "CCCLV01",
+      "qualityName": "CAPITONADA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO"
+    },
+    {
+      "code": "CCCLV02",
+      "qualityName": "CAPITONADA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA"
+    },
+    {
+      "code": "CCCLV03",
+      "qualityName": "CAPITONADA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "CCCLV04",
+      "qualityName": "CAPITONADA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX"
+    },
+    {
+      "code": "DCCCK01",
+      "qualityName": "CAPITONADA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO"
+    },
+    {
+      "code": "DCCCK02",
+      "qualityName": "CAPITONADA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA"
+    },
+    {
+      "code": "DCCCK03",
+      "qualityName": "CAPITONADA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "DCCCK04",
+      "qualityName": "CAPITONADA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX"
+    },
+    {
+      "code": "CCCCK01",
+      "qualityName": "CAPITONADA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO"
+    },
+    {
+      "code": "CCCCK02",
+      "qualityName": "CAPITONADA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA"
+    },
+    {
+      "code": "CCCCK03",
+      "qualityName": "CAPITONADA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "CCCCK04",
+      "qualityName": "CAPITONADA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX"
+    },
+    {
+      "code": "DCCMK01",
+      "qualityName": "CAPITONADA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO"
+    },
+    {
+      "code": "DCCMK02",
+      "qualityName": "CAPITONADA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA"
+    },
+    {
+      "code": "DCCMK03",
+      "qualityName": "CAPITONADA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "DCCMK04",
+      "qualityName": "CAPITONADA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX"
+    },
+    {
+      "code": "CCCMK01",
+      "qualityName": "CAPITONADA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO"
+    },
+    {
+      "code": "CCCMK02",
+      "qualityName": "CAPITONADA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA"
+    },
+    {
+      "code": "CCCMK03",
+      "qualityName": "CAPITONADA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "CCCMK04",
+      "qualityName": "CAPITONADA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX"
+    },
+    {
+      "code": "DCCBB01",
+      "qualityName": "CAPITONADA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO"
+    },
+    {
+      "code": "DCCBB02",
+      "qualityName": "CAPITONADA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA"
+    },
+    {
+      "code": "DCCBB03",
+      "qualityName": "CAPITONADA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "DCCBB04",
+      "qualityName": "CAPITONADA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX"
+    },
+    {
+      "code": "CCCBB01",
+      "qualityName": "CAPITONADA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: ECO"
+    },
+    {
+      "code": "CCCBB02",
+      "qualityName": "CAPITONADA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA"
+    },
+    {
+      "code": "CCCBB03",
+      "qualityName": "CAPITONADA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "CCCBB04",
+      "qualityName": "CAPITONADA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX"
+    },
+    {
+      "code": "DCCTH01",
+      "qualityName": "CAPITONADA - CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO"
+    },
+    {
+      "code": "DCCTH02",
+      "qualityName": "CAPITONADA - CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA"
+    },
+    {
+      "code": "DCCTH03",
+      "qualityName": "CAPITONADA - CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "DCCTH04",
+      "qualityName": "CAPITONADA - CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: TOMMY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX"
+    },
+    {
+      "code": "DCCAE01",
+      "qualityName": "CAPITONADA - CORTE/MODELO: AE - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: AE - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: AE - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: ECO"
+    },
+    {
+      "code": "DCCAE02",
+      "qualityName": "CAPITONADA - CORTE/MODELO: AE - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: AE - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: AE - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA"
+    },
+    {
+      "code": "DCCAE03",
+      "qualityName": "CAPITONADA - CORTE/MODELO: AE - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: AE - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: AE - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "DCCAE04",
+      "qualityName": "CAPITONADA - CORTE/MODELO: AE - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX",
+      "systemQuality": "CAPITONADA - CORTE/MODELO: AE - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX",
+      "productName": "CAPITONADA",
+      "variantName": "CORTE/MODELO: AE - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: DELUX"
+    },
+    {
+      "code": "DCMLV02",
+      "qualityName": "CHAMARRA LINEA - FIT, GENERO,CALIDAD: DAMA",
+      "systemQuality": "CHAMARRA LINEA - FIT, GENERO,CALIDAD: DAMA",
+      "productName": "CHAMARRA LINEA",
+      "variantName": "FIT, GENERO,CALIDAD: DAMA"
+    },
+    {
+      "code": "CCMLV02",
+      "qualityName": "CHAMARRA LINEA - FIT, GENERO,CALIDAD: CABALLERO",
+      "systemQuality": "CHAMARRA LINEA - FIT, GENERO,CALIDAD: CABALLERO",
+      "productName": "CHAMARRA LINEA",
+      "variantName": "FIT, GENERO,CALIDAD: CABALLERO"
+    },
+    {
+      "code": "DCMLV03",
+      "qualityName": "CHAMARRA PREMIUM - FIT, GENERO,CALIDAD: DAMA",
+      "systemQuality": "CHAMARRA PREMIUM - FIT, GENERO,CALIDAD: DAMA",
+      "productName": "CHAMARRA PREMIUM",
+      "variantName": "FIT, GENERO,CALIDAD: DAMA"
+    },
+    {
+      "code": "CCMLV03",
+      "qualityName": "CHAMARRA PREMIUM - FIT, GENERO,CALIDAD: CABALLERO",
+      "systemQuality": "CHAMARRA PREMIUM - FIT, GENERO,CALIDAD: CABALLERO",
+      "productName": "CHAMARRA PREMIUM",
+      "variantName": "FIT, GENERO,CALIDAD: CABALLERO"
+    },
+    {
+      "code": "DJNLV05",
+      "qualityName": "D PRIME - CORTE/MODELO: LEVIS",
+      "systemQuality": "D PRIME - CORTE/MODELO: LEVIS",
+      "productName": "D PRIME",
+      "variantName": "CORTE/MODELO: LEVIS"
+    },
+    {
+      "code": "DJNCK05",
+      "qualityName": "D PRIME - CORTE/MODELO: CK",
+      "systemQuality": "D PRIME - CORTE/MODELO: CK",
+      "productName": "D PRIME",
+      "variantName": "CORTE/MODELO: CK"
+    },
+    {
+      "code": "DJNTH05",
+      "qualityName": "D PRIME - CORTE/MODELO: TOMMY",
+      "systemQuality": "D PRIME - CORTE/MODELO: TOMMY",
+      "productName": "D PRIME",
+      "variantName": "CORTE/MODELO: TOMMY"
+    },
+    {
+      "code": "DJNMK05",
+      "qualityName": "D PRIME - CORTE/MODELO: MK",
+      "systemQuality": "D PRIME - CORTE/MODELO: MK",
+      "productName": "D PRIME",
+      "variantName": "CORTE/MODELO: MK"
+    },
+    {
+      "code": "DJNAE05",
+      "qualityName": "D PRIME - CORTE/MODELO: AE",
+      "systemQuality": "D PRIME - CORTE/MODELO: AE",
+      "productName": "D PRIME",
+      "variantName": "CORTE/MODELO: AE"
+    },
+    {
+      "code": "DJNTB05",
+      "qualityName": "D PRIME - CORTE/MODELO: TIMBERLAND",
+      "systemQuality": "D PRIME - CORTE/MODELO: TIMBERLAND",
+      "productName": "D PRIME",
+      "variantName": "CORTE/MODELO: TIMBERLAND"
+    },
+    {
+      "code": "501-B",
+      "qualityName": "JEANS BASICO - CORTE/MODELO: 501",
+      "systemQuality": "JEANS BASICO - CORTE/MODELO: 501",
+      "productName": "JEANS BASICO",
+      "variantName": "CORTE/MODELO: 501"
+    },
+    {
+      "code": "505-B",
+      "qualityName": "JEANS BASICO - CORTE/MODELO: 505",
+      "systemQuality": "JEANS BASICO - CORTE/MODELO: 505",
+      "productName": "JEANS BASICO",
+      "variantName": "CORTE/MODELO: 505"
+    },
+    {
+      "code": "510-B",
+      "qualityName": "JEANS BASICO - CORTE/MODELO: 510",
+      "systemQuality": "JEANS BASICO - CORTE/MODELO: 510",
+      "productName": "JEANS BASICO",
+      "variantName": "CORTE/MODELO: 510"
+    },
+    {
+      "code": "511-B",
+      "qualityName": "JEANS BASICO - CORTE/MODELO: 511",
+      "systemQuality": "JEANS BASICO - CORTE/MODELO: 511",
+      "productName": "JEANS BASICO",
+      "variantName": "CORTE/MODELO: 511"
+    },
+    {
+      "code": "512-B",
+      "qualityName": "JEANS BASICO - CORTE/MODELO: 512",
+      "systemQuality": "JEANS BASICO - CORTE/MODELO: 512",
+      "productName": "JEANS BASICO",
+      "variantName": "CORTE/MODELO: 512"
+    },
+    {
+      "code": "513-B",
+      "qualityName": "JEANS BASICO - CORTE/MODELO: 513",
+      "systemQuality": "JEANS BASICO - CORTE/MODELO: 513",
+      "productName": "JEANS BASICO",
+      "variantName": "CORTE/MODELO: 513"
+    },
+    {
+      "code": "514-B",
+      "qualityName": "JEANS BASICO - CORTE/MODELO: 514",
+      "systemQuality": "JEANS BASICO - CORTE/MODELO: 514",
+      "productName": "JEANS BASICO",
+      "variantName": "CORTE/MODELO: 514"
+    },
+    {
+      "code": "CBOSS",
+      "qualityName": "JEANS DLX - CORTE/MODELO: BOSS",
+      "systemQuality": "JEANS DLX - CORTE/MODELO: BOSS",
+      "productName": "JEANS DLX",
+      "variantName": "CORTE/MODELO: BOSS"
+    },
+    {
+      "code": "CAERST",
+      "qualityName": "JEANS DLX - CORTE/MODELO: AE RELAXED ST",
+      "systemQuality": "JEANS DLX - CORTE/MODELO: AE RELAXED ST",
+      "productName": "JEANS DLX",
+      "variantName": "CORTE/MODELO: AE RELAXED ST"
+    },
+    {
+      "code": "LP04",
+      "qualityName": "JEANS DLX - CORTE/MODELO: LP",
+      "systemQuality": "JEANS DLX - CORTE/MODELO: LP",
+      "productName": "JEANS DLX",
+      "variantName": "CORTE/MODELO: LP"
+    },
+    {
+      "code": "CAEATSK",
+      "qualityName": "JEANS DLX - CORTE/MODELO: AE AT SKINNY",
+      "systemQuality": "JEANS DLX - CORTE/MODELO: AE AT SKINNY",
+      "productName": "JEANS DLX",
+      "variantName": "CORTE/MODELO: AE AT SKINNY"
+    },
+    {
+      "code": "CAE3511",
+      "qualityName": "JEANS DLX - CORTE/MODELO: AE+511",
+      "systemQuality": "JEANS DLX - CORTE/MODELO: AE+511",
+      "productName": "JEANS DLX",
+      "variantName": "CORTE/MODELO: AE+511"
+    },
+    {
+      "code": "TOMMY2",
+      "qualityName": "JEANS DLX - CORTE/MODELO: TOMMY",
+      "systemQuality": "JEANS DLX - CORTE/MODELO: TOMMY",
+      "productName": "JEANS DLX",
+      "variantName": "CORTE/MODELO: TOMMY"
+    },
+    {
+      "code": "0004",
+      "qualityName": "JEANS DLX - CORTE/MODELO: 2DAS",
+      "systemQuality": "JEANS DLX - CORTE/MODELO: 2DAS",
+      "productName": "JEANS DLX",
+      "variantName": "CORTE/MODELO: 2DAS"
+    },
+    {
+      "code": "DAEJ",
+      "qualityName": "JEANS DLX - CORTE/MODELO: AE JEGGY",
+      "systemQuality": "JEANS DLX - CORTE/MODELO: AE JEGGY",
+      "productName": "JEANS DLX",
+      "variantName": "CORTE/MODELO: AE JEGGY"
+    },
+    {
+      "code": "DAEFIAR",
+      "qualityName": "JEANS DLX - CORTE/MODELO: AE FLARE",
+      "systemQuality": "JEANS DLX - CORTE/MODELO: AE FLARE",
+      "productName": "JEANS DLX",
+      "variantName": "CORTE/MODELO: AE FLARE"
+    },
+    {
+      "code": "DAEJN04",
+      "qualityName": "JEANS DLX - CORTE/MODELO: AE DAMA",
+      "systemQuality": "JEANS DLX - CORTE/MODELO: AE DAMA",
+      "productName": "JEANS DLX",
+      "variantName": "CORTE/MODELO: AE DAMA"
+    },
+    {
+      "code": "CAEJN04",
+      "qualityName": "JEANS DLX - CORTE/MODELO: AE CABALLERO",
+      "systemQuality": "JEANS DLX - CORTE/MODELO: AE CABALLERO",
+      "productName": "JEANS DLX",
+      "variantName": "CORTE/MODELO: AE CABALLERO"
+    },
+    {
+      "code": "KID511",
+      "qualityName": "JEANS KID - CORTE/MODELO: 511",
+      "systemQuality": "JEANS KID - CORTE/MODELO: 511",
+      "productName": "JEANS KID",
+      "variantName": "CORTE/MODELO: 511"
+    },
+    {
+      "code": "KID510",
+      "qualityName": "JEANS KID - CORTE/MODELO: 510",
+      "systemQuality": "JEANS KID - CORTE/MODELO: 510",
+      "productName": "JEANS KID",
+      "variantName": "CORTE/MODELO: 510"
+    },
+    {
+      "code": "0005",
+      "qualityName": "JEANS KID - CORTE/MODELO: 2DAS",
+      "systemQuality": "JEANS KID - CORTE/MODELO: 2DAS",
+      "productName": "JEANS KID",
+      "variantName": "CORTE/MODELO: 2DAS"
+    },
+    {
+      "code": "LPKID",
+      "qualityName": "JEANS KID - CORTE/MODELO: LP",
+      "systemQuality": "JEANS KID - CORTE/MODELO: LP",
+      "productName": "JEANS KID",
+      "variantName": "CORTE/MODELO: LP"
+    },
+    {
+      "code": "0501",
+      "qualityName": "JEANS L - CORTE/MODELO: 501",
+      "systemQuality": "JEANS L - CORTE/MODELO: 501",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 501"
+    },
+    {
+      "code": "0505",
+      "qualityName": "JEANS L - CORTE/MODELO: 505",
+      "systemQuality": "JEANS L - CORTE/MODELO: 505",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 505"
+    },
+    {
+      "code": "0510",
+      "qualityName": "JEANS L - CORTE/MODELO: 510",
+      "systemQuality": "JEANS L - CORTE/MODELO: 510",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 510"
+    },
+    {
+      "code": "0511",
+      "qualityName": "JEANS L - CORTE/MODELO: 511",
+      "systemQuality": "JEANS L - CORTE/MODELO: 511",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 511"
+    },
+    {
+      "code": "0512",
+      "qualityName": "JEANS L - CORTE/MODELO: 512",
+      "systemQuality": "JEANS L - CORTE/MODELO: 512",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 512"
+    },
+    {
+      "code": "0513",
+      "qualityName": "JEANS L - CORTE/MODELO: 513",
+      "systemQuality": "JEANS L - CORTE/MODELO: 513",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 513"
+    },
+    {
+      "code": "0514",
+      "qualityName": "JEANS L - CORTE/MODELO: 514",
+      "systemQuality": "JEANS L - CORTE/MODELO: 514",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 514"
+    },
+    {
+      "code": "0555",
+      "qualityName": "JEANS L - CORTE/MODELO: 555",
+      "systemQuality": "JEANS L - CORTE/MODELO: 555",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 555"
+    },
+    {
+      "code": "0578",
+      "qualityName": "JEANS L - CORTE/MODELO: 578",
+      "systemQuality": "JEANS L - CORTE/MODELO: 578",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 578"
+    },
+    {
+      "code": "0728",
+      "qualityName": "JEANS L - CORTE/MODELO: 728",
+      "systemQuality": "JEANS L - CORTE/MODELO: 728",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 728"
+    },
+    {
+      "code": "0720",
+      "qualityName": "JEANS L - CORTE/MODELO: 720",
+      "systemQuality": "JEANS L - CORTE/MODELO: 720",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 720"
+    },
+    {
+      "code": "0721",
+      "qualityName": "JEANS L - CORTE/MODELO: 721",
+      "systemQuality": "JEANS L - CORTE/MODELO: 721",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 721"
+    },
+    {
+      "code": "0724",
+      "qualityName": "JEANS L - CORTE/MODELO: 724",
+      "systemQuality": "JEANS L - CORTE/MODELO: 724",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 724"
+    },
+    {
+      "code": "DMH1",
+      "qualityName": "JEANS L - CORTE/MODELO: MILE",
+      "systemQuality": "JEANS L - CORTE/MODELO: MILE",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: MILE"
+    },
+    {
+      "code": "MOM501",
+      "qualityName": "JEANS L - CORTE/MODELO: 501 DAMA",
+      "systemQuality": "JEANS L - CORTE/MODELO: 501 DAMA",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 501 DAMA"
+    },
+    {
+      "code": "0725",
+      "qualityName": "JEANS L - CORTE/MODELO: 725",
+      "systemQuality": "JEANS L - CORTE/MODELO: 725",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 725"
+    },
+    {
+      "code": "MOMRB",
+      "qualityName": "JEANS L - CORTE/MODELO: RIBCAGE",
+      "systemQuality": "JEANS L - CORTE/MODELO: RIBCAGE",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: RIBCAGE"
+    },
+    {
+      "code": "0D94",
+      "qualityName": "JEANS L - CORTE/MODELO: D94",
+      "systemQuality": "JEANS L - CORTE/MODELO: D94",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: D94"
+    },
+    {
+      "code": "LP02",
+      "qualityName": "JEANS L - CORTE/MODELO: LP",
+      "systemQuality": "JEANS L - CORTE/MODELO: LP",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: LP"
+    },
+    {
+      "code": "0002",
+      "qualityName": "JEANS L - CORTE/MODELO: 2DAS",
+      "systemQuality": "JEANS L - CORTE/MODELO: 2DAS",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 2DAS"
+    },
+    {
+      "code": "0710",
+      "qualityName": "JEANS L - CORTE/MODELO: 710",
+      "systemQuality": "JEANS L - CORTE/MODELO: 710",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 710"
+    },
+    {
+      "code": "0311",
+      "qualityName": "JEANS L - CORTE/MODELO: 311",
+      "systemQuality": "JEANS L - CORTE/MODELO: 311",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 311"
+    },
+    {
+      "code": "0519",
+      "qualityName": "JEANS L - CORTE/MODELO: 519",
+      "systemQuality": "JEANS L - CORTE/MODELO: 519",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 519"
+    },
+    {
+      "code": "0559",
+      "qualityName": "JEANS L - CORTE/MODELO: 0559",
+      "systemQuality": "JEANS L - CORTE/MODELO: 0559",
+      "productName": "JEANS L",
+      "variantName": "CORTE/MODELO: 0559"
+    },
+    {
+      "code": "0003",
+      "qualityName": "JEANS P - CORTE/MODELO: 2DAS",
+      "systemQuality": "JEANS P - CORTE/MODELO: 2DAS",
+      "productName": "JEANS P",
+      "variantName": "CORTE/MODELO: 2DAS"
+    },
+    {
+      "code": "LP03",
+      "qualityName": "JEANS P - CORTE/MODELO: LP",
+      "systemQuality": "JEANS P - CORTE/MODELO: LP",
+      "productName": "JEANS P",
+      "variantName": "CORTE/MODELO: LP"
+    },
+    {
+      "code": "CCK2SL",
+      "qualityName": "JEANS P - CORTE/MODELO: CK",
+      "systemQuality": "JEANS P - CORTE/MODELO: CK",
+      "productName": "JEANS P",
+      "variantName": "CORTE/MODELO: CK"
+    },
+    {
+      "code": "TOMMY1",
+      "qualityName": "JEANS P - CORTE/MODELO: TOMMY",
+      "systemQuality": "JEANS P - CORTE/MODELO: TOMMY",
+      "productName": "JEANS P",
+      "variantName": "CORTE/MODELO: TOMMY"
+    },
+    {
+      "code": "CMK2",
+      "qualityName": "JEANS P - CORTE/MODELO: MK",
+      "systemQuality": "JEANS P - CORTE/MODELO: MK",
+      "productName": "JEANS P",
+      "variantName": "CORTE/MODELO: MK"
+    },
+    {
+      "code": "CAE511",
+      "qualityName": "JEANS P - CORTE/MODELO: AE511",
+      "systemQuality": "JEANS P - CORTE/MODELO: AE511",
+      "productName": "JEANS P",
+      "variantName": "CORTE/MODELO: AE511"
+    },
+    {
+      "code": "CAETLS",
+      "qualityName": "JEANS P - CORTE/MODELO: AE AT LOOSE",
+      "systemQuality": "JEANS P - CORTE/MODELO: AE AT LOOSE",
+      "productName": "JEANS P",
+      "variantName": "CORTE/MODELO: AE AT LOOSE"
+    },
+    {
+      "code": "CAE2BTT",
+      "qualityName": "JEANS P - CORTE/MODELO: AE BOOTCOT",
+      "systemQuality": "JEANS P - CORTE/MODELO: AE BOOTCOT",
+      "productName": "JEANS P",
+      "variantName": "CORTE/MODELO: AE BOOTCOT"
+    },
+    {
+      "code": "CAEST",
+      "qualityName": "JEANS P - CORTE/MODELO: AE STRIGHT",
+      "systemQuality": "JEANS P - CORTE/MODELO: AE STRIGHT",
+      "productName": "JEANS P",
+      "variantName": "CORTE/MODELO: AE STRIGHT"
+    },
+    {
+      "code": "HOLLISTER",
+      "qualityName": "JEANS P - CORTE/MODELO: HOLLISTER",
+      "systemQuality": "JEANS P - CORTE/MODELO: HOLLISTER",
+      "productName": "JEANS P",
+      "variantName": "CORTE/MODELO: HOLLISTER"
+    },
+    {
+      "code": "ABERCROMBIE",
+      "qualityName": "JEANS P - CORTE/MODELO: ABERCROMBIE",
+      "systemQuality": "JEANS P - CORTE/MODELO: ABERCROMBIE",
+      "productName": "JEANS P",
+      "variantName": "CORTE/MODELO: ABERCROMBIE"
+    },
+    {
+      "code": "DIESEL",
+      "qualityName": "JEANS P - CORTE/MODELO: DIESEL",
+      "systemQuality": "JEANS P - CORTE/MODELO: DIESEL",
+      "productName": "JEANS P",
+      "variantName": "CORTE/MODELO: DIESEL"
+    },
+    {
+      "code": "AEROPOSTAL",
+      "qualityName": "JEANS P - CORTE/MODELO: AEROPOSTALL",
+      "systemQuality": "JEANS P - CORTE/MODELO: AEROPOSTALL",
+      "productName": "JEANS P",
+      "variantName": "CORTE/MODELO: AEROPOSTALL"
+    },
+    {
+      "code": "HOLLISTERD",
+      "qualityName": "JEANS P - CORTE/MODELO: DAMA HOLLISTER",
+      "systemQuality": "JEANS P - CORTE/MODELO: DAMA HOLLISTER",
+      "productName": "JEANS P",
+      "variantName": "CORTE/MODELO: DAMA HOLLISTER"
+    },
+    {
+      "code": "CAEJN03",
+      "qualityName": "JEANS P - CORTE/MODELO: AE CABALLERO",
+      "systemQuality": "JEANS P - CORTE/MODELO: AE CABALLERO",
+      "productName": "JEANS P",
+      "variantName": "CORTE/MODELO: AE CABALLERO"
+    },
+    {
+      "code": "DAEJN03",
+      "qualityName": "JEANS P - CORTE/MODELO: AE DAMA",
+      "systemQuality": "JEANS P - CORTE/MODELO: AE DAMA",
+      "productName": "JEANS P",
+      "variantName": "CORTE/MODELO: AE DAMA"
+    },
+    {
+      "code": "DJNGS03",
+      "qualityName": "JEANS P - CORTE/MODELO: GUESS",
+      "systemQuality": "JEANS P - CORTE/MODELO: GUESS",
+      "productName": "JEANS P",
+      "variantName": "CORTE/MODELO: GUESS"
+    },
+    {
+      "code": "CAE3SK03",
+      "qualityName": "JEANS P - CORTE/MODELO: AE AT SKINNY",
+      "systemQuality": "JEANS P - CORTE/MODELO: AE AT SKINNY",
+      "productName": "JEANS P",
+      "variantName": "CORTE/MODELO: AE AT SKINNY"
+    },
+    {
+      "code": "DAEDDBWL",
+      "qualityName": "JEANS P - CORTE/MODELO: AE DREAMY DRAPE BAGGY WIDE LEG",
+      "systemQuality": "JEANS P - CORTE/MODELO: AE DREAMY DRAPE BAGGY WIDE LEG",
+      "productName": "JEANS P",
+      "variantName": "CORTE/MODELO: AE DREAMY DRAPE BAGGY WIDE LEG"
+    },
+    {
+      "code": "TRUEREL",
+      "qualityName": "JEANS TR",
+      "systemQuality": "JEANS TR",
+      "productName": "JEANS TR",
+      "variantName": ""
+    },
+    {
+      "code": "STUCHY",
+      "qualityName": "JEANS W - CORTE/MODELO: STUCHY",
+      "systemQuality": "JEANS W - CORTE/MODELO: STUCHY",
+      "productName": "JEANS W",
+      "variantName": "CORTE/MODELO: STUCHY"
+    },
+    {
+      "code": "POLO",
+      "qualityName": "JEANS W - CORTE/MODELO: POLO",
+      "systemQuality": "JEANS W - CORTE/MODELO: POLO",
+      "productName": "JEANS W",
+      "variantName": "CORTE/MODELO: POLO"
+    },
+    {
+      "code": "MONKEY",
+      "qualityName": "JEANS W - CORTE/MODELO: MONKEY",
+      "systemQuality": "JEANS W - CORTE/MODELO: MONKEY",
+      "productName": "JEANS W",
+      "variantName": "CORTE/MODELO: MONKEY"
+    },
+    {
+      "code": "LOLA",
+      "qualityName": "JEANS W - CORTE/MODELO: LOLA",
+      "systemQuality": "JEANS W - CORTE/MODELO: LOLA",
+      "productName": "JEANS W",
+      "variantName": "CORTE/MODELO: LOLA"
+    },
+    {
+      "code": "BOGOTA",
+      "qualityName": "JEANS W - CORTE/MODELO: COLOMBIANO",
+      "systemQuality": "JEANS W - CORTE/MODELO: COLOMBIANO",
+      "productName": "JEANS W",
+      "variantName": "CORTE/MODELO: COLOMBIANO"
+    },
+    {
+      "code": "00DS",
+      "qualityName": "JEANS W - CORTE/MODELO: DS",
+      "systemQuality": "JEANS W - CORTE/MODELO: DS",
+      "productName": "JEANS W",
+      "variantName": "CORTE/MODELO: DS"
+    },
+    {
+      "code": "WSTRAIHGT",
+      "qualityName": "JEANS W - CORTE/MODELO: STRIGHT",
+      "systemQuality": "JEANS W - CORTE/MODELO: STRIGHT",
+      "productName": "JEANS W",
+      "variantName": "CORTE/MODELO: STRIGHT"
+    },
+    {
+      "code": "AM&CO",
+      "qualityName": "JEANS W - CORTE/MODELO: AM&CO",
+      "systemQuality": "JEANS W - CORTE/MODELO: AM&CO",
+      "productName": "JEANS W",
+      "variantName": "CORTE/MODELO: AM&CO"
+    },
+    {
+      "code": "DPYLC09",
+      "qualityName": "PIMA",
+      "systemQuality": "PIMA",
+      "productName": "PIMA",
+      "variantName": ""
+    },
+    {
+      "code": "DPYCK03",
+      "qualityName": "PLAYERAS - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "DPYCK08",
+      "qualityName": "PLAYERAS - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: MANGA LARGA"
+    },
+    {
+      "code": "DPYCK07",
+      "qualityName": "PLAYERAS - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: OVER",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: OVER",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: OVER"
+    },
+    {
+      "code": "CPYCK03",
+      "qualityName": "PLAYERAS - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "CPYCK08",
+      "qualityName": "PLAYERAS - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: MANGA LARGA"
+    },
+    {
+      "code": "CPYCK07",
+      "qualityName": "PLAYERAS - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: OVER",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: OVER",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: OVER"
+    },
+    {
+      "code": "DPYMK03",
+      "qualityName": "PLAYERAS - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "DPYMK08",
+      "qualityName": "PLAYERAS - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: MANGA LARGA"
+    },
+    {
+      "code": "DPYMK07",
+      "qualityName": "PLAYERAS - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: OVER",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: OVER",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: OVER"
+    },
+    {
+      "code": "CPYMK03",
+      "qualityName": "PLAYERAS - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "CPYMK08",
+      "qualityName": "PLAYERAS - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: MANGA LARGA"
+    },
+    {
+      "code": "CPYMK07",
+      "qualityName": "PLAYERAS - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: OVER",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: OVER",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: OVER"
+    },
+    {
+      "code": "CPYBS04",
+      "qualityName": "PLAYERAS - CORTE/MODELO: BOSS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: BOSS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: BOSS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX"
+    },
+    {
+      "code": "DPYLV02",
+      "qualityName": "PLAYERAS - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: LINEA"
+    },
+    {
+      "code": "DPYLV03",
+      "qualityName": "PLAYERAS - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "DPYLV08",
+      "qualityName": "PLAYERAS - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: MANGA LARGA"
+    },
+    {
+      "code": "DPYLV07",
+      "qualityName": "PLAYERAS - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: OVER",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: OVER",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: OVER"
+    },
+    {
+      "code": "CPYLV02",
+      "qualityName": "PLAYERAS - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: LINEA"
+    },
+    {
+      "code": "CPYLV03",
+      "qualityName": "PLAYERAS - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "CPYLV08",
+      "qualityName": "PLAYERAS - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: MANGA LARGA"
+    },
+    {
+      "code": "CPYLV07",
+      "qualityName": "PLAYERAS - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: OVER",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: OVER",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: OVER"
+    },
+    {
+      "code": "DPYTB03",
+      "qualityName": "PLAYERAS - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "DPYTB08",
+      "qualityName": "PLAYERAS - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: MANGA LARGA"
+    },
+    {
+      "code": "DPYTB07",
+      "qualityName": "PLAYERAS - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: OVER",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: OVER",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: OVER"
+    },
+    {
+      "code": "CPYTB03",
+      "qualityName": "PLAYERAS - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "CPYTB08",
+      "qualityName": "PLAYERAS - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: MANGA LARGA"
+    },
+    {
+      "code": "CPYTB07",
+      "qualityName": "PLAYERAS - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: OVER",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: OVER",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: OVER"
+    },
+    {
+      "code": "CPYPB04",
+      "qualityName": "PLAYERAS - CORTE/MODELO: PSYCHO BUNNY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: PSYCHO BUNNY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: PSYCHO BUNNY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: DELUX"
+    },
+    {
+      "code": "DPYBB03",
+      "qualityName": "PLAYERAS - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "DPYBB08",
+      "qualityName": "PLAYERAS - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: MANGA LARGA"
+    },
+    {
+      "code": "DPYBB07",
+      "qualityName": "PLAYERAS - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: OVER",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: OVER",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA - FIT, GENERO,CALIDAD: OVER"
+    },
+    {
+      "code": "CPYBB03",
+      "qualityName": "PLAYERAS - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "CPYBB08",
+      "qualityName": "PLAYERAS - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: MANGA LARGA"
+    },
+    {
+      "code": "CPYBB07",
+      "qualityName": "PLAYERAS - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: OVER",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: OVER",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: OVER"
+    },
+    {
+      "code": "CPYGY03",
+      "qualityName": "PLAYERAS - CORTE/MODELO: GEVY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: GEVY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: GEVY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "CPYGV08",
+      "qualityName": "PLAYERAS - CORTE/MODELO: GEVY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: GEVY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: MANGA LARGA",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: GEVY - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: MANGA LARGA"
+    },
+    {
+      "code": "CPYNC03",
+      "qualityName": "PLAYERAS - CORTE/MODELO: NAUTICA - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "systemQuality": "PLAYERAS - CORTE/MODELO: NAUTICA - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM",
+      "productName": "PLAYERAS",
+      "variantName": "CORTE/MODELO: NAUTICA - FIT, GENERO,CALIDAD: CABALLERO - FIT, GENERO,CALIDAD: PREMIUM"
+    },
+    {
+      "code": "CPOLV00",
+      "qualityName": "POLO - CORTE/MODELO: LEVIS",
+      "systemQuality": "POLO - CORTE/MODELO: LEVIS",
+      "productName": "POLO",
+      "variantName": "CORTE/MODELO: LEVIS"
+    },
+    {
+      "code": "CPOCK00",
+      "qualityName": "POLO - CORTE/MODELO: CK",
+      "systemQuality": "POLO - CORTE/MODELO: CK",
+      "productName": "POLO",
+      "variantName": "CORTE/MODELO: CK"
+    },
+    {
+      "code": "CPOMK00",
+      "qualityName": "POLO - CORTE/MODELO: MK",
+      "systemQuality": "POLO - CORTE/MODELO: MK",
+      "productName": "POLO",
+      "variantName": "CORTE/MODELO: MK"
+    },
+    {
+      "code": "CPOTB00",
+      "qualityName": "POLO - CORTE/MODELO: TIMBERLAND",
+      "systemQuality": "POLO - CORTE/MODELO: TIMBERLAND",
+      "productName": "POLO",
+      "variantName": "CORTE/MODELO: TIMBERLAND"
+    },
+    {
+      "code": "CPOTH04",
+      "qualityName": "POLO - CORTE/MODELO: TOMMY",
+      "systemQuality": "POLO - CORTE/MODELO: TOMMY",
+      "productName": "POLO",
+      "variantName": "CORTE/MODELO: TOMMY"
+    },
+    {
+      "code": "0412",
+      "qualityName": "SHORT - CORTE/MODELO: 412",
+      "systemQuality": "SHORT - CORTE/MODELO: 412",
+      "productName": "SHORT",
+      "variantName": "CORTE/MODELO: 412"
+    },
+    {
+      "code": "0468",
+      "qualityName": "SHORT - CORTE/MODELO: 468",
+      "systemQuality": "SHORT - CORTE/MODELO: 468",
+      "productName": "SHORT",
+      "variantName": "CORTE/MODELO: 468"
+    },
+    {
+      "code": "CSHMK00",
+      "qualityName": "SHORT - CORTE/MODELO: MK",
+      "systemQuality": "SHORT - CORTE/MODELO: MK",
+      "productName": "SHORT",
+      "variantName": "CORTE/MODELO: MK"
+    },
+    {
+      "code": "CSHAE00",
+      "qualityName": "SHORT - CORTE/MODELO: AE",
+      "systemQuality": "SHORT - CORTE/MODELO: AE",
+      "productName": "SHORT",
+      "variantName": "CORTE/MODELO: AE"
+    },
+    {
+      "code": "CSHCK00",
+      "qualityName": "SHORT - CORTE/MODELO: CK",
+      "systemQuality": "SHORT - CORTE/MODELO: CK",
+      "productName": "SHORT",
+      "variantName": "CORTE/MODELO: CK"
+    },
+    {
+      "code": "CSHLV00",
+      "qualityName": "SHORT - CORTE/MODELO: LEVIS",
+      "systemQuality": "SHORT - CORTE/MODELO: LEVIS",
+      "productName": "SHORT",
+      "variantName": "CORTE/MODELO: LEVIS"
+    },
+    {
+      "code": "CSHTB00",
+      "qualityName": "SHORT - CORTE/MODELO: TIMBERLAND",
+      "systemQuality": "SHORT - CORTE/MODELO: TIMBERLAND",
+      "productName": "SHORT",
+      "variantName": "CORTE/MODELO: TIMBERLAND"
+    },
+    {
+      "code": "AESHORT",
+      "qualityName": "SHORT - CORTE/MODELO: PRO AE",
+      "systemQuality": "SHORT - CORTE/MODELO: PRO AE",
+      "productName": "SHORT",
+      "variantName": "CORTE/MODELO: PRO AE"
+    },
+    {
+      "code": "CSDLV00",
+      "qualityName": "SUDADERA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO",
+      "systemQuality": "SUDADERA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO",
+      "productName": "SUDADERA",
+      "variantName": "CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: CABALLERO"
+    },
+    {
+      "code": "DSDLV00",
+      "qualityName": "SUDADERA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA",
+      "systemQuality": "SUDADERA - CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA",
+      "productName": "SUDADERA",
+      "variantName": "CORTE/MODELO: LEVIS - FIT, GENERO,CALIDAD: DAMA"
+    },
+    {
+      "code": "CSDTB00",
+      "qualityName": "SUDADERA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO",
+      "systemQuality": "SUDADERA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO",
+      "productName": "SUDADERA",
+      "variantName": "CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: CABALLERO"
+    },
+    {
+      "code": "DSDTB00",
+      "qualityName": "SUDADERA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA",
+      "systemQuality": "SUDADERA - CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA",
+      "productName": "SUDADERA",
+      "variantName": "CORTE/MODELO: TIMBERLAND - FIT, GENERO,CALIDAD: DAMA"
+    },
+    {
+      "code": "CSDBB00",
+      "qualityName": "SUDADERA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO",
+      "systemQuality": "SUDADERA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO",
+      "productName": "SUDADERA",
+      "variantName": "CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: CABALLERO"
+    },
+    {
+      "code": "DSDBB00",
+      "qualityName": "SUDADERA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA",
+      "systemQuality": "SUDADERA - CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA",
+      "productName": "SUDADERA",
+      "variantName": "CORTE/MODELO: BURBERRY - FIT, GENERO,CALIDAD: DAMA"
+    },
+    {
+      "code": "CSDCK00",
+      "qualityName": "SUDADERA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO",
+      "systemQuality": "SUDADERA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO",
+      "productName": "SUDADERA",
+      "variantName": "CORTE/MODELO: CK - FIT, GENERO,CALIDAD: CABALLERO"
+    },
+    {
+      "code": "DSDCK00",
+      "qualityName": "SUDADERA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA",
+      "systemQuality": "SUDADERA - CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA",
+      "productName": "SUDADERA",
+      "variantName": "CORTE/MODELO: CK - FIT, GENERO,CALIDAD: DAMA"
+    },
+    {
+      "code": "CSDMK00",
+      "qualityName": "SUDADERA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO",
+      "systemQuality": "SUDADERA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO",
+      "productName": "SUDADERA",
+      "variantName": "CORTE/MODELO: MK - FIT, GENERO,CALIDAD: CABALLERO"
+    },
+    {
+      "code": "DSDMK00",
+      "qualityName": "SUDADERA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA",
+      "systemQuality": "SUDADERA - CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA",
+      "productName": "SUDADERA",
+      "variantName": "CORTE/MODELO: MK - FIT, GENERO,CALIDAD: DAMA"
+    },
+    {
+      "code": "DSUAE00",
+      "qualityName": "SUETER - CORTE/MODELO: AE DAMA",
+      "systemQuality": "SUETER - CORTE/MODELO: AE DAMA",
+      "productName": "SUETER",
+      "variantName": "CORTE/MODELO: AE DAMA"
+    },
+    {
+      "code": "CSUBS00",
+      "qualityName": "SUETER - CORTE/MODELO: BOSS",
+      "systemQuality": "SUETER - CORTE/MODELO: BOSS",
+      "productName": "SUETER",
+      "variantName": "CORTE/MODELO: BOSS"
+    },
+    {
+      "code": "DSULV00",
+      "qualityName": "SUETER - CORTE/MODELO: LEVIS",
+      "systemQuality": "SUETER - CORTE/MODELO: LEVIS",
+      "productName": "SUETER",
+      "variantName": "CORTE/MODELO: LEVIS"
+    },
+    {
+      "code": "CSUMK00",
+      "qualityName": "SUETER - CORTE/MODELO: MK",
+      "systemQuality": "SUETER - CORTE/MODELO: MK",
+      "productName": "SUETER",
+      "variantName": "CORTE/MODELO: MK"
+    },
+    {
+      "code": "CSUTH00",
+      "qualityName": "SUETER - CORTE/MODELO: TOMMY",
+      "systemQuality": "SUETER - CORTE/MODELO: TOMMY",
+      "productName": "SUETER",
+      "variantName": "CORTE/MODELO: TOMMY"
+    },
+    {
+      "code": "CSUBB00",
+      "qualityName": "SUETER - CORTE/MODELO: BURBERRY",
+      "systemQuality": "SUETER - CORTE/MODELO: BURBERRY",
+      "productName": "SUETER",
+      "variantName": "CORTE/MODELO: BURBERRY"
+    },
+    {
+      "code": "CSUCK00",
+      "qualityName": "SUETER - CORTE/MODELO: CK",
+      "systemQuality": "SUETER - CORTE/MODELO: CK",
+      "productName": "SUETER",
+      "variantName": "CORTE/MODELO: CK"
     }
   ],
-  "expectedByQuality": {
-    "AM&CO": {
-      "elite": 0,
-      "lineas-originales": 6,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 20,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "BOLSA": {
+  "expectedByProduct": {
+    "0BLLV00": {
       "elite": 0,
       "lineas-originales": 0,
       "club-jeans": 0,
@@ -1339,25 +1773,7 @@ window.INVENTORY_DATA = {
       "zapotlanejo": 0,
       "denim-click": 0
     },
-    "BOLSA DELUX": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": -1,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "BOLSA ECO": {
-      "elite": 0,
-      "lineas-originales": 1,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "BOLSA LINEA": {
+    "0BLSM04": {
       "elite": 0,
       "lineas-originales": 0,
       "club-jeans": 0,
@@ -1366,8 +1782,8 @@ window.INVENTORY_DATA = {
       "zapotlanejo": 0,
       "denim-click": 0
     },
-    "BOLSA PREMIUM": {
-      "elite": 13,
+    "0BLSM01": {
+      "elite": 0,
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
@@ -1375,70 +1791,43 @@ window.INVENTORY_DATA = {
       "zapotlanejo": 0,
       "denim-click": 0
     },
-    "BORREGA SM": {
+    "0BLSM02": {
       "elite": 0,
       "lineas-originales": 0,
       "club-jeans": 0,
-      "miguel-aleman": 1,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0BLSM03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "BORREGASM": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
       "almacen-general": 4,
       "zapotlanejo": 0,
       "denim-click": 0
     },
-    "C PRIME": {
-      "elite": 44,
-      "lineas-originales": 21,
-      "club-jeans": 8,
-      "miguel-aleman": 32,
-      "almacen-general": 139,
-      "zapotlanejo": 0,
-      "denim-click": 69
-    },
-    "C PRO DELUX": {
-      "elite": 31,
-      "lineas-originales": 23,
-      "club-jeans": 0,
-      "miguel-aleman": 9,
-      "almacen-general": 45,
-      "zapotlanejo": 0,
-      "denim-click": 30
-    },
-    "CAMISA": {
-      "elite": 0,
-      "lineas-originales": 33,
-      "club-jeans": 1,
-      "miguel-aleman": 4,
-      "almacen-general": 21,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "CAMISA BURBERRY": {
+    "CHALECOSM": {
       "elite": 0,
       "lineas-originales": 0,
       "club-jeans": 0,
-      "miguel-aleman": 10,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 3
-    },
-    "CAMISA OAKTREE": {
-      "elite": 32,
-      "lineas-originales": 16,
-      "club-jeans": 4,
-      "miguel-aleman": 28,
-      "almacen-general": 93,
-      "zapotlanejo": 0,
-      "denim-click": 25
-    },
-    "CAMISA SM": {
-      "elite": 0,
-      "lineas-originales": 20,
-      "club-jeans": 0,
-      "miguel-aleman": 3,
-      "almacen-general": 11,
+      "miguel-aleman": 0,
+      "almacen-general": 2,
       "zapotlanejo": 0,
       "denim-click": 0
     },
-    "CAP L SM": {
+    "CAPSM": {
       "elite": 0,
       "lineas-originales": 0,
       "club-jeans": 0,
@@ -1447,332 +1836,53 @@ window.INVENTORY_DATA = {
       "zapotlanejo": 0,
       "denim-click": 0
     },
-    "CHALECO SM": {
+    "NFLDLX": {
       "elite": 0,
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 2,
+      "almacen-general": 34,
       "zapotlanejo": 0,
       "denim-click": 0
     },
-    "CHAMARRA CAPITONADA DELUX": {
-      "elite": 7,
-      "lineas-originales": 13,
-      "club-jeans": 3,
-      "miguel-aleman": 45,
-      "almacen-general": 82,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "CHAMARRA CAPITONADA ECO": {
+    "NFLP": {
       "elite": 0,
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 0,
+      "almacen-general": 13,
       "zapotlanejo": 0,
       "denim-click": 0
     },
-    "CHAMARRA CAPITONADA LINEA": {
-      "elite": 2,
-      "lineas-originales": 17,
-      "club-jeans": 9,
-      "miguel-aleman": 75,
-      "almacen-general": 244,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "CHAMARRA CAPITONADA PREMIUM": {
-      "elite": 14,
-      "lineas-originales": 58,
-      "club-jeans": 20,
-      "miguel-aleman": 149,
-      "almacen-general": 331,
-      "zapotlanejo": 0,
-      "denim-click": 3
-    },
-    "CHAMARRA LINEA": {
-      "elite": 23,
-      "lineas-originales": 41,
-      "club-jeans": 48,
-      "miguel-aleman": 67,
-      "almacen-general": 344,
-      "zapotlanejo": 0,
-      "denim-click": 43
-    },
-    "CHAMARRA P": {
-      "elite": 2,
-      "lineas-originales": 1,
-      "club-jeans": -1,
-      "miguel-aleman": 17,
-      "almacen-general": 23,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "CHAMARRA W": {
+    "CHMW": {
       "elite": 0,
       "lineas-originales": 0,
-      "club-jeans": 3,
+      "club-jeans": 0,
       "miguel-aleman": 0,
       "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
-    "COLOMBIANO": {
-      "elite": 19,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 1,
-      "almacen-general": 116,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "D PRIME": {
-      "elite": 10,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 8,
-      "almacen-general": 65,
-      "zapotlanejo": 0,
-      "denim-click": 15
-    },
-    "DS": {
-      "elite": 5,
-      "lineas-originales": 5,
-      "club-jeans": 0,
-      "miguel-aleman": 58,
-      "almacen-general": 42,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "JEANS DELUX": {
-      "elite": 35,
-      "lineas-originales": 116,
-      "club-jeans": 30,
-      "miguel-aleman": 102,
-      "almacen-general": 951,
-      "zapotlanejo": 0,
-      "denim-click": 29
-    },
-    "JEANS KID": {
-      "elite": 7,
-      "lineas-originales": 51,
-      "club-jeans": 6,
-      "miguel-aleman": 63,
-      "almacen-general": 416,
-      "zapotlanejo": 0,
-      "denim-click": 7
-    },
-    "JEANS LINEA": {
-      "elite": 442,
-      "lineas-originales": 1773,
-      "club-jeans": 378,
-      "miguel-aleman": 1344,
-      "almacen-general": 11612,
-      "zapotlanejo": 0,
-      "denim-click": 446
-    },
-    "JEANS PREMIUM": {
-      "elite": 139,
-      "lineas-originales": 388,
-      "club-jeans": 61,
-      "miguel-aleman": 396,
-      "almacen-general": 3480,
-      "zapotlanejo": 0,
-      "denim-click": 177
-    },
-    "JEANS PREMIUM DAMA": {
-      "elite": 12,
-      "lineas-originales": 68,
-      "club-jeans": 19,
-      "miguel-aleman": 39,
-      "almacen-general": 642,
-      "zapotlanejo": 0,
-      "denim-click": 15
-    },
-    "JEANS SHERMAN": {
+    "CDPRO": {
       "elite": 0,
-      "lineas-originales": 37,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 17,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "SHERMAN": {
+      "elite": 0,
+      "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
       "almacen-general": 16,
       "zapotlanejo": 0,
       "denim-click": 0
     },
-    "LOLA": {
-      "elite": 12,
-      "lineas-originales": 22,
-      "club-jeans": 0,
-      "miguel-aleman": 46,
-      "almacen-general": 101,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "MONKEY": {
-      "elite": 19,
-      "lineas-originales": 28,
-      "club-jeans": 13,
-      "miguel-aleman": 30,
-      "almacen-general": 570,
-      "zapotlanejo": 0,
-      "denim-click": 58
-    },
-    "NFL DLX": {
+    "PYOVERSM": {
       "elite": 0,
-      "lineas-originales": 7,
-      "club-jeans": 0,
-      "miguel-aleman": 155,
-      "almacen-general": 34,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "NFL P": {
-      "elite": 0,
-      "lineas-originales": 3,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 14,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "OVER SM": {
-      "elite": 0,
-      "lineas-originales": 2,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "PLAYERA DELUX": {
-      "elite": 162,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 605,
-      "zapotlanejo": 0,
-      "denim-click": 88
-    },
-    "PLAYERA KID": {
-      "elite": 49,
-      "lineas-originales": 68,
-      "club-jeans": 38,
-      "miguel-aleman": 206,
-      "almacen-general": 524,
-      "zapotlanejo": 0,
-      "denim-click": 3
-    },
-    "PLAYERA LINEA": {
-      "elite": 16,
-      "lineas-originales": 4,
-      "club-jeans": 7,
-      "miguel-aleman": 92,
-      "almacen-general": 77,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "PLAYERA MANGA LARGA": {
-      "elite": 6,
-      "lineas-originales": 20,
-      "club-jeans": 15,
-      "miguel-aleman": 32,
-      "almacen-general": 36,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "PLAYERA MANGA LARGA W": {
-      "elite": 9,
-      "lineas-originales": 3,
-      "club-jeans": 31,
-      "miguel-aleman": 0,
-      "almacen-general": 235,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "PLAYERA OVER": {
-      "elite": 0,
-      "lineas-originales": -1,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "PLAYERA PREMIUM": {
-      "elite": 337,
-      "lineas-originales": 1388,
-      "club-jeans": 799,
-      "miguel-aleman": 2104,
-      "almacen-general": 3409,
-      "zapotlanejo": 0,
-      "denim-click": 352
-    },
-    "PLAYERA SM": {
-      "elite": 0,
-      "lineas-originales": 54,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 2,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "PLAYERA TIPO SUETER": {
-      "elite": 6,
-      "lineas-originales": 1,
-      "club-jeans": 7,
-      "miguel-aleman": 17,
-      "almacen-general": 2,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "POLO": {
-      "elite": 12,
-      "lineas-originales": 1,
-      "club-jeans": 0,
-      "miguel-aleman": 13,
-      "almacen-general": 32,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "POLO DELUX": {
-      "elite": 7,
-      "lineas-originales": 9,
-      "club-jeans": 5,
-      "miguel-aleman": 7,
-      "almacen-general": 31,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "POLO SM": {
-      "elite": 3,
-      "lineas-originales": 15,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 45,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "SHORT CABALLERO": {
-      "elite": 19,
-      "lineas-originales": 89,
-      "club-jeans": 19,
-      "miguel-aleman": 49,
-      "almacen-general": 577,
-      "zapotlanejo": 0,
-      "denim-click": 42
-    },
-    "SHORT DAMA": {
-      "elite": 20,
-      "lineas-originales": 80,
-      "club-jeans": 0,
-      "miguel-aleman": 21,
-      "almacen-general": 174,
-      "zapotlanejo": 0,
-      "denim-click": 0
-    },
-    "SHORT MARCAS": {
-      "elite": 2,
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
@@ -1780,25 +1890,529 @@ window.INVENTORY_DATA = {
       "zapotlanejo": 0,
       "denim-click": 0
     },
-    "SHORT POLO": {
-      "elite": 3,
-      "lineas-originales": -1,
+    "KPYLV00": {
+      "elite": 0,
+      "lineas-originales": 0,
       "club-jeans": 0,
-      "miguel-aleman": 1,
+      "miguel-aleman": 0,
+      "almacen-general": 482,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "PYSM": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 111,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "POLOSM": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 47,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYSUMK": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 2,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DSHTR00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 154,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "SHPOLO": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
       "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
-    "SHORT PRO": {
-      "elite": 11,
-      "lineas-originales": 45,
-      "club-jeans": 9,
-      "miguel-aleman": 21,
+    "SUDSM": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 6,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CJNCK05": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CJNTH05": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CJNMK05": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 2,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CJNBS05": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 67,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CJNAE05": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CJNLV05": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 4,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CJNTB05": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 2,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCALV00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 21,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCABB00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "OAKTREE": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 93,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CAMSM": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 11,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCABS03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
       "almacen-general": 18,
       "zapotlanejo": 0,
       "denim-click": 0
     },
-    "SUD SM": {
+    "CCCTH01": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCTH02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCTH03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 255,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCTH04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCAE01": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCAE02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCAE03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 126,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCAE04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 4,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCBS01": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCBS02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCBS03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCBS04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCTB01": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCTB02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCTB03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 6,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCTB04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCTB01": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCTB02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 7,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCTB03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCTB04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCLV01": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCLV02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 6,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCLV03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 6,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCLV04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCLV01": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCLV02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 33,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCLV03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 17,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCLV04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 10,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCCK01": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCCK02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCCK03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 32,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCCK04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 2,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCCK01": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCCK02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCCK03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 11,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCCK04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 35,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCMK01": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCMK02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 104,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCMK03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 40,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCMK04": {
       "elite": 0,
       "lineas-originales": 0,
       "club-jeans": 0,
@@ -1807,50 +2421,1554 @@ window.INVENTORY_DATA = {
       "zapotlanejo": 0,
       "denim-click": 0
     },
-    "SUDADERA": {
-      "elite": 19,
-      "lineas-originales": 24,
-      "club-jeans": 17,
-      "miguel-aleman": 25,
-      "almacen-general": 120,
-      "zapotlanejo": 0,
-      "denim-click": 22
-    },
-    "SUETER": {
-      "elite": 9,
-      "lineas-originales": 22,
-      "club-jeans": 10,
-      "miguel-aleman": 74,
-      "almacen-general": 269,
-      "zapotlanejo": 0,
-      "denim-click": 14
-    },
-    "TRUE RELIGION": {
-      "elite": 4,
-      "lineas-originales": 4,
-      "club-jeans": 1,
+    "CCCMK01": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
       "miguel-aleman": 0,
       "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
-    "W STRAIGHT": {
-      "elite": 4,
+    "CCCMK02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 4,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCMK03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCMK04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCBB01": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCBB02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCBB03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCBB04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCBB01": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCBB02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCBB03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 3,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCCBB04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCTH01": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCTH02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 12,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCTH03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCTH04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCAE01": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCAE02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCAE03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCCAE04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCMLV02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 146,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCMLV02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 204,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DCMLV03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 13,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCMLV03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 10,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DJNLV05": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DJNCK05": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 20,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DJNTH05": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DJNMK05": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DJNAE05": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DJNTB05": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 44,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "501B": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "505B": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "510B": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "511B": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "512B": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "513B": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "514B": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 67,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CBOSS": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 107,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CAERST": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 6,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "LP04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 569,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CAEATSK": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 135,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CAE3511": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 289,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "TOMMY2": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 5,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0004": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DAEJ": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DAEFIAR": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 21,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DAEJN04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CAEJN04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 28,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "KID511": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 172,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "KID510": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 56,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0005": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 131,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "LPKID": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0501": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1181,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0505": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 622,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0510": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 157,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0511": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1626,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0512": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 105,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0513": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 630,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0514": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 667,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0555": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1399,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0578": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 427,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0728": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 172,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0720": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 806,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0721": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 206,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0724": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 127,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DMH1": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 382,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "MOM501": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 147,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0725": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 500,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "MOMRB": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 89,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0D94": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 2,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "LP02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1403,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0002": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 940,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0710": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0311": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0519": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0559": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0003": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "LP03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1434,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CCK2SL": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 337,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "TOMMY1": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 3,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CMK2": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 24,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CAE511": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 453,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CAETLS": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 246,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CAE2BTT": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CAEST": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 224,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "HOLLISTER": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 23,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "ABERCROMBIE": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 10,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DIESEL": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 191,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "AEROPOSTAL": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 36,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "HOLLISTERD": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 121,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CAEJN03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DAEJN03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 254,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DJNGS03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 11,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CAE3SK03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DAEDDBWL": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "TRUEREL": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "STUCHY": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 11,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "POLO": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 8,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "MONKEY": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 486,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "LOLA": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 201,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "BOGOTA": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 10,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "00DS": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 84,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "WSTRAIHGT": {
+      "elite": 0,
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
       "almacen-general": 9,
       "zapotlanejo": 0,
-      "denim-click": 1
+      "denim-click": 0
     },
-    "WOMAN": {
-      "elite": 2,
-      "lineas-originales": 12,
-      "club-jeans": 2,
-      "miguel-aleman": 1,
+    "AMCO": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 20,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DPYLC09": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DPYCK03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 81,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DPYCK08": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 149,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DPYCK07": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYCK03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 448,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYCK08": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYCK07": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DPYMK03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 17,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DPYMK08": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DPYMK07": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYMK03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 118,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYMK08": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYMK07": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYBS04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 429,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DPYLV02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 47,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DPYLV03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 159,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DPYLV08": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DPYLV07": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYLV02": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 25,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYLV03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1043,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYLV08": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 16,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYLV07": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DPYTB03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 32,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DPYTB08": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DPYTB07": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYTB03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 257,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYTB08": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 18,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYTB07": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYPB04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 108,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DPYBB03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DPYBB08": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DPYBB07": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYBB03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 266,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYBB08": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYBB07": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYGY03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 28,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYGV08": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 7,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPYNC03": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 2,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPOLV00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPOCK00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 8,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPOMK00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 7,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPOTB00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CPOTH04": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 3,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0412": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 432,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "0468": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 172,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CSHMK00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CSHAE00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CSHCK00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CSHLV00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CSHTB00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "AESHORT": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 65,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CSDLV00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 18,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DSDLV00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 16,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CSDTB00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 18,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DSDTB00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CSDBB00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DSDBB00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CSDCK00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DSDCK00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 19,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CSDMK00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DSDMK00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DSUAE00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 85,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CSUBS00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 2,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "DSULV00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 52,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CSUMK00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CSUTH00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 1,
+      "zapotlanejo": 0,
+      "denim-click": 0
+    },
+    "CSUBB00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
       "almacen-general": 4,
       "zapotlanejo": 0,
       "denim-click": 0
+    },
+    "CSUCK00": {
+      "elite": 0,
+      "lineas-originales": 0,
+      "club-jeans": 0,
+      "miguel-aleman": 0,
+      "almacen-general": 0,
+      "zapotlanejo": 0,
+      "denim-click": 0
     }
-  }
+  },
+  "expectedByQuality": {}
 }

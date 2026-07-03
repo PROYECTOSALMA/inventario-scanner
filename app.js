@@ -2,7 +2,7 @@
   const data = window.INVENTORY_DATA
   const app = document.querySelector('#app')
   const supabaseClient = createSupabaseClient()
-  const stockStorageKey = 'inventario-scanner:stock-overrides:v1'
+  const stockStorageKey = 'inventario-scanner:stock-overrides:v2-products'
   const customCodesStorageKey = 'inventario-scanner:custom-codes:v1'
   const pendingFinalizedStorageKey = 'inventario-scanner:pending-finalized:v1'
   const pendingCustomCodesStorageKey = 'inventario-scanner:pending-custom-codes:v1'
@@ -652,8 +652,8 @@
     const input = app.querySelector('[data-qty-input]')
 
     app.querySelector('[data-sheet-code]').textContent = pendingScan.item.code
-    app.querySelector('[data-sheet-quality]').textContent = pendingScan.item.qualityName
-    app.querySelector('[data-sheet-system]').textContent = `Calidad sistema: ${pendingScan.item.systemQuality}`
+    app.querySelector('[data-sheet-quality]').textContent = productLabelForItem(pendingScan.item)
+    app.querySelector('[data-sheet-system]').textContent = pendingScan.item.variantName ? `Variante: ${pendingScan.item.variantName}` : 'Producto individual'
     app.querySelector('[data-sheet-current]').textContent = `Total actual: ${formatNumber(totalForCode(codeTotals, pendingScan.item.code))} pz`
     input.value = '1'
     setQtyError('')
@@ -706,7 +706,7 @@
     const item = getCatalogItem(movement.code)
     editingMovement = movement
     app.querySelector('[data-edit-code]').textContent = movement.code
-    app.querySelector('[data-edit-quality]').textContent = item ? item.qualityName : 'Codigo'
+    app.querySelector('[data-edit-quality]').textContent = item ? productLabelForItem(item) : 'Codigo'
     app.querySelector('[data-edit-input]').value = String(movement.quantity)
     app.querySelector('[data-edit-sheet]').hidden = false
     window.setTimeout(() => app.querySelector('[data-edit-input]').select(), 60)
@@ -738,7 +738,7 @@
     if (!movement) return
 
     const item = getCatalogItem(movement.code)
-    const label = item ? `${item.code} - ${item.qualityName}` : movement.code
+    const label = item ? `${item.code} - ${productLabelForItem(item)}` : movement.code
     if (!window.confirm(`Eliminar movimiento?\n${label}\n${movement.quantity} pz`)) return
 
     activeCount.movements = activeCount.movements.filter(item => item.id !== id)
@@ -806,7 +806,7 @@
           <thead>
             <tr>
               <th>Codigo</th>
-              <th>Nombre de la calidad</th>
+              <th>Producto</th>
               <th class="right">Total de pz</th>
             </tr>
           </thead>
@@ -814,7 +814,7 @@
             ${rows.map(row => `
               <tr>
                 <td class="mono">${escapeHtml(row.code)}</td>
-                <td>${escapeHtml(row.qualityName)}</td>
+                <td>${escapeHtml(row.productLabel)}</td>
                 <td class="right mono">${formatNumber(row.total)}</td>
               </tr>
             `).join('')}
@@ -831,7 +831,7 @@
         <table>
           <thead>
             <tr>
-              <th>Calidad</th>
+              <th>Producto</th>
               <th class="right">Conteo</th>
               <th class="right">Sistema</th>
               ${compact ? '' : '<th class="right">Faltante</th><th class="right">Sobrante</th>'}
@@ -841,7 +841,10 @@
           <tbody>
             ${rows.map(row => `
               <tr>
-                <td>${escapeHtml(row.quality)}</td>
+                <td>
+                  <strong class="mono">${escapeHtml(row.code)}</strong>
+                  <span>${escapeHtml(row.product)}</span>
+                </td>
                 <td class="right mono">${formatNumber(row.counted)}</td>
                 <td class="right">${formatNumber(row.expected)}</td>
                 ${compact ? '' : `<td class="right">${formatNumber(row.shortage)}</td><td class="right">${formatNumber(row.surplus)}</td>`}
@@ -869,7 +872,7 @@
               <span class="pill">${formatNumber(movement.quantity)} pz</span>
               ${movement.updatedAt ? '<span class="pill">corregido</span>' : ''}
             </div>
-            <p>${escapeHtml(item ? item.qualityName : 'Codigo no encontrado')}</p>
+            <p>${escapeHtml(item ? productLabelForItem(item) : 'Codigo no encontrado')}</p>
             <p>${formatTime(movement.createdAt)} - scan: ${escapeHtml(movement.rawScan)}</p>
           </div>
           ${readOnly ? '' : `
@@ -915,25 +918,39 @@
       code: item.code,
       qualityName: item.qualityName,
       systemQuality: item.systemQuality,
+      productLabel: productLabelForItem(item),
       total: totals.get(normalizeCode(item.code)) || 0,
     })).sort((a, b) => a.code.localeCompare(b.code, 'es-MX', { numeric: true }))
   }
 
   function buildComparisonTotals(codeTotals, storeSlug) {
-    const expectedByQuality = getExpectedByQualityForStore(storeSlug)
-    const qualities = new Set([
-      ...Object.keys(expectedByQuality),
-      ...catalogItems.map(item => item.systemQuality),
+    const expectedByProduct = getExpectedByProductForStore(storeSlug)
+    const productCodes = new Set([
+      ...Object.keys(expectedByProduct),
+      ...catalogItems.map(item => normalizeCode(item.code)),
     ])
     const counted = new Map()
-    codeTotals.forEach(row => counted.set(row.systemQuality, (counted.get(row.systemQuality) || 0) + row.total))
+    codeTotals.forEach(row => {
+      const code = normalizeCode(row.code)
+      counted.set(code, (counted.get(code) || 0) + row.total)
+    })
 
-    return Array.from(qualities).sort((a, b) => a.localeCompare(b)).map(quality => {
-      const countedPieces = counted.get(quality) || 0
-      const expected = Number(expectedByQuality[quality]) || 0
+    return Array.from(productCodes).sort((a, b) => {
+      const itemA = getCatalogItem(a)
+      const itemB = getCatalogItem(b)
+      const labelA = itemA ? productLabelForItem(itemA) : a
+      const labelB = itemB ? productLabelForItem(itemB) : b
+      return labelA.localeCompare(labelB, 'es-MX', { numeric: true })
+    }).map(code => {
+      const item = getCatalogItem(code)
+      const product = item ? productLabelForItem(item) : code
+      const countedPieces = counted.get(code) || 0
+      const expected = Number(expectedByProduct[code]) || 0
       const difference = countedPieces - expected
       return {
-        quality,
+        code: item ? item.code : code,
+        product,
+        quality: product,
         counted: countedPieces,
         expected,
         difference,
@@ -958,14 +975,18 @@
     }
   }
 
-  function getExpectedByQualityForStore(storeSlug) {
+  function getExpectedByProductForStore(storeSlug) {
     const override = stockOverrides[storeSlug]
+    if (override && override.expectedByProduct && typeof override.expectedByProduct === 'object') {
+      return normalizeProductStockObject(override.expectedByProduct)
+    }
     if (override && override.expectedByQuality && typeof override.expectedByQuality === 'object') {
-      return { ...override.expectedByQuality }
+      return normalizeProductStockObject(override.expectedByQuality)
     }
 
-    return Object.fromEntries(Object.entries(data.expectedByQuality).map(([quality, stores]) => [
-      quality,
+    const baseStock = data.expectedByProduct || {}
+    return Object.fromEntries(Object.entries(baseStock).map(([code, stores]) => [
+      normalizeCode(code),
       Number((stores || {})[storeSlug]) || 0,
     ]))
   }
@@ -982,7 +1003,7 @@
   }
 
   function totalStockForStore(storeSlug) {
-    return Object.values(getExpectedByQualityForStore(storeSlug)).reduce((sum, value) => sum + (Number(value) || 0), 0)
+    return Object.values(getExpectedByProductForStore(storeSlug)).reduce((sum, value) => sum + (Number(value) || 0), 0)
   }
 
   function filterMovements(rows) {
@@ -990,7 +1011,7 @@
     if (!query) return rows
     return rows.filter(movement => {
       const item = getCatalogItem(movement.code)
-      return normalizeSearch(`${movement.code} ${movement.rawScan} ${item ? item.qualityName : ''} ${item ? item.systemQuality : ''}`).includes(query)
+      return normalizeSearch(`${movement.code} ${movement.rawScan} ${item ? productLabelForItem(item) : ''} ${item ? item.variantName || '' : ''}`).includes(query)
     })
   }
 
@@ -1006,6 +1027,11 @@
 
   function getCatalogItem(code) {
     return catalogByCode.get(normalizeCode(code)) || null
+  }
+
+  function productLabelForItem(item) {
+    if (!item) return ''
+    return String(item.qualityName || item.productName || item.systemQuality || item.code || '').trim().toUpperCase()
   }
 
   function totalForCode(rows, code) {
@@ -1050,18 +1076,19 @@
 
       y = drawPdfTable(doc, 'Conteo por codigo', y, [
         { header: 'Codigo', width: 28, value: row => row.code },
-        { header: 'Nombre de la calidad', width: 132, value: row => row.qualityName },
+        { header: 'Producto', width: 132, value: row => row.productLabel || row.qualityName },
         { header: 'Total pz', width: 25, value: row => formatNumber(row.total), align: 'right' },
       ], count.codeTotals)
 
       y += 6
-      y = drawPdfTable(doc, 'Comparativo por calidad sistema', y, [
-        { header: 'Calidad', width: 58, value: row => row.quality },
-        { header: 'Conteo', width: 28, value: row => formatNumber(row.counted), align: 'right' },
-        { header: 'Sistema', width: 28, value: row => formatNumber(row.expected), align: 'right' },
-        { header: 'Faltante', width: 28, value: row => formatNumber(row.shortage), align: 'right' },
-        { header: 'Sobrante', width: 28, value: row => formatNumber(row.surplus), align: 'right' },
-        { header: 'Dif.', width: 20, value: row => signedNumber(row.difference), align: 'right' },
+      y = drawPdfTable(doc, 'Comparativo por producto', y, [
+        { header: 'Codigo', width: 24, value: row => row.code },
+        { header: 'Producto', width: 62, value: row => row.product || row.quality },
+        { header: 'Conteo', width: 24, value: row => formatNumber(row.counted), align: 'right' },
+        { header: 'Sistema', width: 24, value: row => formatNumber(row.expected), align: 'right' },
+        { header: 'Faltante', width: 22, value: row => formatNumber(row.shortage), align: 'right' },
+        { header: 'Sobrante', width: 22, value: row => formatNumber(row.surplus), align: 'right' },
+        { header: 'Dif.', width: 14, value: row => signedNumber(row.difference), align: 'right' },
       ], count.comparisonTotals)
 
       y += 6
@@ -1524,12 +1551,14 @@
   function applyRemoteStocks(rows) {
     rows.forEach(row => {
       if (!row || !row.store_slug || !row.expected_by_quality) return
+      const expectedByProduct = normalizeRemoteProductStock(row.expected_by_quality)
+      if (!Object.keys(expectedByProduct).length) return
       stockOverrides[row.store_slug] = {
         sourceName: row.source_name || 'stock cargado',
         sourceType: row.source_type || 'archivo',
         uploadedAt: row.uploaded_at || new Date().toISOString(),
         totalStock: Number(row.total_stock) || 0,
-        expectedByQuality: normalizeStockObject(row.expected_by_quality),
+        expectedByProduct,
       }
     })
     saveStockOverrides()
@@ -1607,16 +1636,22 @@
     if (syncLabel) syncLabel.textContent = `Leyendo ${file.name}...`
 
     try {
-      const expectedByQuality = await parseInventoryFile(file)
-      const totalStock = Object.values(expectedByQuality).reduce((sum, value) => sum + (Number(value) || 0), 0)
-      if (!Object.keys(expectedByQuality).length) throw new Error('No encontre calidades con piezas.')
+      const parsed = await parseInventoryFile(file)
+      const expectedByProduct = parsed.expectedByProduct || {}
+      const totalStock = Object.values(expectedByProduct).reduce((sum, value) => sum + (Number(value) || 0), 0)
+      if (!Object.keys(expectedByProduct).length) throw new Error('No encontre productos con piezas.')
+
+      if (Array.isArray(parsed.catalogAdditions)) {
+        parsed.catalogAdditions.forEach(item => addCustomCode(item))
+        await Promise.all(parsed.catalogAdditions.map(item => syncCustomCode(item)))
+      }
 
       const override = {
         sourceName: file.name,
         sourceType: file.type || file.name.split('.').pop() || 'archivo',
         uploadedAt: new Date().toISOString(),
         totalStock,
-        expectedByQuality,
+        expectedByProduct,
       }
       stockOverrides[storeSlug] = override
       saveStockOverrides()
@@ -1628,7 +1663,7 @@
           source_type: override.sourceType,
           uploaded_at: override.uploadedAt,
           total_stock: totalStock,
-          expected_by_quality: expectedByQuality,
+          expected_by_quality: expectedByProduct,
         }, { onConflict: 'store_slug' })
       }
 
@@ -1681,33 +1716,173 @@
   }
 
   function extractInventoryRows(rows, sourceName) {
+    const productStock = extractProductInventoryRows(rows)
+    if (productStock && Object.keys(productStock.expectedByProduct).length) return productStock
+
     const output = {}
+    const catalogAdditions = []
     rows.forEach(row => {
       const cells = Array.isArray(row) ? row.map(cell => String(cell || '').trim()).filter(Boolean) : []
       if (cells.length < 2) return
       const joined = normalizeSearch(cells.join(' '))
-      if (joined.includes('calidad') || joined.includes('cantidadamano') || joined.includes('pz') && joined.includes('sistema')) return
+      if (joined.includes('codigo') || joined.includes('cantidadamano') || joined.includes('pz') && joined.includes('sistema')) return
 
       const qtyIndex = cells.findIndex(cell => parseLooseNumber(cell) !== null)
       if (qtyIndex < 0) return
-      const qualityCell = cells.find((cell, index) => index !== qtyIndex && parseLooseNumber(cell) === null)
-      if (!qualityCell) return
+      const productCell = cells.find((cell, index) => index !== qtyIndex && parseLooseNumber(cell) === null)
+      if (!productCell) return
 
-      const quality = resolveQualityName(qualityCell)
+      const productCode = resolveInventoryProductCode(productCell, '', [])
       const quantity = parseLooseNumber(cells[qtyIndex])
-      if (!quality || quantity === null) return
-      output[quality] = (output[quality] || 0) + quantity
+      if (!productCode || quantity === null) return
+      output[productCode] = (output[productCode] || 0) + quantity
     })
 
-    if (!Object.keys(output).length) throw new Error(`No encontre columnas de calidad y piezas en ${sourceName}.`)
-    return normalizeStockObject(output)
+    if (!Object.keys(output).length) throw new Error(`No encontre columnas de producto y piezas en ${sourceName}.`)
+    return {
+      expectedByProduct: normalizeProductStockObject(output, true),
+      catalogAdditions,
+    }
   }
 
-  function resolveQualityName(value) {
-    const normalized = normalizeQuality(value)
-    const base = Object.keys(data.expectedByQuality).find(quality => normalizeQuality(quality) === normalized)
-    const catalogQuality = catalogItems.find(item => normalizeQuality(item.systemQuality) === normalized)
-    return base || (catalogQuality && catalogQuality.systemQuality) || String(value || '').trim().toUpperCase()
+  function extractProductInventoryRows(rows) {
+    const headerIndex = rows.findIndex(row => {
+      const normalized = (Array.isArray(row) ? row : []).map(cell => normalizeQuality(cell))
+      return normalized.some(cell => cell.includes('CODIGO DE BARRAS'))
+        && normalized.some(cell => cell === 'NOMBRE')
+        && normalized.some(cell => cell.includes('CANTIDAD A MANO'))
+    })
+    if (headerIndex < 0) return null
+
+    const headers = rows[headerIndex].map(cell => normalizeQuality(cell))
+    const codeIndex = headers.findIndex(cell => cell.includes('CODIGO DE BARRAS'))
+    const nameIndex = headers.findIndex(cell => cell === 'NOMBRE')
+    const variantIndex = headers.findIndex(cell => cell.includes('VALORES DE LAS VARIANTES'))
+    const qtyIndex = headers.findIndex(cell => cell.includes('CANTIDAD A MANO'))
+    if (codeIndex < 0 || nameIndex < 0 || qtyIndex < 0) return null
+
+    const fileProducts = []
+    const missingStockRows = []
+    let currentProduct = null
+
+    rows.slice(headerIndex + 1).forEach(row => {
+      const cells = Array.isArray(row) ? row : []
+      const codeRaw = String(cells[codeIndex] || '').trim().toUpperCase()
+      const code = normalizeCode(codeRaw)
+      const productName = String(cells[nameIndex] || '').trim().toUpperCase()
+      const variant = variantIndex >= 0 ? String(cells[variantIndex] || '').trim().toUpperCase() : ''
+      const quantity = parseLooseNumber(cells[qtyIndex]) || 0
+
+      if (code) {
+        currentProduct = {
+          code,
+          displayCode: codeRaw || code,
+          productName,
+          variants: variant ? [variant] : [],
+          quantity,
+        }
+        fileProducts.push(currentProduct)
+        return
+      }
+
+      if (!productName && variant && currentProduct) {
+        currentProduct.variants.push(variant)
+        return
+      }
+
+      if (productName && quantity) {
+        missingStockRows.push({ productName, variant, quantity })
+      }
+    })
+
+    const expectedByProduct = {}
+    const catalogAdditions = []
+    fileProducts.forEach(product => {
+      const code = normalizeCode(product.code)
+      if (!code) return
+      expectedByProduct[code] = (expectedByProduct[code] || 0) + product.quantity
+      if (!catalogByCode.has(code)) catalogAdditions.push(productToCatalogItem(product))
+    })
+
+    missingStockRows.forEach(row => {
+      const code = resolveInventoryProductCode(row.productName, row.variant, fileProducts)
+      if (!code) return
+      expectedByProduct[code] = (expectedByProduct[code] || 0) + row.quantity
+    })
+
+    return {
+      expectedByProduct: normalizeProductStockObject(expectedByProduct, true),
+      catalogAdditions,
+    }
+  }
+
+  function productToCatalogItem(product) {
+    const label = productInventoryLabel(product.productName, product.variants)
+    return {
+      code: product.code,
+      qualityName: label,
+      systemQuality: label,
+      productName: product.productName || label,
+      variantName: product.variants.join(' - '),
+      custom: true,
+      createdAt: new Date().toISOString(),
+      createdByStore: store ? store.slug : 'gerente',
+      source: 'stock-upload',
+    }
+  }
+
+  function productInventoryLabel(productName, variants) {
+    const cleanName = String(productName || '').trim().toUpperCase()
+    const cleanVariants = (variants || []).map(item => String(item || '').trim().toUpperCase()).filter(Boolean)
+    return [cleanName, ...cleanVariants].filter(Boolean).join(' - ')
+  }
+
+  function resolveInventoryProductCode(productName, variant, fileProducts) {
+    const exactCode = normalizeCode(productName)
+    if (exactCode && (catalogByCode.has(exactCode) || (fileProducts || []).some(product => normalizeCode(product.code) === exactCode))) {
+      return exactCode
+    }
+
+    const candidates = [
+      ...(fileProducts || []).map(product => ({
+        code: normalizeCode(product.code),
+        text: `${product.displayCode || product.code} ${product.productName} ${productInventoryLabel(product.productName, product.variants)}`,
+      })),
+      ...catalogItems.map(item => ({
+        code: normalizeCode(item.code),
+        text: `${item.code} ${item.qualityName} ${item.systemQuality} ${item.productName} ${item.variantName || ''}`,
+      })),
+    ].filter(item => item.code)
+
+    let best = null
+    candidates.forEach(candidate => {
+      const score = productMatchScore(productName, variant, candidate)
+      if (!best || score > best.score) best = { ...candidate, score }
+    })
+
+    return best && best.score >= 18 ? best.code : ''
+  }
+
+  function productMatchScore(productName, variant, candidate) {
+    const wantedTokens = tokenSet(`${productName} ${variant}`)
+    const candidateTokens = tokenSet(candidate.text)
+    if (!wantedTokens.size || !candidateTokens.size) return 0
+
+    let score = 0
+    wantedTokens.forEach(token => {
+      if (candidateTokens.has(token)) score += 10
+    })
+
+    const wantedText = normalizeQuality(productName)
+    const candidateText = normalizeQuality(candidate.text)
+    if (normalizeCode(productName) === candidate.code) score += 100
+    if (wantedText && candidateText.includes(wantedText)) score += 40
+    if (candidateText && wantedText.includes(candidateText)) score += 20
+    return score
+  }
+
+  function tokenSet(value) {
+    return new Set(normalizeQuality(value).split(' ').filter(token => token.length > 1))
   }
 
   function parseLooseNumber(value) {
@@ -1716,12 +1891,21 @@
     return Math.round(Number(cleaned))
   }
 
-  function normalizeStockObject(stock) {
+  function normalizeRemoteProductStock(stock) {
+    const entries = Object.entries(stock || {})
+    if (!entries.length) return {}
+    const catalogMatches = entries.filter(([code]) => catalogByCode.has(normalizeCode(code))).length
+    if (catalogMatches / entries.length < 0.6) return {}
+    return normalizeProductStockObject(stock)
+  }
+
+  function normalizeProductStockObject(stock, allowUnknown) {
     const output = {}
-    Object.entries(stock || {}).forEach(([quality, quantity]) => {
-      const key = resolveQualityName(quality)
+    Object.entries(stock || {}).forEach(([code, quantity]) => {
+      const key = normalizeCode(code)
       if (!key) return
-      output[key] = Number(quantity) || 0
+      if (!allowUnknown && !catalogByCode.has(key)) return
+      output[key] = (output[key] || 0) + (Number(quantity) || 0)
     })
     return output
   }
