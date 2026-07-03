@@ -980,9 +980,9 @@ td {
     min-width: 460px;
   }
 
-  .tabs button {
-    padding: 0 12px;
-    font-size: 14px;
+  .metrics {
+    margin: 0 -10px;
+    padding: 2px 10px;
   }
 
   .preset-row button,
@@ -1047,6 +1047,108 @@ td {
   }
 
   .space {
-    padding-bottom: calc(40px + env(safe-area-inset-bottom));
+    padding-bottom: calc(120px + env(safe-area-inset-bottom));
+  }
+}
+
+/* ============================================================
+   Layout movil: metricas en tira deslizable + navegacion abajo
+   ============================================================ */
+
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 840px) {
+  /* Metricas: una sola fila deslizable en vez de bloque apilado */
+  .metrics {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    margin: 0 -12px;
+    padding: 2px 12px;
+  }
+
+  .metrics::-webkit-scrollbar {
+    display: none;
+  }
+
+  .metric {
+    flex: 0 0 146px;
+    scroll-snap-align: start;
+    padding: 10px;
+  }
+
+  .metric strong {
+    font-size: 22px;
+  }
+
+  /* Pestanas: barra de navegacion fija abajo, al alcance del pulgar */
+  .tabs {
+    position: fixed;
+    z-index: 40;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    gap: 0;
+    overflow: visible;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+    box-shadow: 0 -4px 16px rgb(0 0 0 / 0.06);
+  }
+
+  .tabs button {
+    flex: 1 1 0;
+    min-height: 46px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    padding: 0 4px;
+    font-size: 13px;
+  }
+
+  .tabs button.active {
+    border: 0;
+    background: var(--dark);
+    color: white;
+  }
+
+  /* Espacio para que la barra inferior no tape contenido */
+  .space {
+    padding-bottom: calc(150px + env(safe-area-inset-bottom));
+  }
+
+  /* Encabezado mas compacto */
+  .header-row {
+    padding: 8px 0;
+  }
+
+  .scan-panel {
+    margin-top: 10px;
+  }
+
+  .panel + .panel {
+    margin-top: 10px;
+  }
+
+  /* Camara casi a pantalla completa para apuntar comodo */
+  .camera-sheet {
+    max-width: none;
+  }
+
+  .camera-video {
+    min-height: min(420px, 58dvh);
+    max-height: 62dvh;
+  }
+}
+
+/* La tira de metricas tambien aplica en el dashboard gerencial movil */
+@media (max-width: 840px) {
+  .dashboard-metrics {
+    margin-bottom: 12px;
   }
 }
