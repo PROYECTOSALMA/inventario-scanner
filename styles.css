@@ -1152,3 +1152,19 @@ body {
     margin-bottom: 12px;
   }
 }
+
+.closure-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 8px;
+}
+
+@media (max-width: 640px) {
+  .past-card .closure-actions {
+    width: 100%;
+  }
+
+  .past-card .closure-actions button {
+    flex: 1 1 0;
+  }
+}

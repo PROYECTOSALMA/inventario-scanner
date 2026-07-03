@@ -266,7 +266,10 @@
             <strong>${escapeHtml(item ? item.name : count.storeSlug)} - <span class="mono">${escapeHtml(count.folio)}</span></strong>
             <p class="muted">${formatDateTime(count.finalizedAt)} - ${formatNumber(count.totalPieces)} pz - ${formatNumber(count.movements.length)} movimientos</p>
           </div>
-          <button type="button" class="primary-button" data-admin-pdf="${escapeHtml(count.folio)}">PDF</button>
+          <div class="closure-actions">
+            <button type="button" class="primary-button" data-admin-pdf="${escapeHtml(count.folio)}">PDF</button>
+            <button type="button" class="secondary-button" data-admin-excel="${escapeHtml(count.folio)}">Excel</button>
+          </div>
         </article>
       `
     }).join('')
@@ -311,6 +314,13 @@
         const count = dashboardClosures.find(item => item.folio === button.dataset.adminPdf)
         const item = count ? data.stores.find(storeItem => storeItem.slug === count.storeSlug) : null
         if (count && item) downloadPdf(count, item)
+      })
+    })
+    app.querySelectorAll('[data-admin-excel]').forEach(button => {
+      button.addEventListener('click', () => {
+        const count = dashboardClosures.find(item => item.folio === button.dataset.adminExcel)
+        const item = count ? data.stores.find(storeItem => storeItem.slug === count.storeSlug) : null
+        if (count && item) downloadExcel(count, item)
       })
     })
   }
@@ -562,6 +572,12 @@
         if (count) downloadPdf(count)
       })
     })
+    app.querySelectorAll('[data-excel-count]').forEach(button => {
+      button.addEventListener('click', () => {
+        const count = pastCounts.find(item => item.id === button.dataset.excelCount)
+        if (count) downloadExcel(count)
+      })
+    })
   }
 
   async function processScan() {
@@ -801,6 +817,7 @@
     savePastCounts()
     syncFinalizedCount(finalized)
     downloadPdf(finalized)
+    downloadExcel(finalized)
 
     activeCount = createEmptyCount(store.slug)
     lastMovementId = ''
@@ -919,7 +936,10 @@
           <strong class="mono">${escapeHtml(count.folio)}</strong>
           <p class="muted">${formatDateTime(count.finalizedAt)} - ${formatNumber(count.totalPieces)} pz - ${count.movements.length} movimientos</p>
         </div>
-        <button type="button" class="primary-button" data-pdf-count="${escapeHtml(count.id)}">PDF</button>
+        <div class="closure-actions">
+          <button type="button" class="primary-button" data-pdf-count="${escapeHtml(count.id)}">PDF</button>
+          <button type="button" class="secondary-button" data-excel-count="${escapeHtml(count.id)}">Excel</button>
+        </div>
       </article>
     `).join('')
   }
@@ -1096,14 +1116,7 @@
       doc.text(`Total piezas: ${formatNumber(count.totalPieces)}   Movimientos: ${formatNumber(count.movements.length)}`, margin, y)
       y += 9
 
-      y = drawPdfTable(doc, 'Conteo por codigo', y, [
-        { header: 'Codigo', width: 28, value: row => row.code },
-        { header: 'Producto', width: 132, value: row => row.productLabel || row.qualityName },
-        { header: 'Total pz', width: 25, value: row => formatNumber(row.total), align: 'right' },
-      ], count.codeTotals)
-
-      y += 6
-      y = drawPdfTable(doc, 'Comparativo por producto', y, [
+      y = drawPdfTable(doc, 'Comparativo sistema vs conteo fisico', y, [
         { header: 'Codigo', width: 24, value: row => row.code },
         { header: 'Producto', width: 62, value: row => row.product || row.quality },
         { header: 'Conteo', width: 24, value: row => formatNumber(row.counted), align: 'right' },
@@ -1113,20 +1126,79 @@
         { header: 'Dif.', width: 14, value: row => signedNumber(row.difference), align: 'right' },
       ], count.comparisonTotals)
 
-      y += 6
-      drawPdfTable(doc, 'Historial de movimientos', y, [
-        { header: 'Hora', width: 34, value: row => formatTime(row.createdAt) },
-        { header: 'Codigo', width: 30, value: row => row.code },
-        { header: 'Scan', width: 62, value: row => row.rawScan },
-        { header: 'Piezas', width: 24, value: row => formatNumber(row.quantity), align: 'right' },
-        { header: 'Estado', width: 36, value: row => row.updatedAt ? 'Corregido' : 'Original' },
-      ], [...count.movements].reverse())
-
       doc.save(`inventario-${reportStore.slug}-${count.folio}.pdf`)
       return
     }
 
     openPrintableReport(count, reportStore)
+  }
+
+  function excelLocationForStore(reportStore) {
+    const locations = {
+      'almacen-general': 'A.G./Stock',
+    }
+    return locations[reportStore.slug] || `${reportStore.name}/Stock`
+  }
+
+  function excelProductName(item, row) {
+    if (!item) return String(row.productLabel || row.qualityName || row.code || '').trim().toUpperCase()
+    const name = String(item.productName || item.qualityName || item.code || '').trim().toUpperCase()
+    const values = String(item.variantName || '')
+      .split(' - ')
+      .map(part => {
+        const separator = part.lastIndexOf(': ')
+        return (separator >= 0 ? part.slice(separator + 2) : part).trim()
+      })
+      .filter(Boolean)
+    return values.length ? `${name} (${values.join(', ')})` : name
+  }
+
+  function downloadExcel(count, reportStore = store) {
+    if (!window.XLSX) {
+      window.alert('No se pudo generar el Excel: la libreria XLSX no cargo. Revisa tu conexion y vuelve a intentar desde Cierres.')
+      return
+    }
+
+    const location = excelLocationForStore(reportStore)
+    const rows = (count.codeTotals || [])
+      .filter(row => row.total > 0)
+      .map(row => {
+        const item = getCatalogItem(row.code)
+        return [
+          location,
+          excelProductName(item, row),
+          '',
+          row.total,
+          'Pieza',
+          0,
+          0,
+        ]
+      })
+
+    const headers = ['Ubicación', 'Producto', 'Lote/Nº de serie', 'Cantidad', 'Unidad de medida', 'Cantidade contada', 'Diferencia']
+    const sheet = window.XLSX.utils.aoa_to_sheet([headers, ...rows])
+
+    // Formato numerico 0.00 en Cantidad, Cantidade contada y Diferencia
+    for (let rowIndex = 1; rowIndex <= rows.length; rowIndex += 1) {
+      ;['D', 'F', 'G'].forEach(column => {
+        const cell = sheet[`${column}${rowIndex + 1}`]
+        if (cell && typeof cell.v === 'number') cell.z = '0.00'
+      })
+    }
+
+    sheet['!cols'] = [
+      { wch: 14 },
+      { wch: 52 },
+      { wch: 16 },
+      { wch: 10 },
+      { wch: 16 },
+      { wch: 16 },
+      { wch: 10 },
+    ]
+
+    const workbook = window.XLSX.utils.book_new()
+    window.XLSX.utils.book_append_sheet(workbook, sheet, 'Sheet1')
+    window.XLSX.writeFile(workbook, `inventario-${reportStore.slug}-${count.folio}.xlsx`)
   }
 
   function drawPdfTable(doc, title, startY, columns, rows) {
@@ -1210,9 +1282,7 @@
           <p>Folio: ${escapeHtml(count.folio)}</p>
           <p>Inicio: ${formatDateTime(count.startedAt)} - Cierre: ${formatDateTime(count.finalizedAt)}</p>
           <p>Total piezas: ${formatNumber(count.totalPieces)}</p>
-          <h2>Conteo por codigo</h2>
-          ${renderCodeTable(count.codeTotals)}
-          <h2>Comparativo</h2>
+          <h2>Comparativo sistema vs conteo fisico</h2>
           ${renderComparisonTable(count.comparisonTotals)}
         </body>
       </html>
