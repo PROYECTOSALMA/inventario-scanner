@@ -21,6 +21,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  min-height: 100dvh;
   background: var(--bg);
   color: var(--ink);
 }
@@ -49,12 +50,12 @@ a {
 .page-width,
 .top-inner,
 .header-row {
-  width: min(1120px, calc(100% - 24px));
+  width: min(1120px, calc(100% - 24px - env(safe-area-inset-left) - env(safe-area-inset-right)));
   margin: 0 auto;
 }
 
 .space {
-  padding: 14px 0 88px;
+  padding: 14px 0 calc(88px + env(safe-area-inset-bottom));
 }
 
 .top-band,
@@ -90,7 +91,7 @@ p {
 }
 
 h1 {
-  font-size: 28px;
+  font-size: clamp(22px, 3.4vw + 12px, 28px);
   line-height: 1.12;
 }
 
@@ -374,7 +375,7 @@ h2 {
 .metric strong {
   display: block;
   margin-top: 8px;
-  font-size: 28px;
+  font-size: clamp(20px, 2vw + 12px, 28px);
   line-height: 1;
 }
 
@@ -489,7 +490,8 @@ h2 {
 
 .camera-video {
   width: 100%;
-  min-height: 260px;
+  min-height: min(260px, 46dvh);
+  max-height: 60dvh;
   border-radius: 8px;
   background: #111827;
   object-fit: cover;
@@ -762,10 +764,14 @@ td {
 .sheet {
   width: 100%;
   max-width: 440px;
+  max-height: calc(100dvh - 20px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid var(--line);
   border-radius: 12px 12px 0 0;
   background: white;
   padding: 16px;
+  padding-bottom: calc(16px + env(safe-area-inset-bottom));
   box-shadow: 0 -12px 40px rgb(0 0 0 / 0.24);
 }
 
@@ -902,5 +908,145 @@ td {
 
   .metric {
     padding: 10px;
+  }
+}
+
+/* ============================================================
+   Ajustes responsivos por tamano de dispositivo
+   ============================================================ */
+
+/* Tablets y pantallas medianas: 2 columnas de sucursales */
+@media (min-width: 600px) and (max-width: 840px) {
+  .store-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Moviles en general */
+@media (max-width: 640px) {
+  .top-inner {
+    padding: 20px 0;
+  }
+
+  table {
+    min-width: 520px;
+    font-size: 13px;
+  }
+
+  th {
+    padding: 8px;
+  }
+
+  td {
+    padding: 9px 8px;
+  }
+
+  .panel,
+  .scan-panel {
+    padding: 12px;
+  }
+
+  .movement-actions button {
+    width: 42px;
+    min-height: 42px;
+  }
+
+  .past-card {
+    flex-wrap: wrap;
+  }
+
+  .past-card .primary-button {
+    width: 100%;
+  }
+}
+
+/* Telefonos chicos (iPhone SE, Android compactos) */
+@media (max-width: 400px) {
+  .page-width,
+  .top-inner,
+  .header-row {
+    width: min(1120px, calc(100% - 20px - env(safe-area-inset-left) - env(safe-area-inset-right)));
+  }
+
+  .header-row {
+    gap: 8px;
+  }
+
+  .header-title h1 {
+    font-size: 16px;
+  }
+
+  table {
+    min-width: 460px;
+  }
+
+  .tabs button {
+    padding: 0 12px;
+    font-size: 14px;
+  }
+
+  .preset-row button,
+  .qty-row button {
+    font-size: 17px;
+  }
+
+  .sheet {
+    padding: 12px;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Pantallas muy angostas (plegables cerrados, ~280-340px) */
+@media (max-width: 340px) {
+  .metrics {
+    gap: 6px;
+  }
+
+  .metric {
+    padding: 8px;
+  }
+
+  .metric span {
+    font-size: 10px;
+  }
+
+  .metric strong {
+    font-size: 18px;
+  }
+
+  .scan-row input {
+    font-size: 16px;
+    min-height: 48px;
+  }
+
+  .scan-row button {
+    min-width: 60px;
+  }
+
+  .store-actions a,
+  .store-actions button,
+  .store-actions label {
+    flex: 1 1 auto;
+  }
+}
+
+/* Telefonos acostados (landscape con poca altura) */
+@media (max-height: 480px) and (orientation: landscape) {
+  .sheet-backdrop {
+    align-items: center;
+    padding: 8px;
+  }
+
+  .sheet {
+    max-height: calc(100dvh - 16px);
+    border-radius: 12px;
+  }
+
+  .top-inner {
+    padding: 14px 0;
+  }
+
+  .space {
+    padding-bottom: calc(40px + env(safe-area-inset-bottom));
   }
 }
