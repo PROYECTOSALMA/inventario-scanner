@@ -1765,2209 +1765,739 @@ window.INVENTORY_DATA = {
   ],
   "expectedByProduct": {
     "0BLLV00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 48,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 48
     },
     "0BLSM04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "0BLSM01": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "0BLSM02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "0BLSM03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "BORREGASM": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 4,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 4
     },
     "CHALECOSM": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 2,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 2
     },
     "CAPSM": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "NFLDLX": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 34,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 34
     },
     "NFLP": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 13,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 13
     },
     "CHMW": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CDPRO": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 17,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 17
     },
     "SHERMAN": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 16,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 16
     },
     "PYOVERSM": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "KPYLV00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 482,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 482
     },
     "PYSM": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 111,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 111
     },
     "POLOSM": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 47,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 47
     },
     "CPYSUMK": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 2,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 2
     },
     "DSHTR00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 154,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 154
     },
     "SHPOLO": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "SUDSM": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 6,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 6
     },
     "CJNCK05": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "CJNTH05": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CJNMK05": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 2,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 2
     },
     "CJNBS05": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 67,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 67
     },
     "CJNAE05": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "CJNLV05": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 4,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 4
     },
     "CJNTB05": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 2,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 2
     },
     "CCALV00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 21,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 21
     },
     "CCABB00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "OAKTREE": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 93,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 93
     },
     "CAMSM": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 11,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 11
     },
     "CCABS03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 18,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 18
     },
     "CCCTH01": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CCCTH02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CCCTH03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 255,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 255
     },
     "CCCTH04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CCCAE01": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CCCAE02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CCCAE03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 126,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 126
     },
     "CCCAE04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 4,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 4
     },
     "CCCBS01": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CCCBS02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CCCBS03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "CCCBS04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DCCTB01": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DCCTB02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DCCTB03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 6,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 6
     },
     "DCCTB04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "CCCTB01": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CCCTB02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 7,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 7
     },
     "CCCTB03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CCCTB04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DCCLV01": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DCCLV02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 6,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 6
     },
     "DCCLV03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 6,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 6
     },
     "DCCLV04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "CCCLV01": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CCCLV02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 33,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 33
     },
     "CCCLV03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 17,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 17
     },
     "CCCLV04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 10,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 10
     },
     "DCCCK01": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DCCCK02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DCCCK03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 32,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 32
     },
     "DCCCK04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 2,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 2
     },
     "CCCCK01": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CCCCK02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CCCCK03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 11,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 11
     },
     "CCCCK04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 35,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 35
     },
     "DCCMK01": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DCCMK02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 104,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 104
     },
     "DCCMK03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 40,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 40
     },
     "DCCMK04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 5,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 5
     },
     "CCCMK01": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CCCMK02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 4,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 4
     },
     "CCCMK03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "CCCMK04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "DCCBB01": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DCCBB02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DCCBB03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DCCBB04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CCCBB01": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CCCBB02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CCCBB03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 3,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 3
     },
     "CCCBB04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DCCTH01": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DCCTH02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 12,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 12
     },
     "DCCTH03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "DCCTH04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DCCAE01": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DCCAE02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DCCAE03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DCCAE04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DCMLV02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 146,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 146
     },
     "CCMLV02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 204,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 204
     },
     "DCMLV03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 13,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 13
     },
     "CCMLV03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 10,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 10
     },
     "DJNLV05": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DJNCK05": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 20,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 20
     },
     "DJNTH05": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DJNMK05": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DJNAE05": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DJNTB05": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 44,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 44
     },
-    "501B": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+    "501-B": {
+      "almacen-general": 0
     },
-    "505B": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+    "505-B": {
+      "almacen-general": 0
     },
-    "510B": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+    "510-B": {
+      "almacen-general": 0
     },
-    "511B": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+    "511-B": {
+      "almacen-general": 0
     },
-    "512B": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+    "512-B": {
+      "almacen-general": 0
     },
-    "513B": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+    "513-B": {
+      "almacen-general": 0
     },
-    "514B": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 67,
-      "zapotlanejo": 0,
-      "denim-click": 0
+    "514-B": {
+      "almacen-general": 67
     },
     "CBOSS": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 107,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 107
     },
     "CAERST": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 6,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 6
     },
     "LP04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 569,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 569
     },
     "CAEATSK": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 135,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 135
     },
     "CAE3511": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 289,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 289
     },
     "TOMMY2": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 5,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 5
     },
     "0004": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DAEJ": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "DAEFIAR": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 21,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 21
     },
     "DAEJN04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CAEJN04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 28,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 28
     },
     "KID511": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 172,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 172
     },
     "KID510": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 56,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 56
     },
     "0005": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 131,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 131
     },
     "LPKID": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "0501": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1181,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1181
     },
     "0505": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 622,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 622
     },
     "0510": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 157,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 157
     },
     "0511": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1626,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1626
     },
     "0512": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 105,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 105
     },
     "0513": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 630,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 630
     },
     "0514": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 667,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 667
     },
     "0555": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1399,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1399
     },
     "0578": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 427,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 427
     },
     "0728": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 172,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 172
     },
     "0720": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 806,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 806
     },
     "0721": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 206,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 206
     },
     "0724": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 127,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 127
     },
     "DMH1": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 382,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 382
     },
     "MOM501": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 147,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 147
     },
     "0725": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 500,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 500
     },
     "MOMRB": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 89,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 89
     },
     "0D94": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 2,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 2
     },
     "LP02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1403,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1403
     },
     "0002": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 940,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 940
     },
     "0710": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "0311": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "0519": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "0559": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "0003": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "LP03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1434,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1434
     },
     "CCK2SL": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 337,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 337
     },
     "TOMMY1": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 3,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 3
     },
     "CMK2": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 24,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 24
     },
     "CAE511": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 453,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 453
     },
     "CAETLS": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 246,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 246
     },
     "CAE2BTT": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CAEST": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 224,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 224
     },
     "HOLLISTER": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 23,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 23
     },
     "ABERCROMBIE": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 10,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 10
     },
     "DIESEL": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 191,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 191
     },
     "AEROPOSTAL": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 36,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 36
     },
     "HOLLISTERD": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 121,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 121
     },
     "CAEJN03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DAEJN03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 254,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 254
     },
     "DJNGS03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 11,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 11
     },
     "CAE3SK03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DAEDDBWL": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "TRUEREL": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "STUCHY": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 11,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 11
     },
     "POLO": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 8,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 8
     },
     "MONKEY": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 486,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 486
     },
     "LOLA": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 201,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 201
     },
     "BOGOTA": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 10,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 10
     },
     "00DS": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 84,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 84
     },
     "WSTRAIHGT": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 9,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 9
     },
-    "AMCO": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 20,
-      "zapotlanejo": 0,
-      "denim-click": 0
+    "AM&CO": {
+      "almacen-general": 20
     },
     "DPYLC09": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DPYCK03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 81,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 81
     },
     "DPYCK08": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 149,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 149
     },
     "DPYCK07": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "CPYCK03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 448,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 448
     },
     "CPYCK08": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "CPYCK07": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "DPYMK03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 17,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 17
     },
     "DPYMK08": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "DPYMK07": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CPYMK03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 118,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 118
     },
     "CPYMK08": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CPYMK07": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CPYBS04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 429,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 429
     },
     "DPYLV02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 47,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 47
     },
     "DPYLV03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 159,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 159
     },
     "DPYLV08": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DPYLV07": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CPYLV02": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 25,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 25
     },
     "CPYLV03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1043,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1043
     },
     "CPYLV08": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 16,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 16
     },
     "CPYLV07": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DPYTB03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 32,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 32
     },
     "DPYTB08": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "DPYTB07": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CPYTB03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 257,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 257
     },
     "CPYTB08": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 18,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 18
     },
     "CPYTB07": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CPYPB04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 108,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 108
     },
     "DPYBB03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DPYBB08": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DPYBB07": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CPYBB03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 266,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 266
     },
     "CPYBB08": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CPYBB07": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CPYGY03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 28,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 28
     },
     "CPYGV08": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 7,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 7
     },
     "CPYNC03": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 2,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 2
     },
     "CPOLV00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "CPOCK00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 8,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 8
     },
     "CPOMK00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 7,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 7
     },
     "CPOTB00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CPOTH04": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 3,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 3
     },
     "0412": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 432,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 432
     },
     "0468": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 172,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 172
     },
     "CSHMK00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CSHAE00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CSHCK00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CSHLV00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CSHTB00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "AESHORT": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 65,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 65
     },
     "CSDLV00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 18,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 18
     },
     "DSDLV00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 16,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 16
     },
     "CSDTB00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 18,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 18
     },
     "DSDTB00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CSDBB00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "DSDBB00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "CSDCK00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DSDCK00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 19,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 19
     },
     "CSDMK00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "DSDMK00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     },
     "DSUAE00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 85,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 85
     },
     "CSUBS00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 2,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 2
     },
     "DSULV00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 52,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 52
     },
     "CSUMK00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "CSUTH00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 1,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 1
     },
     "CSUBB00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 4,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 4
     },
     "CSUCK00": {
-      "elite": 0,
-      "lineas-originales": 0,
-      "club-jeans": 0,
-      "miguel-aleman": 0,
-      "almacen-general": 0,
-      "zapotlanejo": 0,
-      "denim-click": 0
+      "almacen-general": 0
     }
   },
   "expectedByQuality": {}

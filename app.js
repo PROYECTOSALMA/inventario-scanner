@@ -52,6 +52,7 @@
     }
 
     readOnlyMode = isReadOnlyUrl()
+    if (!readOnlyMode) trapBackButton()
     document.title = `Inventario - ${store.name}`
     activeCount = loadActiveCount(store.slug)
     pastCounts = loadPastCounts(store.slug)
@@ -147,13 +148,33 @@
     window.addEventListener('offline', () => {
       if (store) saveActiveCount()
     })
-    window.addEventListener('beforeunload', () => {
+    window.addEventListener('beforeunload', event => {
+      if (store && activeCount) saveActiveCount()
+      if (store && !readOnlyMode && activeCount && activeCount.movements.length > 0) {
+        event.preventDefault()
+        event.returnValue = ''
+      }
+    })
+    window.addEventListener('pagehide', () => {
       if (store && activeCount) saveActiveCount()
     })
     document.addEventListener('visibilitychange', () => {
       if (document.visibilityState !== 'visible') return
       syncPendingData()
       if (store && !readOnlyMode) syncActiveCountNow(true)
+    })
+  }
+
+  function trapBackButton() {
+    // Atrapa el boton de retroceder del navegador o del celular para que
+    // no cierre la pagina de conteo. La unica salida intencional es la flecha
+    // del encabezado. La captura ya esta guardada en el dispositivo, asi que
+    // aunque algo cierre la pagina, el conteo se restaura al volver a abrirla.
+    window.history.pushState({ inventarioTrap: true }, '', window.location.href)
+    window.addEventListener('popstate', () => {
+      if (!store || readOnlyMode) return
+      window.history.pushState({ inventarioTrap: true }, '', window.location.href)
+      saveActiveCount()
     })
   }
 
@@ -686,6 +707,7 @@
     }
 
     activeCount.movements.unshift(movement)
+    saveActiveCount()
     lastMovementId = movement.id
     closeQuantitySheet()
     setTab('scan')
