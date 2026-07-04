@@ -1870,7 +1870,7 @@ window.INVENTORY_DATA = {
       "almacen-general": 0
     },
     "CCCTH03": {
-      "almacen-general": 255
+      "almacen-general": 191
     },
     "CCCTH04": {
       "almacen-general": 0
@@ -1975,7 +1975,7 @@ window.INVENTORY_DATA = {
       "almacen-general": 0
     },
     "DCCMK02": {
-      "almacen-general": 104
+      "almacen-general": 98
     },
     "DCCMK03": {
       "almacen-general": 40
@@ -2107,7 +2107,7 @@ window.INVENTORY_DATA = {
       "almacen-general": 135
     },
     "CAE3511": {
-      "almacen-general": 289
+      "almacen-general": 287
     },
     "TOMMY2": {
       "almacen-general": 5
@@ -2119,7 +2119,7 @@ window.INVENTORY_DATA = {
       "almacen-general": 1
     },
     "DAEFIAR": {
-      "almacen-general": 21
+      "almacen-general": 11
     },
     "DAEJN04": {
       "almacen-general": 0
@@ -2140,16 +2140,16 @@ window.INVENTORY_DATA = {
       "almacen-general": 0
     },
     "0501": {
-      "almacen-general": 1181
+      "almacen-general": 1507
     },
     "0505": {
-      "almacen-general": 622
+      "almacen-general": 619
     },
     "0510": {
       "almacen-general": 157
     },
     "0511": {
-      "almacen-general": 1626
+      "almacen-general": 2911
     },
     "0512": {
       "almacen-general": 105
@@ -2158,7 +2158,7 @@ window.INVENTORY_DATA = {
       "almacen-general": 630
     },
     "0514": {
-      "almacen-general": 667
+      "almacen-general": 825
     },
     "0555": {
       "almacen-general": 1399
@@ -2173,16 +2173,16 @@ window.INVENTORY_DATA = {
       "almacen-general": 806
     },
     "0721": {
-      "almacen-general": 206
+      "almacen-general": 174
     },
     "0724": {
-      "almacen-general": 127
+      "almacen-general": 369
     },
     "DMH1": {
       "almacen-general": 382
     },
     "MOM501": {
-      "almacen-general": 147
+      "almacen-general": 291
     },
     "0725": {
       "almacen-general": 500
@@ -2194,10 +2194,10 @@ window.INVENTORY_DATA = {
       "almacen-general": 2
     },
     "LP02": {
-      "almacen-general": 1403
+      "almacen-general": 1414
     },
     "0002": {
-      "almacen-general": 940
+      "almacen-general": 1058
     },
     "0710": {
       "almacen-general": 0
@@ -2215,19 +2215,19 @@ window.INVENTORY_DATA = {
       "almacen-general": 0
     },
     "LP03": {
-      "almacen-general": 1434
+      "almacen-general": 1445
     },
     "CCK2SL": {
       "almacen-general": 337
     },
     "TOMMY1": {
-      "almacen-general": 3
+      "almacen-general": 258
     },
     "CMK2": {
       "almacen-general": 24
     },
     "CAE511": {
-      "almacen-general": 453
+      "almacen-general": 728
     },
     "CAETLS": {
       "almacen-general": 246
@@ -2257,7 +2257,7 @@ window.INVENTORY_DATA = {
       "almacen-general": 0
     },
     "DAEJN03": {
-      "almacen-general": 254
+      "almacen-general": 233
     },
     "DJNGS03": {
       "almacen-general": 11
@@ -2308,7 +2308,7 @@ window.INVENTORY_DATA = {
       "almacen-general": 1
     },
     "CPYCK03": {
-      "almacen-general": 448
+      "almacen-general": 430
     },
     "CPYCK08": {
       "almacen-general": 1
@@ -2326,7 +2326,7 @@ window.INVENTORY_DATA = {
       "almacen-general": 0
     },
     "CPYMK03": {
-      "almacen-general": 118
+      "almacen-general": 111
     },
     "CPYMK08": {
       "almacen-general": 0
@@ -2335,7 +2335,7 @@ window.INVENTORY_DATA = {
       "almacen-general": 0
     },
     "CPYBS04": {
-      "almacen-general": 429
+      "almacen-general": 299
     },
     "DPYLV02": {
       "almacen-general": 47
@@ -2353,7 +2353,7 @@ window.INVENTORY_DATA = {
       "almacen-general": 25
     },
     "CPYLV03": {
-      "almacen-general": 1043
+      "almacen-general": 1024
     },
     "CPYLV08": {
       "almacen-general": 16
@@ -2371,7 +2371,7 @@ window.INVENTORY_DATA = {
       "almacen-general": 0
     },
     "CPYTB03": {
-      "almacen-general": 257
+      "almacen-general": 228
     },
     "CPYTB08": {
       "almacen-general": 18
@@ -2380,7 +2380,7 @@ window.INVENTORY_DATA = {
       "almacen-general": 0
     },
     "CPYPB04": {
-      "almacen-general": 108
+      "almacen-general": 88
     },
     "DPYBB03": {
       "almacen-general": 0
@@ -2392,7 +2392,7 @@ window.INVENTORY_DATA = {
       "almacen-general": 0
     },
     "CPYBB03": {
-      "almacen-general": 266
+      "almacen-general": 251
     },
     "CPYBB08": {
       "almacen-general": 0
