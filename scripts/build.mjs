@@ -1,6 +1,6 @@
 import { copyFile, mkdir, rm, writeFile } from 'node:fs/promises'
 
-const files = ['index.html', 'styles.css', 'app.js', 'data.js']
+const files = ['index.html', 'styles.css', 'app.js', 'data.js', 'sw.js']
 const dist = new URL('../dist/', import.meta.url)
 
 await rm(dist, { recursive: true, force: true })

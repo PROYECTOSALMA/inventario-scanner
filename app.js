@@ -32,6 +32,8 @@
   let lastMovementId = ''
   let readOnlyMode = false
   let lastActiveSyncHash = ''
+  let activeSyncInFlight = false
+  let backTrapActive = false
   let unknownScanCode = ''
   let addCodeContext = null
   let networkHandlersBound = false
@@ -39,9 +41,19 @@
   let cameraTimer = null
   let cameraDetector = null
 
+  registerOfflineShell()
   refreshCatalogIndex()
 
   boot()
+
+  function registerOfflineShell() {
+    if (!('serviceWorker' in navigator)) return
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(() => {
+        // La app sigue funcionando; solo se pierde recarga offline en navegadores sin soporte.
+      })
+    })
+  }
 
   function boot() {
     bindNetworkSync()
@@ -135,9 +147,12 @@
     if (networkHandlersBound) return
     networkHandlersBound = true
 
-    window.addEventListener('online', () => {
+    window.addEventListener('online', async () => {
       syncPendingData()
-      if (store && !readOnlyMode) syncActiveCountNow(true)
+      if (store && !readOnlyMode) {
+        await fetchRemoteActiveCount()
+        syncActiveCountNow(true)
+      }
       if (store) {
         fetchRemoteCustomCodes()
         fetchRemoteCounts()
@@ -158,10 +173,16 @@
     window.addEventListener('pagehide', () => {
       if (store && activeCount) saveActiveCount()
     })
+    window.addEventListener('freeze', () => {
+      if (store && activeCount) saveActiveCount()
+    })
     document.addEventListener('visibilitychange', () => {
+      if (store && activeCount) saveActiveCount()
       if (document.visibilityState !== 'visible') return
       syncPendingData()
-      if (store && !readOnlyMode) syncActiveCountNow(true)
+      if (store && !readOnlyMode) {
+        fetchRemoteActiveCount().finally(() => syncActiveCountNow(true))
+      }
     })
   }
 
@@ -170,11 +191,26 @@
     // no cierre la pagina de conteo. La unica salida intencional es la flecha
     // del encabezado. La captura ya esta guardada en el dispositivo, asi que
     // aunque algo cierre la pagina, el conteo se restaura al volver a abrirla.
-    window.history.pushState({ inventarioTrap: true }, '', window.location.href)
+    if (backTrapActive) return
+    backTrapActive = true
+    try {
+      window.history.replaceState({ inventarioBase: true, storeSlug: store.slug }, '', window.location.href)
+      window.history.pushState({ inventarioTrap: true, storeSlug: store.slug }, '', window.location.href)
+    } catch {
+      // Algunos navegadores limitan history; el guardado local sigue activo.
+    }
     window.addEventListener('popstate', () => {
       if (!store || readOnlyMode) return
-      window.history.pushState({ inventarioTrap: true }, '', window.location.href)
       saveActiveCount()
+      window.setTimeout(() => {
+        try {
+          window.history.pushState({ inventarioTrap: true, storeSlug: store.slug }, '', window.location.href)
+        } catch {
+          // Si no se puede rearmar, beforeunload y el respaldo local protegen el conteo.
+        }
+        setScanError('Conteo guardado. El boton atras esta bloqueado para evitar salir por error.')
+        focusScanner()
+      }, 0)
     })
   }
 
@@ -1316,9 +1352,22 @@
   }
 
   function loadActiveCount(storeSlug) {
-    const parsed = readJson(activeKey(storeSlug))
-    if (parsed && parsed.storeSlug === storeSlug && Array.isArray(parsed.movements)) return parsed
+    const candidates = [readJson(activeKey(storeSlug)), readJson(activeBackupKey(storeSlug))]
+      .map(item => item && item.count ? item.count : item)
+      .filter(item => item && item.storeSlug === storeSlug && Array.isArray(item.movements))
+    if (candidates.length) {
+      return candidates.sort((a, b) => {
+        const movementDiff = (b.movements.length || 0) - (a.movements.length || 0)
+        if (movementDiff) return movementDiff
+        return lastCountActivity(b) - lastCountActivity(a)
+      })[0]
+    }
     return createEmptyCount(storeSlug)
+  }
+
+  function lastCountActivity(count) {
+    const movementTimes = (count.movements || []).map(item => new Date(item.updatedAt || item.createdAt || 0).getTime() || 0)
+    return Math.max(new Date(count.startedAt || 0).getTime() || 0, ...movementTimes)
   }
 
   function loadPastCounts(storeSlug) {
@@ -1449,22 +1498,9 @@
     if (!supabaseClient || !store) return
 
     try {
-      const { data: row, error } = await supabaseClient
-        .from('inventory_active_counts')
-        .select('store_slug, local_id, started_at, updated_at, total_pieces, movement_count, active_count, code_totals, comparison_totals, dashboard')
-        .eq('store_slug', store.slug)
-        .maybeSingle()
-
-      if (error || !row || !row.active_count) return
-      const remote = fromRemoteActiveCount(row)
+      const remote = await loadRemoteActiveCount()
       if (!remote) return
-
-      if (readOnlyMode) {
-        activeCount = remote
-      } else {
-        activeCount.movements = mergeMovementLists(activeCount.movements, remote.movements)
-        if (new Date(remote.startedAt).getTime() < new Date(activeCount.startedAt).getTime()) activeCount.startedAt = remote.startedAt
-      }
+      mergeRemoteActiveCount(remote)
       updateCounter()
     } catch {
       // Sigue funcionando local si la nube no responde.
@@ -1479,30 +1515,48 @@
 
   async function syncActiveCountNow(force) {
     if (!supabaseClient || !store || readOnlyMode) return
-
-    const codeTotals = buildCodeTotals(activeCount.movements)
-    const comparison = buildComparisonTotals(codeTotals, store.slug)
-    const dashboard = buildDashboard(comparison)
-    const payload = {
-      store_slug: store.slug,
-      local_id: activeCount.id,
-      started_at: activeCount.startedAt,
-      updated_at: new Date().toISOString(),
-      total_pieces: dashboard.counted,
-      movement_count: activeCount.movements.length,
-      active_count: activeCount,
-      code_totals: codeTotals.filter(row => row.total > 0),
-      comparison_totals: comparison.filter(row => row.counted || row.expected),
-      dashboard,
+    if (!navigator.onLine) {
+      saveActiveCount()
+      return
     }
-    const hash = JSON.stringify(payload)
-    if (!force && hash === lastActiveSyncHash) return
-    lastActiveSyncHash = hash
+    if (activeSyncInFlight) {
+      if (force) {
+        window.clearTimeout(activeSyncTimer)
+        activeSyncTimer = window.setTimeout(() => syncActiveCountNow(true), 900)
+      }
+      return
+    }
 
+    activeSyncInFlight = true
     try {
-      await supabaseClient.from('inventory_active_counts').upsert(payload, { onConflict: 'store_slug' })
+      const remote = await loadRemoteActiveCount()
+      if (remote) mergeRemoteActiveCount(remote)
+
+      const codeTotals = buildCodeTotals(activeCount.movements)
+      const comparison = buildComparisonTotals(codeTotals, store.slug)
+      const dashboard = buildDashboard(comparison)
+      const payload = {
+        store_slug: store.slug,
+        local_id: activeCount.id,
+        started_at: activeCount.startedAt,
+        updated_at: new Date().toISOString(),
+        total_pieces: dashboard.counted,
+        movement_count: activeCount.movements.length,
+        active_count: activeCount,
+        code_totals: codeTotals.filter(row => row.total > 0),
+        comparison_totals: comparison.filter(row => row.counted || row.expected),
+        dashboard,
+      }
+      const hash = JSON.stringify(payload)
+      if (!force && hash === lastActiveSyncHash) return
+
+      const { error } = await supabaseClient.from('inventory_active_counts').upsert(payload, { onConflict: 'store_slug' })
+      if (error) throw error
+      lastActiveSyncHash = hash
     } catch {
       // La captura local se mantiene aunque falle la sincronizacion en vivo.
+    } finally {
+      activeSyncInFlight = false
     }
   }
 
@@ -1608,6 +1662,34 @@
       codeTotals: Array.isArray(row.code_totals) ? row.code_totals : [],
       comparisonTotals: Array.isArray(row.comparison_totals) ? row.comparison_totals : [],
     }
+  }
+
+  async function loadRemoteActiveCount() {
+    if (!supabaseClient || !store) return null
+
+    const { data: row, error } = await supabaseClient
+      .from('inventory_active_counts')
+      .select('store_slug, local_id, started_at, updated_at, total_pieces, movement_count, active_count, code_totals, comparison_totals, dashboard')
+      .eq('store_slug', store.slug)
+      .maybeSingle()
+
+    if (error) throw error
+    if (!row || !row.active_count) return null
+    return fromRemoteActiveCount(row)
+  }
+
+  function mergeRemoteActiveCount(remote) {
+    if (!remote) return false
+    if (readOnlyMode) {
+      activeCount = remote
+      return true
+    }
+
+    const before = activeCount && Array.isArray(activeCount.movements) ? activeCount.movements.length : 0
+    activeCount.movements = mergeMovementLists(activeCount.movements, remote.movements)
+    if (new Date(remote.startedAt).getTime() < new Date(activeCount.startedAt).getTime()) activeCount.startedAt = remote.startedAt
+    if (activeCount.movements.length !== before) saveActiveCount()
+    return activeCount.movements.length !== before
   }
 
   function fromRemoteActiveCount(row) {
@@ -2038,7 +2120,13 @@
   }
 
   function saveActiveCount() {
-    writeLocalJson(activeKey(store.slug), activeCount)
+    if (!store || !activeCount) return false
+    const saved = writeLocalJson(activeKey(store.slug), activeCount)
+    writeLocalJson(activeBackupKey(store.slug), {
+      savedAt: new Date().toISOString(),
+      count: activeCount,
+    }, true)
+    return saved
   }
 
   function savePastCounts() {
@@ -2054,18 +2142,22 @@
     }
   }
 
-  function writeLocalJson(key, value) {
+  function writeLocalJson(key, value, silent) {
     try {
       localStorage.setItem(key, JSON.stringify(value))
       return true
     } catch {
-      window.alert('No se pudo guardar en este dispositivo. No cierres la pagina y avisa al gerente.')
+      if (!silent) window.alert('No se pudo guardar en este dispositivo. No cierres la pagina y avisa al gerente.')
       return false
     }
   }
 
   function activeKey(storeSlug) {
     return `inventario-scanner:active:${storeSlug}:v1`
+  }
+
+  function activeBackupKey(storeSlug) {
+    return `inventario-scanner:active-backup:${storeSlug}:v1`
   }
 
   function pastKey(storeSlug) {
