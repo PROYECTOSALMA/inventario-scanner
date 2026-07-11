@@ -3,7 +3,7 @@
   const app = document.querySelector('#app')
   const supabaseClient = createSupabaseClient()
   const cloudSyncEnabled = Boolean(supabaseClient)
-  const stockStorageKey = 'inventario-scanner:stock-overrides:v2-products'
+  const stockStorageKey = 'inventario-scanner:stock-overrides:v3-cloud-latest'
   const customCodesStorageKey = 'inventario-scanner:custom-codes:v1'
   const pendingFinalizedStorageKey = 'inventario-scanner:pending-finalized:v1'
   const pendingCustomCodesStorageKey = 'inventario-scanner:pending-custom-codes:v1'
@@ -27,6 +27,7 @@
   let activeSyncTimer = null
   let stockFetchTimer = null
   let stockChannel = null
+  let stockUploadInProgress = false
   let customCodesFetchTimer = null
   let currentTab = 'scan'
   let pendingScan = null
@@ -46,6 +47,7 @@
   let cameraDetector = null
 
   registerOfflineShell()
+  purgeLegacyStockCaches()
   refreshCatalogIndex()
 
   boot()
@@ -1413,6 +1415,16 @@
     return parsed && typeof parsed === 'object' ? parsed : {}
   }
 
+  function purgeLegacyStockCaches() {
+    try {
+      Object.keys(localStorage)
+        .filter(key => key.startsWith('inventario-scanner:stock-overrides:') && key !== stockStorageKey)
+        .forEach(key => localStorage.removeItem(key))
+    } catch {
+      // Si el navegador bloquea localStorage, la nube sigue siendo la fuente real.
+    }
+  }
+
   function loadCustomCodes() {
     return loadArray(customCodesStorageKey)
   }
@@ -1932,6 +1944,12 @@
     if (!storeItem) return
 
     const syncLabel = app.querySelector('[data-dashboard-sync]')
+    if (stockUploadInProgress) {
+      const message = 'Ya hay una carga de stock en proceso. Espera a que termine para subir otro archivo.'
+      if (syncLabel) syncLabel.textContent = message
+      window.alert(message)
+      return
+    }
     if (!cloudSyncEnabled) {
       const message = 'No puedo cargar stock compartido porque Supabase no esta configurado en esta publicacion.'
       window.alert(`${message}\nConfigura SUPABASE_URL y SUPABASE_ANON_KEY en Netlify y vuelve a publicar.`)
@@ -1944,6 +1962,7 @@
     }
 
     setStatus(`Leyendo ${file.name} (${formatFileSize(file.size)})...`)
+    stockUploadInProgress = true
 
     try {
       await pauseForPaint()
@@ -1956,6 +1975,7 @@
       if (catalogAdditions.length) {
         // Se agregan de inmediato al catalogo local, pero no se bloquea la carga del
         // stock esperando cientos o miles de codigos. La sincronizacion continua al fondo.
+        setStatus(`Preparando ${formatNumber(catalogAdditions.length)} codigos nuevos...`)
         catalogAdditions.forEach(item => addCustomCode(item))
         saveCustomCodes()
         refreshCatalogIndex()
@@ -1973,6 +1993,7 @@
       await pauseForPaint()
       const savedRow = await saveRemoteStoreStock(storeSlug, override)
       applyRemoteStocks([savedRow], { force: true })
+      await fetchRemoteStock()
 
       const savedStock = stockOverrides[storeSlug] || override
       setStatus(`${storeItem.name}: stock cargado con ${formatNumber(savedStock.totalStock)} pz. Actualizando pantallas...`)
@@ -1991,6 +2012,8 @@
     } catch (error) {
       window.alert(`No pude cargar el inventario de ${storeItem.name}.\n${error.message || 'Revisa el archivo.'}`)
       setStatus('Carga cancelada.')
+    } finally {
+      stockUploadInProgress = false
     }
   }
 
