@@ -854,12 +854,14 @@
     app.querySelector('[data-edit-code]').textContent = movement.code
     app.querySelector('[data-edit-quality]').textContent = item ? productLabelForItem(item) : 'Codigo'
     app.querySelector('[data-edit-input]').value = String(movement.quantity)
+    setEditError('')
     app.querySelector('[data-edit-sheet]').hidden = false
     window.setTimeout(() => app.querySelector('[data-edit-input]').select(), 60)
   }
 
   function closeEditSheet() {
     editingMovement = null
+    setEditError('')
     app.querySelector('[data-edit-sheet]').hidden = true
     focusScanner()
   }
@@ -867,8 +869,18 @@
   function saveMovementEdit() {
     if (readOnlyMode) return
     if (!editingMovement) return
-    const quantity = parsePieces(app.querySelector('[data-edit-input]').value)
-    if (!quantity) return
+
+    const rawValue = app.querySelector('[data-edit-input]').value
+    const number = Number(rawValue)
+    // A diferencia de un escaneo nuevo, una correccion si puede dejar el movimiento
+    // en 0 piezas (por ejemplo si el escaneo original fue un error). Antes, cualquier
+    // valor invalido o en 0 hacia que "Guardar correccion" no hiciera nada y sin
+    // ningun aviso, lo que parecia que el boton estaba roto.
+    if (rawValue.trim() === '' || !Number.isFinite(number) || number < 0) {
+      setEditError('Escribe un numero valido (puede ser 0).')
+      return
+    }
+    const quantity = Math.floor(number)
 
     activeCount.movements = activeCount.movements.map(item => {
       if (item.id !== editingMovement.id) return item
@@ -888,6 +900,10 @@
     if (!window.confirm(`Eliminar movimiento?\n${label}\n${movement.quantity} pz`)) return
 
     activeCount.movements = activeCount.movements.filter(item => item.id !== id)
+    // Se recuerda el id borrado (aunque la nube todavia tenga la version vieja)
+    // para que ninguna sincronizacion o refresco posterior lo vuelva a agregar.
+    if (!Array.isArray(activeCount.deletedMovementIds)) activeCount.deletedMovementIds = []
+    if (!activeCount.deletedMovementIds.includes(id)) activeCount.deletedMovementIds.push(id)
     if (lastMovementId === id) lastMovementId = ''
     updateCounter()
   }
@@ -929,6 +945,10 @@
     syncFinalizedCount(finalized)
     downloadPdf(finalized)
     downloadExcel(finalized)
+
+    // Al cerrar el conteo, el stock del sistema vuelve a 0 para esta sucursal: el
+    // siguiente periodo empieza limpio hasta que se cargue un archivo de stock nuevo.
+    resetStoreStockAfterClosure(store.slug)
 
     activeCount = createEmptyCount(store.slug)
     lastMovementId = ''
@@ -1833,8 +1853,18 @@
       return true
     }
 
+    // Los ids borrados (en este dispositivo o en otro) se juntan para que ningun
+    // refresco o sincronizacion vuelva a traer de regreso un movimiento eliminado,
+    // aunque la nube todavia tenga guardada la version vieja del conteo.
+    const localDeleted = Array.isArray(activeCount.deletedMovementIds) ? activeCount.deletedMovementIds : []
+    const remoteDeleted = Array.isArray(remote.deletedMovementIds) ? remote.deletedMovementIds : []
+    const deletedIds = new Set([...localDeleted, ...remoteDeleted])
+    activeCount.deletedMovementIds = Array.from(deletedIds)
+
     const before = activeCount && Array.isArray(activeCount.movements) ? activeCount.movements.length : 0
-    activeCount.movements = mergeMovementLists(activeCount.movements, remote.movements)
+    const incomingMovements = remote.movements.filter(movement => !movement || !deletedIds.has(movement.id))
+    const merged = mergeMovementLists(activeCount.movements, incomingMovements)
+    activeCount.movements = merged.filter(movement => !movement || !deletedIds.has(movement.id))
     if (remoteStarted < localStarted) activeCount.startedAt = remote.startedAt
     if (activeCount.movements.length !== before) saveActiveCount()
     return activeCount.movements.length !== before
@@ -1848,6 +1878,7 @@
       storeSlug: row.store_slug,
       startedAt: row.started_at || count.startedAt,
       movements: count.movements,
+      deletedMovementIds: Array.isArray(count.deletedMovementIds) ? count.deletedMovementIds : [],
     }
   }
 
@@ -1864,7 +1895,18 @@
   function mergeMovementLists(current, incoming) {
     const byId = new Map()
     incoming.concat(current).forEach(movement => {
-      if (movement && movement.id) byId.set(movement.id, movement)
+      if (!movement || !movement.id) return
+      const existing = byId.get(movement.id)
+      // Si el mismo id llega de las dos listas (por ejemplo una correccion), se
+      // conserva la version con el "updatedAt" mas reciente en vez de simplemente
+      // quedarnos con la ultima que se proceso.
+      if (!existing) {
+        byId.set(movement.id, movement)
+        return
+      }
+      const existingTime = new Date(existing.updatedAt || existing.createdAt || 0).getTime() || 0
+      const candidateTime = new Date(movement.updatedAt || movement.createdAt || 0).getTime() || 0
+      if (candidateTime >= existingTime) byId.set(movement.id, movement)
     })
     return Array.from(byId.values())
       .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
@@ -2070,6 +2112,32 @@
 
     if (error) throw new Error(`No se pudo guardar el stock en la nube: ${error.message}`)
     return row || payload
+  }
+
+  async function resetStoreStockAfterClosure(storeSlug) {
+    const emptyOverride = {
+      sourceName: 'Cierre de conteo',
+      sourceType: 'reset',
+      uploadedAt: new Date().toISOString(),
+      totalStock: 0,
+      expectedByProduct: {},
+    }
+
+    // Optimista: se refleja de inmediato en este dispositivo aunque la nube tarde o falle.
+    stockOverrides[storeSlug] = { ...emptyOverride }
+    saveStockOverrides()
+
+    if (!cloudSyncEnabled) return
+
+    try {
+      const savedRow = await saveRemoteStoreStock(storeSlug, emptyOverride)
+      applyRemoteStocks([savedRow], { force: true })
+    } catch (error) {
+      // El cierre del conteo ya se guardo; si el reinicio de stock en la nube falla
+      // (por ejemplo sin internet), este dispositivo ya quedo en 0 y la nube se
+      // actualizara la proxima vez que haya conexion y se repita esta accion.
+      console.warn('No se pudo reiniciar el stock en la nube tras el cierre:', error)
+    }
   }
 
   async function parseInventoryFile(file, setStatus) {
@@ -2400,6 +2468,7 @@
       storeSlug,
       startedAt: new Date().toISOString(),
       movements: [],
+      deletedMovementIds: [],
     }
   }
 
@@ -2512,6 +2581,13 @@
 
   function setCodeError(message) {
     const el = app.querySelector('[data-code-error]')
+    if (!el) return
+    el.hidden = !message
+    el.textContent = message
+  }
+
+  function setEditError(message) {
+    const el = app.querySelector('[data-edit-error]')
     if (!el) return
     el.hidden = !message
     el.textContent = message
