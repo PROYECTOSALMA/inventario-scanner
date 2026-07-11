@@ -1776,7 +1776,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 48,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1821,7 +1821,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 4,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1830,7 +1830,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 2,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1839,7 +1839,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1848,7 +1848,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 34,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1857,7 +1857,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 13,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1875,7 +1875,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 17,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1884,7 +1884,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 16,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1902,7 +1902,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 482,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1911,7 +1911,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 111,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1920,7 +1920,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 47,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1929,7 +1929,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 2,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1938,7 +1938,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 154,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1956,7 +1956,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 6,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1965,7 +1965,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1983,7 +1983,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 2,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -1992,7 +1992,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 67,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2001,7 +2001,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2010,7 +2010,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 4,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2019,7 +2019,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 2,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2028,7 +2028,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 21,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2046,7 +2046,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 93,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2055,7 +2055,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 11,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2064,7 +2064,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 18,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2091,7 +2091,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 191,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2127,7 +2127,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 126,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2136,7 +2136,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 4,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2163,7 +2163,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2199,7 +2199,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 6,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2208,7 +2208,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2226,7 +2226,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 7,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2262,7 +2262,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 6,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2271,7 +2271,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 6,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2280,7 +2280,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2298,7 +2298,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 33,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2307,7 +2307,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 17,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2316,7 +2316,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 10,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2343,7 +2343,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 32,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2352,7 +2352,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 2,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2379,7 +2379,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 11,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2388,7 +2388,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 35,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2406,7 +2406,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 98,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2415,7 +2415,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 40,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2424,7 +2424,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 5,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2442,7 +2442,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 4,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2451,7 +2451,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2460,7 +2460,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2523,7 +2523,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 3,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2550,7 +2550,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 12,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2559,7 +2559,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2613,7 +2613,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 146,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2622,7 +2622,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 204,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2631,7 +2631,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 13,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2640,7 +2640,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 10,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2658,7 +2658,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 20,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2694,7 +2694,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 44,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2766,7 +2766,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 107,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2775,7 +2775,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 6,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2784,7 +2784,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 569,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2793,7 +2793,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 135,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2802,7 +2802,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 287,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2811,7 +2811,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 5,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2829,7 +2829,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2838,7 +2838,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 11,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2856,7 +2856,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 28,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2865,7 +2865,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 172,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2874,7 +2874,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 56,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2883,7 +2883,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 131,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2901,7 +2901,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1507,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2910,7 +2910,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 619,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2919,7 +2919,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 157,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2928,7 +2928,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 2911,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2937,7 +2937,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 105,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2946,7 +2946,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 630,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2955,7 +2955,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 825,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2964,7 +2964,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1399,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2973,7 +2973,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 427,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2982,7 +2982,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 172,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -2991,7 +2991,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 806,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3000,7 +3000,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 174,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3009,7 +3009,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 369,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3018,7 +3018,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 382,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3027,7 +3027,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 291,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3036,7 +3036,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 500,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3045,7 +3045,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 89,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3054,7 +3054,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 2,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3063,7 +3063,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1414,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3072,7 +3072,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1058,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3126,7 +3126,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1445,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3135,7 +3135,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 337,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3144,7 +3144,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 258,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3153,7 +3153,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 24,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3162,7 +3162,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 728,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3171,7 +3171,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 246,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3189,7 +3189,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 224,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3198,7 +3198,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 23,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3207,7 +3207,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 10,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3216,7 +3216,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 191,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3225,7 +3225,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 36,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3234,7 +3234,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 121,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3252,7 +3252,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 233,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3261,7 +3261,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 11,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3297,7 +3297,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 11,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3306,7 +3306,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 8,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3315,7 +3315,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 486,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3324,7 +3324,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 201,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3333,7 +3333,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 10,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3342,7 +3342,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 84,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3351,7 +3351,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 9,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3378,7 +3378,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 81,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3387,7 +3387,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 149,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3396,7 +3396,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3405,7 +3405,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 430,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3414,7 +3414,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3423,7 +3423,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3432,7 +3432,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 17,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3441,7 +3441,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3459,7 +3459,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 111,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3486,7 +3486,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 299,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3495,7 +3495,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 47,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3504,7 +3504,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 159,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3531,7 +3531,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 25,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3540,7 +3540,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1024,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3549,7 +3549,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 16,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3567,7 +3567,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 32,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3576,7 +3576,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3594,7 +3594,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 228,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3603,7 +3603,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 18,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3621,7 +3621,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 88,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3657,7 +3657,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 251,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3684,7 +3684,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 28,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3693,7 +3693,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 7,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3702,7 +3702,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 2,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3711,7 +3711,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3720,7 +3720,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 8,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3729,7 +3729,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 7,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3747,7 +3747,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 3,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3756,7 +3756,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 432,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3765,7 +3765,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 172,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3819,7 +3819,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 65,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3828,7 +3828,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 18,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3837,7 +3837,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 16,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3846,7 +3846,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 18,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3864,7 +3864,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3891,7 +3891,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 19,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3900,7 +3900,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3918,7 +3918,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 85,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3927,7 +3927,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 2,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3936,7 +3936,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 52,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3945,7 +3945,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3954,7 +3954,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 1,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },
@@ -3963,7 +3963,7 @@ window.INVENTORY_DATA = {
       "lineas-originales": 0,
       "club-jeans": 0,
       "miguel-aleman": 0,
-      "almacen-general": 4,
+      "almacen-general": 0,
       "zapotlanejo": 0,
       "denim-click": 0
     },

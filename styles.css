@@ -165,8 +165,7 @@ h2 {
 }
 
 .store-actions a,
-.store-actions button,
-.store-actions label {
+.store-actions button {
   display: inline-flex;
   min-height: 34px;
   align-items: center;
@@ -187,7 +186,7 @@ h2 {
   color: white;
 }
 
-.store-actions input {
+.store-actions input[type="file"] {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -1024,8 +1023,7 @@ td {
   }
 
   .store-actions a,
-  .store-actions button,
-  .store-actions label {
+  .store-actions button {
     flex: 1 1 auto;
   }
 }

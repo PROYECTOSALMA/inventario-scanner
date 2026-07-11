@@ -3,7 +3,7 @@
   const app = document.querySelector('#app')
   const supabaseClient = createSupabaseClient()
   const cloudSyncEnabled = Boolean(supabaseClient)
-  const stockStorageKey = 'inventario-scanner:stock-overrides:v3-cloud-latest'
+  const stockStorageKey = 'inventario-scanner:stock-overrides:v4-zero-aware'
   const customCodesStorageKey = 'inventario-scanner:custom-codes:v1'
   const pendingFinalizedStorageKey = 'inventario-scanner:pending-finalized:v1'
   const pendingCustomCodesStorageKey = 'inventario-scanner:pending-custom-codes:v1'
@@ -278,10 +278,8 @@
     const item = row.store
     const stockUploadControl = cloudSyncEnabled
       ? `
-          <label>
-            Cargar stock
-            <input type="file" accept=".xlsx,.xls,.csv,.pdf,application/pdf" data-stock-upload="${escapeHtml(item.slug)}" />
-          </label>
+          <button type="button" data-stock-trigger="${escapeHtml(item.slug)}">Cargar stock</button>
+          <input type="file" accept=".xlsx,.xls,.csv,.pdf,application/pdf" data-stock-upload="${escapeHtml(item.slug)}" />
         `
       : '<button type="button" disabled title="Configura Supabase en Netlify para cargar stock compartido.">Cargar stock</button>'
 
@@ -334,6 +332,7 @@
 
   async function fetchDashboard() {
     if (!app.querySelector('[data-store-grid]')) return
+    if (stockUploadInProgress) return
     if (!navigator.onLine) {
       app.querySelector('[data-dashboard-sync]').textContent = 'Sin internet: mostrando ultimo dato guardado en este dispositivo.'
       renderDashboardContent()
@@ -366,6 +365,13 @@
   }
 
   function bindDashboardButtons() {
+    app.querySelectorAll('[data-stock-trigger]').forEach(button => {
+      button.addEventListener('click', () => {
+        const input = app.querySelector(`[data-stock-upload="${cssEscape(button.dataset.stockTrigger || '')}"]`)
+        if (input) input.click()
+      })
+    })
+
     app.querySelectorAll('[data-admin-pdf]').forEach(button => {
       button.addEventListener('click', () => {
         const count = dashboardClosures.find(item => item.folio === button.dataset.adminPdf)
@@ -1097,11 +1103,7 @@
       return normalizeProductStockObject(override.expectedByQuality)
     }
 
-    const baseStock = data.expectedByProduct || {}
-    return Object.fromEntries(Object.entries(baseStock).map(([code, stores]) => [
-      normalizeCode(code),
-      Number((stores || {})[storeSlug]) || 0,
-    ]))
+    return {}
   }
 
   function getStockInfo(storeSlug) {
@@ -1840,7 +1842,7 @@
       // muchos codigos aun no existian en el catalogo del dispositivo, dejando el
       // inventario viejo aparentemente "pegado".
       const expectedByProduct = normalizeProductStockObject(row.expected_by_quality, true)
-      if (!Object.keys(expectedByProduct).length) return
+      if (!Object.keys(expectedByProduct).length && Number(row.total_stock) > 0) return
       const uploadedAt = row.uploaded_at || new Date().toISOString()
       const current = stockOverrides[row.store_slug]
       if (!options.force && current && stockTimestamp(current.uploadedAt) > stockTimestamp(uploadedAt)) return
@@ -1943,23 +1945,20 @@
     const storeItem = data.stores.find(item => item.slug === storeSlug)
     if (!storeItem) return
 
-    const syncLabel = app.querySelector('[data-dashboard-sync]')
     if (stockUploadInProgress) {
       const message = 'Ya hay una carga de stock en proceso. Espera a que termine para subir otro archivo.'
-      if (syncLabel) syncLabel.textContent = message
+      setDashboardStatus(message)
       window.alert(message)
       return
     }
     if (!cloudSyncEnabled) {
       const message = 'No puedo cargar stock compartido porque Supabase no esta configurado en esta publicacion.'
       window.alert(`${message}\nConfigura SUPABASE_URL y SUPABASE_ANON_KEY en Netlify y vuelve a publicar.`)
-      if (syncLabel) syncLabel.textContent = message
+      setDashboardStatus(message)
       return
     }
 
-    const setStatus = text => {
-      if (syncLabel) syncLabel.textContent = text
-    }
+    const setStatus = text => setDashboardStatus(text)
 
     setStatus(`Leyendo ${file.name} (${formatFileSize(file.size)})...`)
     stockUploadInProgress = true
@@ -2027,23 +2026,6 @@
       expected_by_quality: override.expectedByProduct,
     }
 
-    const rpcResponse = await supabaseClient.rpc('save_inventory_store_stock', {
-      p_store_slug: storeSlug,
-      p_source_name: override.sourceName,
-      p_source_type: override.sourceType,
-      p_total_stock: override.totalStock,
-      p_expected_by_quality: override.expectedByProduct,
-    })
-
-    if (!rpcResponse.error) {
-      const row = Array.isArray(rpcResponse.data) ? rpcResponse.data[0] : rpcResponse.data
-      if (row) return row
-      throw new Error('No recibi confirmacion de Supabase al guardar el stock.')
-    }
-    if (!isMissingRpcError(rpcResponse.error)) {
-      throw new Error(`No se pudo guardar el stock en la nube: ${rpcResponse.error.message}`)
-    }
-
     const { data: row, error } = await supabaseClient
       .from('inventory_store_stocks')
       .upsert(payload, { onConflict: 'store_slug' })
@@ -2052,10 +2034,6 @@
 
     if (error) throw new Error(`No se pudo guardar el stock en la nube: ${error.message}`)
     return row || payload
-  }
-
-  function isMissingRpcError(error) {
-    return error && (error.code === '42883' || error.code === 'PGRST202')
   }
 
   async function parseInventoryFile(file, setStatus) {
@@ -2144,7 +2122,7 @@
     if (headerIndex < 0) return null
 
     const headers = rows[headerIndex].map(cell => normalizeQuality(cell))
-    const codeIndex = headers.findIndex(cell => cell.includes('CODIGO DE BARRAS'))
+    const codeIndex = headers.findIndex(cell => cell.includes('CODIGO DE BARRAS') || cell === 'CODIGO' || cell === 'CODIGO BARRAS')
     const nameIndex = headers.findIndex(cell => cell === 'NOMBRE')
     const variantIndex = headers.findIndex(cell => cell.includes('VALORES DE LAS VARIANTES'))
     const qtyIndex = headers.findIndex(cell => cell.includes('CANTIDAD A MANO'))
@@ -2275,9 +2253,19 @@
   }
 
   function parseLooseNumber(value) {
-    const cleaned = String(value || '').replace(/,/g, '').trim()
+    const cleaned = String(value ?? '').replace(/,/g, '').trim()
     if (!/^-?\d+(\.\d+)?$/.test(cleaned)) return null
     return Math.round(Number(cleaned))
+  }
+
+  function cssEscape(value) {
+    if (window.CSS && typeof window.CSS.escape === 'function') return window.CSS.escape(value)
+    return String(value || '').replace(/["\\]/g, '\\$&')
+  }
+
+  function setDashboardStatus(text) {
+    const syncLabel = app.querySelector('[data-dashboard-sync]')
+    if (syncLabel) syncLabel.textContent = text
   }
 
   function normalizeRemoteProductStock(stock) {

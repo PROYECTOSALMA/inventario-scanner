@@ -1,4 +1,4 @@
-const CACHE_NAME = 'inventario-scanner-v20260711-6'
+const CACHE_NAME = 'inventario-scanner-v20260711-7'
 const APP_SHELL = [
   '/',
   '/index.html',
