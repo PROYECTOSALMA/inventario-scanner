@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#111827" />
+    <title>Inventario Scanner</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+    <script defer src="/config.js"></script>
+    <script defer src="/data.js"></script>
+    <script defer src="/app.js"></script>
+  </head>
+  <body>
+    <main id="app"></main>
+
+    <template id="store-list-template">
+      <section class="top-band">
+        <div class="top-inner">
+          <div>
+            <p class="eyebrow">Conteo movil por scanner</p>
+            <h1>Dashboard de inventarios</h1>
+            <p class="muted">Monitorea el conteo en vivo, carga inventarios de sistema y descarga cierres por sucursal.</p>
+          </div>
+          <div class="brand-mark">INV</div>
+        </div>
+      </section>
+      <section class="page-width space">
+        <div class="metrics dashboard-metrics">
+          <article class="metric"><span>Stock sistema</span><strong data-admin-stock>0</strong></article>
+          <article class="metric"><span>Conteo acumulado</span><strong data-admin-counted>0</strong></article>
+          <article class="metric danger"><span>Faltante general</span><strong data-admin-shortage>0</strong></article>
+          <article class="metric warning"><span>Sobrante general</span><strong data-admin-surplus>0</strong></article>
+          <article class="metric"><span>Diferencia neta</span><strong data-admin-difference>0</strong></article>
+        </div>
+        <div class="dashboard-head">
+          <div>
+            <h2>Estatus por sucursal</h2>
+            <p class="muted" data-dashboard-sync>Conectando con la nube...</p>
+          </div>
+          <div class="dashboard-actions">
+            <button class="small-button" type="button" data-add-code>Agregar codigo</button>
+            <button class="small-button" type="button" data-refresh-dashboard>Actualizar</button>
+          </div>
+        </div>
+        <div class="store-grid dashboard-grid" data-store-grid></div>
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <h2>Cierres recientes</h2>
+              <p>Descarga PDF sin esperar que te lo manden.</p>
+            </div>
+          </div>
+          <div data-admin-closures></div>
+        </article>
+      </section>
+
+      <div class="sheet-backdrop" data-code-sheet hidden>
+        <form class="sheet" data-code-form>
+          <div class="sheet-head">
+            <div>
+              <p class="code-title">Agregar codigo</p>
+              <p class="muted">Este codigo quedara disponible para todas las sucursales.</p>
+            </div>
+            <button type="button" class="icon-button" data-close-code>&times;</button>
+          </div>
+          <label class="scan-label" for="new-code">Codigo</label>
+          <input id="new-code" class="edit-input compact" data-code-input autocapitalize="characters" spellcheck="false" />
+          <label class="scan-label" for="new-product">Nombre del producto</label>
+          <input id="new-product" class="search-input full-input" data-product-input />
+          <p class="error-text" data-code-error hidden></p>
+          <button type="submit" class="primary-button full">Guardar codigo</button>
+        </form>
+      </div>
+    </template>
+
+    <template id="counter-template">
+      <header class="app-header">
+        <div class="header-row">
+          <a class="icon-button" href="/" aria-label="Volver">&larr;</a>
+          <div class="header-title">
+            <h1 data-store-name></h1>
+            <p data-count-meta></p>
+          </div>
+          <button class="secondary-button" data-reset disabled>Reiniciar</button>
+          <button class="primary-button" data-finalize disabled>Finalizar conteo</button>
+        </div>
+      </header>
+
+      <section class="page-width space">
+        <p class="viewer-banner" data-viewer-banner hidden>Vista gerente: solo lectura en vivo.</p>
+        <div class="metrics">
+          <article class="metric"><span>Stock sistema</span><strong data-metric-expected>0</strong></article>
+          <article class="metric"><span>Piezas contadas</span><strong data-metric-counted>0</strong></article>
+          <article class="metric danger"><span>Faltante general</span><strong data-metric-shortage>0</strong></article>
+          <article class="metric warning"><span>Sobrante general</span><strong data-metric-surplus>0</strong></article>
+          <article class="metric"><span>Diferencia neta</span><strong data-metric-difference>0</strong></article>
+        </div>
+
+        <form class="scan-panel" data-scan-form data-scan-panel>
+          <label class="scan-label" for="scan-input">Escanear codigo</label>
+          <div class="scan-row">
+            <input id="scan-input" data-scan-input autocomplete="off" autocapitalize="characters" spellcheck="false" />
+            <button type="submit">OK</button>
+          </div>
+          <button class="small-button camera-button" type="button" data-camera-scan>Escanear con camara</button>
+          <p class="error-text" data-scan-error hidden></p>
+          <button class="small-button add-unknown" type="button" data-add-unknown hidden>Agregar codigo no registrado</button>
+          <p class="success-text" data-last-scan hidden></p>
+        </form>
+
+        <nav class="tabs" aria-label="Modulos">
+          <button data-tab-button="scan" class="active">Escaneo</button>
+          <button data-tab-button="tables">Tablas</button>
+          <button data-tab-button="history">Historial</button>
+          <button data-tab-button="past">Cierres</button>
+        </nav>
+
+        <section data-tab-panel="scan" class="tab-panel">
+          <div class="two-col">
+            <article class="panel">
+              <div class="panel-heading">
+                <div>
+                  <h2>Avance del conteo</h2>
+                  <p data-progress-text>0 piezas en 0 codigos</p>
+                </div>
+              </div>
+              <div data-compact-comparison></div>
+            </article>
+            <article class="panel">
+              <div class="panel-heading">
+                <h2>Ultimos movimientos</h2>
+                <button class="small-button" data-go-history>Ver todo</button>
+              </div>
+              <div data-recent-movements></div>
+            </article>
+          </div>
+        </section>
+
+        <section data-tab-panel="tables" class="tab-panel" hidden>
+          <article class="panel">
+            <div class="panel-heading wrap">
+              <div>
+                <h2>Tabla por codigo</h2>
+                <p>codigo - producto - total de pz</p>
+              </div>
+              <label class="check-row"><input data-show-all type="checkbox" /> Mostrar todos</label>
+            </div>
+            <div data-code-table></div>
+          </article>
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <h2>Comparativo</h2>
+                <p>Compara cada producto contra sistema sin agrupar calidades.</p>
+              </div>
+            </div>
+            <div data-comparison-table></div>
+          </article>
+        </section>
+
+        <section data-tab-panel="history" class="tab-panel" hidden>
+          <article class="panel">
+            <div class="panel-heading wrap">
+              <div>
+                <h2>Historial de movimientos</h2>
+                <p>Corrige antes de finalizar.</p>
+              </div>
+              <input class="search-input" data-history-search placeholder="Buscar" />
+            </div>
+            <div data-history-list></div>
+          </article>
+        </section>
+
+        <section data-tab-panel="past" class="tab-panel" hidden>
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <h2>Conteos pasados</h2>
+                <p>Cierres bloqueados y listos para PDF.</p>
+              </div>
+            </div>
+            <div data-past-list></div>
+          </article>
+        </section>
+      </section>
+
+      <div class="sheet-backdrop" data-quantity-sheet hidden>
+        <form class="sheet" data-quantity-form>
+          <div class="sheet-head">
+            <div>
+              <p class="code-title" data-sheet-code></p>
+              <p class="quality-title" data-sheet-quality></p>
+              <p class="muted" data-sheet-system></p>
+            </div>
+            <button type="button" class="icon-button" data-close-sheet>&times;</button>
+          </div>
+          <p class="muted" data-sheet-current></p>
+          <div class="qty-row">
+            <button type="button" data-qty-minus>-</button>
+            <input data-qty-input inputmode="numeric" />
+            <button type="button" data-qty-plus>+</button>
+          </div>
+          <div class="preset-row">
+            <button type="button" data-preset="1">1</button>
+            <button type="button" data-preset="6">6</button>
+            <button type="button" data-preset="12">12</button>
+            <button type="button" data-preset="24">24</button>
+          </div>
+          <p class="error-text" data-qty-error hidden></p>
+          <button type="submit" class="primary-button full">Sumar al conteo</button>
+        </form>
+      </div>
+
+      <div class="sheet-backdrop" data-edit-sheet hidden>
+        <form class="sheet" data-edit-form>
+          <div class="sheet-head">
+            <div>
+              <p class="code-title">Corregir movimiento</p>
+              <p class="quality-title" data-edit-code></p>
+              <p class="muted" data-edit-quality></p>
+            </div>
+            <button type="button" class="icon-button" data-close-edit>&times;</button>
+          </div>
+          <label class="scan-label" for="edit-qty">Piezas correctas</label>
+          <input id="edit-qty" class="edit-input" data-edit-input inputmode="numeric" />
+          <button type="submit" class="primary-button full">Guardar correccion</button>
+        </form>
+      </div>
+
+      <div class="sheet-backdrop" data-code-sheet hidden>
+        <form class="sheet" data-code-form>
+          <div class="sheet-head">
+            <div>
+              <p class="code-title">Agregar codigo</p>
+              <p class="muted">Despues de guardarlo podras sumar piezas a este codigo.</p>
+            </div>
+            <button type="button" class="icon-button" data-close-code>&times;</button>
+          </div>
+          <label class="scan-label" for="new-code-counter">Codigo</label>
+          <input id="new-code-counter" class="edit-input compact" data-code-input autocapitalize="characters" spellcheck="false" />
+          <label class="scan-label" for="new-product-counter">Nombre del producto</label>
+          <input id="new-product-counter" class="search-input full-input" data-product-input />
+          <p class="error-text" data-code-error hidden></p>
+          <button type="submit" class="primary-button full">Guardar codigo</button>
+        </form>
+      </div>
+
+      <div class="sheet-backdrop" data-camera-sheet hidden>
+        <div class="sheet camera-sheet">
+          <div class="sheet-head">
+            <div>
+              <p class="code-title">Escanear con camara</p>
+              <p class="muted">Apunta al codigo de barras hasta que lo detecte.</p>
+            </div>
+            <button type="button" class="icon-button" data-close-camera>&times;</button>
+          </div>
+          <video class="camera-video" data-camera-video playsinline muted></video>
+          <p class="error-text" data-camera-error hidden></p>
+        </div>
+      </div>
+    </template>
+  </body>
+</html>

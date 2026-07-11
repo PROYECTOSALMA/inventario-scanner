@@ -176,6 +176,80 @@ create policy "inventory_store_stocks_public_update"
 
 grant select, insert, update on public.inventory_store_stocks to anon;
 
+drop function if exists public.save_inventory_store_stock(text, text, text, integer, jsonb);
+create or replace function public.save_inventory_store_stock(
+  p_store_slug text,
+  p_source_name text,
+  p_source_type text,
+  p_total_stock integer,
+  p_expected_by_quality jsonb
+)
+returns table (
+  store_slug text,
+  source_name text,
+  source_type text,
+  uploaded_at timestamptz,
+  total_stock integer,
+  expected_by_quality jsonb
+)
+language plpgsql
+as $$
+begin
+  if p_store_slug not in (
+    'elite',
+    'lineas-originales',
+    'club-jeans',
+    'miguel-aleman',
+    'almacen-general',
+    'zapotlanejo',
+    'denim-click'
+  ) then
+    raise exception 'Sucursal invalida: %', p_store_slug;
+  end if;
+
+  return query
+    insert into public.inventory_store_stocks as saved_stock (
+      store_slug,
+      source_name,
+      source_type,
+      uploaded_at,
+      total_stock,
+      expected_by_quality
+    )
+    values (
+      p_store_slug,
+      p_source_name,
+      p_source_type,
+      now(),
+      coalesce(p_total_stock, 0),
+      coalesce(p_expected_by_quality, '{}'::jsonb)
+    )
+    on conflict (store_slug) do update set
+      source_name = excluded.source_name,
+      source_type = excluded.source_type,
+      uploaded_at = now(),
+      total_stock = excluded.total_stock,
+      expected_by_quality = excluded.expected_by_quality
+    returning
+      saved_stock.store_slug,
+      saved_stock.source_name,
+      saved_stock.source_type,
+      saved_stock.uploaded_at,
+      saved_stock.total_stock,
+      saved_stock.expected_by_quality;
+end;
+$$;
+
+grant execute on function public.save_inventory_store_stock(text, text, text, integer, jsonb) to anon, authenticated;
+
+do $$
+begin
+  alter publication supabase_realtime add table public.inventory_store_stocks;
+exception
+  when duplicate_object then null;
+  when undefined_object then null;
+end $$;
+
 create table if not exists public.inventory_custom_codes (
   code text primary key,
   quality_name text not null,
@@ -214,3 +288,50 @@ create policy "inventory_custom_codes_public_insert"
 
 revoke update on public.inventory_custom_codes from anon;
 grant select, insert on public.inventory_custom_codes to anon;
+
+drop function if exists public.save_inventory_custom_codes(jsonb);
+create or replace function public.save_inventory_custom_codes(p_items jsonb)
+returns integer
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  inserted_count integer := 0;
+begin
+  insert into public.inventory_custom_codes (
+    code,
+    quality_name,
+    system_quality,
+    product_name,
+    created_at,
+    created_by_store,
+    source
+  )
+  select
+    upper(regexp_replace(coalesce(item.code, ''), '[^A-Za-z0-9]', '', 'g')) as code,
+    upper(trim(coalesce(item.quality_name, item.product_name, ''))) as quality_name,
+    upper(trim(coalesce(item.system_quality, item.product_name, item.quality_name, ''))) as system_quality,
+    upper(trim(coalesce(item.product_name, item.quality_name, ''))) as product_name,
+    coalesce(item.created_at, now()) as created_at,
+    item.created_by_store,
+    coalesce(item.source, 'manual') as source
+  from jsonb_to_recordset(coalesce(p_items, '[]'::jsonb)) as item(
+    code text,
+    quality_name text,
+    system_quality text,
+    product_name text,
+    created_at timestamptz,
+    created_by_store text,
+    source text
+  )
+  where upper(regexp_replace(coalesce(item.code, ''), '[^A-Za-z0-9]', '', 'g')) <> ''
+    and upper(trim(coalesce(item.product_name, item.quality_name, ''))) <> ''
+  on conflict (code) do nothing;
+
+  get diagnostics inserted_count = row_count;
+  return inserted_count;
+end;
+$$;
+
+grant execute on function public.save_inventory_custom_codes(jsonb) to anon, authenticated;

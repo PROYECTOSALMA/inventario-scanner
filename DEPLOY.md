@@ -30,10 +30,10 @@ git remote set-url origin https://github.com/TU_USUARIO/inventario-scanner.git
 git push -u origin main
 ```
 
-## 3. Vercel
+## 3. Netlify
 
-1. Entra a https://vercel.com/new.
-2. Importa el repositorio `inventario-scanner` desde GitHub.
+1. Entra a Netlify y abre el sitio publicado.
+2. Importa o conecta el repositorio `inventario-scanner` desde GitHub.
 3. Usa esta configuracion:
    - Framework Preset: `Other`
    - Build Command: `npm run build`
@@ -45,16 +45,16 @@ git push -u origin main
 
 ## 4. URLs de tienda
 
-Cuando Vercel termine, reemplaza `TU-DOMINIO.vercel.app` por el dominio real:
+Cuando Netlify termine, reemplaza `TU-DOMINIO.netlify.app` por el dominio real:
 
 ```text
-https://TU-DOMINIO.vercel.app/elite
-https://TU-DOMINIO.vercel.app/lineas-originales
-https://TU-DOMINIO.vercel.app/club-jeans
-https://TU-DOMINIO.vercel.app/miguel-aleman
-https://TU-DOMINIO.vercel.app/almacen-general
-https://TU-DOMINIO.vercel.app/zapotlanejo
-https://TU-DOMINIO.vercel.app/denim-click
+https://TU-DOMINIO.netlify.app/elite
+https://TU-DOMINIO.netlify.app/lineas-originales
+https://TU-DOMINIO.netlify.app/club-jeans
+https://TU-DOMINIO.netlify.app/miguel-aleman
+https://TU-DOMINIO.netlify.app/almacen-general
+https://TU-DOMINIO.netlify.app/zapotlanejo
+https://TU-DOMINIO.netlify.app/denim-click
 ```
 
 ## 5. Prueba rapida
@@ -89,5 +89,9 @@ Para activar conteo en vivo y carga de stock por archivo, vuelve a ejecutar `sup
 
 - `inventory_counts`: cierres finales.
 - `inventory_active_counts`: conteo activo visible en nube.
-- `inventory_store_stocks`: inventario de sistema cargado desde Excel, CSV o PDF.
+- `inventory_store_stocks`: inventario de sistema cargado desde Excel, CSV o PDF, una fila vigente por sucursal.
 - `inventory_custom_codes`: codigos nuevos agregados por gerente o durante el escaneo.
+- `save_inventory_store_stock`: funcion que guarda cada archivo con hora real de Supabase para que el ultimo archivo recibido sea el vigente.
+- `save_inventory_custom_codes`: funcion que guarda codigos nuevos por lotes para que los Excel grandes no se queden leyendo.
+
+Sin `SUPABASE_URL` y `SUPABASE_ANON_KEY` en Netlify, la carga de stock no se comparte entre dispositivos.

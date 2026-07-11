@@ -38,14 +38,20 @@ Abre `http://localhost:4173/index.html?tienda=elite`.
 2. Ve a SQL Editor.
 3. Pega y ejecuta `supabase/schema.sql`.
 4. Copia Project URL y anon public key.
-5. En Vercel agrega variables de entorno:
+5. En Netlify agrega variables de entorno:
 
 ```text
 SUPABASE_URL=https://TU-PROYECTO.supabase.co
 SUPABASE_ANON_KEY=TU_SUPABASE_ANON_KEY
 ```
 
-Si Supabase no esta configurado, la app sigue funcionando y guarda conteos en el navegador del dispositivo.
+Si Supabase no esta configurado, la app sigue funcionando y guarda conteos en el navegador del dispositivo, pero la carga de stock compartido queda desactivada para evitar archivos viejos o locales.
+
+## Carga de inventario real
+
+El dashboard permite cargar Excel, CSV o PDF por sucursal desde movil o computadora. Cada carga reemplaza el stock anterior de esa sucursal en Supabase, y las pantallas abiertas refrescan el inventario automaticamente; si Realtime esta activo en Supabase, el cambio llega casi al momento, y si no, se refresca por intervalo corto.
+
+Para que esto funcione en produccion, ejecuta el `supabase/schema.sql` actualizado y configura `SUPABASE_URL` y `SUPABASE_ANON_KEY` en Netlify antes de publicar.
 
 ## Conteos simultaneos
 
