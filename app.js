@@ -28,6 +28,7 @@
   let stockFetchTimer = null
   let stockChannel = null
   let stockUploadInProgress = false
+  let stockPickerOpen = false
   let customCodesFetchTimer = null
   let currentTab = 'scan'
   let pendingScan = null
@@ -101,6 +102,9 @@
     app.querySelector('[data-add-code]').addEventListener('click', () => openAddCodeSheet('', false))
     app.querySelector('[data-store-grid]').addEventListener('change', event => {
       if (!event.target.matches('[data-stock-upload]')) return
+      // El dialogo del sistema ya se resolvio (se eligio un archivo); a partir de aqui
+      // uploadStoreStock controla el bloqueo de refresco con stockUploadInProgress.
+      stockPickerOpen = false
       const file = event.target.files && event.target.files[0]
       const slug = event.target.dataset.stockUpload
       if (file && slug) uploadStoreStock(slug, file)
@@ -332,7 +336,7 @@
 
   async function fetchDashboard() {
     if (!app.querySelector('[data-store-grid]')) return
-    if (stockUploadInProgress) return
+    if (stockUploadInProgress || stockPickerOpen) return
     if (!navigator.onLine) {
       app.querySelector('[data-dashboard-sync]').textContent = 'Sin internet: mostrando ultimo dato guardado en este dispositivo.'
       renderDashboardContent()
@@ -368,7 +372,39 @@
     app.querySelectorAll('[data-stock-trigger]').forEach(button => {
       button.addEventListener('click', () => {
         const input = app.querySelector(`[data-stock-upload="${cssEscape(button.dataset.stockTrigger || '')}"]`)
-        if (input) input.click()
+        if (!input) return
+
+        // El refresco automatico del dashboard (fetchDashboard cada 5s) reescribe el
+        // innerHTML de la grilla, lo que destruye este <input type="file"> mientras el
+        // dialogo del sistema sigue abierto. Si el usuario tarda mas de 5s en elegir el
+        // archivo, el evento "change" termina disparando sobre un nodo ya desconectado
+        // del DOM y nunca se procesa (por eso "no pasaba nada" y el stock quedaba en 0).
+        // Bloqueamos el refresco desde que se abre el selector, no solo despues de elegir
+        // el archivo.
+        stockPickerOpen = true
+
+        let settled = false
+        const releaseGuard = () => {
+          if (settled) return
+          settled = true
+          window.removeEventListener('focus', onWindowFocus)
+        }
+
+        const onWindowFocus = () => {
+          // Si se eligio un archivo, el evento "change" ya disparo (o esta por disparar)
+          // antes de que la ventana recupere el foco y el propio handler de "change" limpia
+          // stockPickerOpen. Si no hay archivos, el usuario cancelo el dialogo y hay que
+          // liberar el refresco automatico aqui.
+          window.setTimeout(() => {
+            if (!input.files || !input.files.length) {
+              stockPickerOpen = false
+            }
+            releaseGuard()
+          }, 300)
+        }
+
+        window.addEventListener('focus', onWindowFocus)
+        input.click()
       })
     })
 
