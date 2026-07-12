@@ -29,6 +29,7 @@
   let stockChannel = null
   let stockUploadInProgress = false
   let stockPickerOpen = false
+  let fallbackCodeCache = new Map()
   let customCodesFetchTimer = null
   let currentTab = 'scan'
   let pendingScan = null
@@ -2141,6 +2142,11 @@
   }
 
   async function parseInventoryFile(file, setStatus) {
+    // Se reinicia en cada carga: los codigos generados para productos sin codigo
+    // de barras son deterministas (mismo nombre = mismo codigo), pero este mapa
+    // evita duplicar la entrada de catalogo varias veces dentro del mismo archivo.
+    fallbackCodeCache = new Map()
+
     const name = file.name.toLowerCase()
     if (name.endsWith('.xlsx') || name.endsWith('.xls') || name.endsWith('.csv')) {
       if (setStatus) setStatus(`Abriendo hoja de calculo ${file.name}...`)
@@ -2161,10 +2167,51 @@
   function parseSpreadsheetInventory(buffer, name) {
     if (!window.XLSX) throw new Error('No cargo el lector de Excel. Recarga la pagina.')
     const workbook = window.XLSX.read(buffer, { type: 'array', dense: true, cellDates: false, cellText: false })
-    const sheetName = workbook.SheetNames[0]
-    const sheet = workbook.Sheets[sheetName]
-    const rows = window.XLSX.utils.sheet_to_json(sheet, { header: 1, raw: true, defval: '', blankrows: false })
-    return extractInventoryRows(rows, name)
+    const sheetNames = workbook.SheetNames || []
+    if (!sheetNames.length) throw new Error(`No encontre hojas en ${name}.`)
+
+    // Antes solo se leia la primera hoja del archivo. Si el Excel trae varias
+    // pestanas con productos (por ejemplo una por categoria), las demas se
+    // ignoraban por completo. Ahora se procesan todas y se suman.
+    const combinedExpected = {}
+    const combinedAdditions = []
+    const seenAdditionCodes = new Set()
+    let matchedAnySheet = false
+
+    sheetNames.forEach(sheetName => {
+      const sheet = workbook.Sheets[sheetName]
+      if (!sheet) return
+      const rows = window.XLSX.utils.sheet_to_json(sheet, { header: 1, raw: true, defval: '', blankrows: false })
+      if (!rows.length) return
+
+      let parsed = null
+      try {
+        parsed = extractInventoryRows(rows, `${name} (${sheetName})`)
+      } catch {
+        parsed = null
+      }
+      if (!parsed) return
+
+      matchedAnySheet = true
+      Object.entries(parsed.expectedByProduct || {}).forEach(([code, quantity]) => {
+        const key = normalizeCode(code)
+        if (!key) return
+        combinedExpected[key] = (combinedExpected[key] || 0) + (Number(quantity) || 0)
+      })
+      ;(parsed.catalogAdditions || []).forEach(item => {
+        const code = normalizeCode(item && item.code)
+        if (!code || seenAdditionCodes.has(code)) return
+        seenAdditionCodes.add(code)
+        combinedAdditions.push(item)
+      })
+    })
+
+    if (!matchedAnySheet) throw new Error(`No encontre columnas de producto y piezas en ${name}.`)
+
+    return {
+      expectedByProduct: combinedExpected,
+      catalogAdditions: combinedAdditions,
+    }
   }
 
   async function parsePdfInventory(buffer) {
@@ -2203,9 +2250,12 @@
       const productCell = cells.find((cell, index) => index !== qtyIndex && parseLooseNumber(cell) === null)
       if (!productCell) return
 
-      const productCode = resolveInventoryProductCode(productCell, '', [])
       const quantity = parseLooseNumber(cells[qtyIndex])
-      if (!productCode || quantity === null) return
+      if (quantity === null) return
+      // Aunque el producto no tenga nada parecido en el catalogo, se genera un
+      // codigo nuevo para el en vez de descartar sus piezas.
+      const productCode = resolveInventoryProductCodeOrCreate(productCell, '', [], catalogAdditions)
+      if (!productCode) return
       output[productCode] = (output[productCode] || 0) + quantity
     })
 
@@ -2261,7 +2311,10 @@
         return
       }
 
-      if (productName && quantity) {
+      // Antes se exigia que "quantity" fuera distinto de 0 para siquiera
+      // considerar la fila; eso descartaba en silencio los productos en cero
+      // que no tienen codigo de barras propio.
+      if (productName) {
         missingStockRows.push({ productName, variant, quantity })
       }
     })
@@ -2276,7 +2329,9 @@
     })
 
     missingStockRows.forEach(row => {
-      const code = resolveInventoryProductCode(row.productName, row.variant, fileProducts)
+      // Si no hay nada parecido en el catalogo ni en el archivo, se crea un
+      // codigo nuevo para el producto en vez de perder sus piezas.
+      const code = resolveInventoryProductCodeOrCreate(row.productName, row.variant, fileProducts, catalogAdditions)
       if (!code) return
       expectedByProduct[code] = (expectedByProduct[code] || 0) + row.quantity
     })
@@ -2332,6 +2387,62 @@
     })
 
     return best && best.score >= 18 ? best.code : ''
+  }
+
+  // A diferencia de resolveInventoryProductCode (que puede regresar '' si no
+  // encuentra nada parecido), esta version nunca deja piezas sin contar: si no
+  // hay ningun codigo ni producto parecido, crea uno nuevo a partir del nombre
+  // para que el stock de ese producto se cargue de todas formas.
+  function resolveInventoryProductCodeOrCreate(productName, variant, fileProducts, catalogAdditions) {
+    const matchedCode = resolveInventoryProductCode(productName, variant, fileProducts)
+    if (matchedCode) return matchedCode
+
+    const cleanName = String(productName || '').trim()
+    if (!cleanName) return ''
+
+    const label = productInventoryLabel(cleanName, variant ? [variant] : [])
+    const dedupeKey = label || cleanName
+
+    let code = fallbackCodeCache.get(dedupeKey)
+    if (!code) {
+      code = generateFallbackProductCode(dedupeKey)
+      fallbackCodeCache.set(dedupeKey, code)
+    }
+
+    if (!catalogByCode.has(code) && Array.isArray(catalogAdditions) && !catalogAdditions.some(item => normalizeCode(item && item.code) === code)) {
+      catalogAdditions.push({
+        code,
+        qualityName: label || cleanName,
+        systemQuality: label || cleanName,
+        productName: cleanName,
+        variantName: variant || '',
+        custom: true,
+        createdAt: new Date().toISOString(),
+        createdByStore: store ? store.slug : 'gerente',
+        source: 'stock-upload',
+      })
+    }
+
+    return code
+  }
+
+  function generateFallbackProductCode(seed) {
+    // normalize('NFD') separa acentos de su letra base (por ejemplo "Á" en "A" +
+    // marca de acento); el siguiente replace se queda solo con A-Z0-9, asi que
+    // tanto la marca de acento como cualquier otro simbolo quedan fuera.
+    const base = String(seed || 'PRODUCTO')
+      .toUpperCase()
+      .normalize('NFD')
+      .replace(/[^A-Z0-9]/g, '')
+      .slice(0, 18) || 'PRODUCTO'
+
+    let hash = 0
+    const text = String(seed || '')
+    for (let index = 0; index < text.length; index += 1) {
+      hash = (hash * 31 + text.charCodeAt(index)) >>> 0
+    }
+
+    return `AUTO${base}${hash.toString(36).toUpperCase()}`
   }
 
   function productMatchScore(productName, variant, candidate) {
